@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
-
-class PokemonTemplate extends Component {
-  render() {
-    return (
-        <div>
-          <h2>Pokemon 1</h2>
-        </div>
-    );
-  }
+const PokemonCard = (props) => {
+  return (
+      <div>
+        <h3>{props.name}</h3>
+        <img
+          className="card-image" 
+          src={`https://pokeres.bastionbot.org/images/pokemon/${props.id}.png`} 
+          alt={props.name}
+        />
+      </div>
+  );
 }
 
-export default PokemonTemplate;
+export default PokemonCard;
