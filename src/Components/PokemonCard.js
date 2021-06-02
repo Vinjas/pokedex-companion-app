@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
-class PokemonList extends Component {
+
+class PokemonTemplate extends Component {
   render() {
     return (
         <div>
-          <h2>Pokemon List</h2>
+          <h2>Pokemon 1</h2>
         </div>
     );
   }
 }
 
-export default PokemonList;
+export default PokemonTemplate;
