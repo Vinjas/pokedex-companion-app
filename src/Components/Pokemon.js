@@ -8,8 +8,10 @@ const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
 
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2${location.pathname}`)
-    .then((response) => response.json())
+    {/*fetch(`https://pokeapi.co/api/v2${location.pathname}`)
+  .then((response) => response.json())*/}
+    
+    getPokemon(location.pathname)
     .then((data) => {
       setPokemon(data);
     });
