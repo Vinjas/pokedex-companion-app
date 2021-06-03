@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import PokemonCard from "../Components/PokemonCard"
-import { getPokemons } from "../Services/pokemons"
+import { getPokemons } from "../API/pokemons"
 
 const AllPokemon = () => {
   const [pokemons, setPokemons] = useState([])

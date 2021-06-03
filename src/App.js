@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PokemonList from "./Containers/PokemonList"
 import TypesList from "./Containers/TypesList"
 import Moves from "./Containers/Moves"
 import NavBar from "./navBar"
 import PokemonTemplate from "./Components/Pokemon"
 
-import "./CSS/App.css"
+import "./Sass/App.scss"
 
 class App extends Component {
   render() {
