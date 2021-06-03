@@ -8,26 +8,23 @@ const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
 
   useEffect(() => {
-    {/*fetch(`https://pokeapi.co/api/v2${location.pathname}`)
-  .then((response) => response.json())*/}
-    
     getPokemon(location.pathname)
     .then((data) => {
       setPokemon(data);
     });
   }, [location.pathname]);
 
-  //const { id, name, height, weight, base_experience } = pokemon;
+  const { id, name, height, weight, base_experience } = pokemon;
 
   return (
     <div>
-      <h2>{pokemon.name}</h2>
+      <h2>{name}</h2>
       <img
         className='card__img'
-        src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`}
+        src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
         alt='pokemon-pic'
       />
-      {/*<ul>
+      <ul>
         <li>Height: {height}</li>
         <li>Weight: {weight}</li>
         <li>Base XP:{base_experience}</li>
@@ -57,7 +54,7 @@ const Pokemon = () => {
           pokemon.types.map((type, index) => {
             return <li key={index}>{type['type']['name']}</li>;
           })}
-      </ul>*/}
+      </ul>
     </div>
   );
 };
