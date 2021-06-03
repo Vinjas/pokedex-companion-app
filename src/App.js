@@ -6,7 +6,7 @@ import Moves from "./Containers/Moves"
 import NavBar from "./navBar"
 import PokemonTemplate from "./Components/Pokemon"
 
-import "./Sass/App.scss"
+import "./index.css"
 
 class App extends Component {
   render() {
