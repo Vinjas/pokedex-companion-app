@@ -2,10 +2,10 @@
 
 const PokemonCard = (props) => {
   return (
-      <div>
-        <h3>{props.name}</h3>
+      <div className="card">
+        <h3 className="card__title">{props.name}</h3>
         <img
-          className="card-image" 
+          className="card__img" 
           src={`https://pokeres.bastionbot.org/images/pokemon/${props.id}.png`} 
           alt={props.name}
         />
