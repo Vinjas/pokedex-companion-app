@@ -1,18 +1,15 @@
-.primary-heading {
-    font-size: 8rem;
-    padding: 2rem;
-    background-image: linear-gradient(to right, $yellow, $dark-yellow);
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-stroke: 3px $light-blue;
-}
-
-.home__header {
+//HOME
+.header {
     font-weight: bold;
     font-size: 36px;
     line-height: 43px;
     text-align: left;
     margin-top: 90px;
+
+    &__pokedex {
+        margin-top: 20px;
+        font-size: 30px;
+    }
 }
 
 .bigbutton__title {
@@ -31,4 +28,11 @@
     &--typechart {
         padding-top: 13px;
     }
+}
+
+//POKEDEX
+.card__title {
+    color: $pure-white;
+    font-weight: normal;
+
 }

@@ -1,25 +1,27 @@
 .card {
-    height: 30rem;
-    background-color: $dark-blue;
-    margin: 2rem;
-    border-radius: 1rem;
-    flex: 0 0 24%;
+    display: flex;
+    
+    
+    background-color: $gray;
     transition: all 0.2s;
+    border-radius: 10px;
+    text-decoration: none;
+    min-width: 48.5%;
+    margin-top: 8px;
 
     &__title {
-        color: $white;
-        font-size: 4rem;
-        text-transform: capitalize;
+        color: $pure-white;
+        font-weight: bold;
+        font-size: 16px;
     }
 
     &__img {
-        height: 25rem;
-        width: 25rem;
+        height: 7rem;
+        width: 7rem;
     }
 
     &:hover {
         transform: translateY(-3px);
-        box-shadow: 0 1rem 2rem rgba($black, 0.6);
         cursor: pointer;
     }
 

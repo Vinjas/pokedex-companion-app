@@ -6,12 +6,12 @@ import { NavLink } from "react-router-dom"
 const Home = () => {
     return (
         <div className="home__page">
-            <h1 className="home__header">What are <br/> you looking for?</h1>
+            <h1 className="header">What are <br/> you looking for?</h1>
             <NavLink
             className="bigbutton"
             to = {{pathname: "pokemon/"}}
             >    
-                    <h2 className="bigbutton__title">Pokémon</h2>
+                    <h2 className="bigbutton__title">Pokedex</h2>
                     <div className="bigbutton__pokeball"/>
                     
             </NavLink>

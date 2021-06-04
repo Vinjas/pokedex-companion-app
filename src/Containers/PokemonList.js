@@ -15,10 +15,12 @@ const AllPokemon = () => {
 
   return (
     <div>
-      <NavLink to={{pathname: "/"}}>
+      <NavLink className="back__button" to={{pathname: "/"}}>
         <button>Back</button>
       </NavLink>
-            
+
+      <h1 className="header header__pokedex">Pokedex</h1>  
+
       <div className="cards">
         {Object.entries(pokemons)[3] && 
           Object.entries(pokemons)[3][1].map((pokemon, index) => {

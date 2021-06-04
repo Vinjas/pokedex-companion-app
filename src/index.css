@@ -27,21 +27,16 @@ body {
     background-size: 750px;
   }
 }
-.primary-heading {
-  font-size: 8rem;
-  padding: 2rem;
-  background-image: linear-gradient(to right, #ffcb05, #c7a008);
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 3px #2a75bb;
-}
-
-.home__header {
+.header {
   font-weight: bold;
   font-size: 36px;
   line-height: 43px;
   text-align: left;
   margin-top: 90px;
+}
+.header__pokedex {
+  margin-top: 20px;
+  font-size: 30px;
 }
 
 .bigbutton__title {
@@ -61,26 +56,31 @@ body {
   padding-top: 13px;
 }
 
+.card__title {
+  color: #fff;
+  font-weight: normal;
+}
+
 .card {
-  height: 30rem;
-  background-color: #3c5aa6;
-  margin: 2rem;
-  border-radius: 1rem;
-  flex: 0 0 24%;
+  display: flex;
+  background-color: #777;
   transition: all 0.2s;
+  border-radius: 10px;
+  text-decoration: none;
+  min-width: 48.5%;
+  margin-top: 8px;
 }
 .card__title {
-  color: #ebebeb;
-  font-size: 4rem;
-  text-transform: capitalize;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
 }
 .card__img {
-  height: 25rem;
-  width: 25rem;
+  height: 7rem;
+  width: 7rem;
 }
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(14, 17, 17, 0.6);
   cursor: pointer;
 }
 .card:active, .card:focus {
@@ -148,9 +148,9 @@ body {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: center;
-  min-width: 90vh;
+  text-decoration: none;
 }
 
 .pokeball__small {

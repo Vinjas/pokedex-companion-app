@@ -1,7 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
-
-import { getPokemon } from "../API/pokemon-api"
+import React from 'react';
 
 const PokemonCard = (props) => {
   const location = useLocation();
@@ -16,7 +14,10 @@ const PokemonCard = (props) => {
         }
       }
       >
+        <div></div>
         <h3 className="card__title">{props.name}</h3>
+        <h3 className="card__title">{props.id}</h3>
+
         <img
           className="card__img" 
           src={`https://pokeres.bastionbot.org/images/pokemon/${props.id}.png`} 
