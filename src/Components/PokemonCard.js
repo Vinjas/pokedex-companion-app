@@ -1,11 +1,30 @@
 import { NavLink, useLocation } from "react-router-dom";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import zeroIDs from "../utils/zeroIDs"
+import processTypes from "../utils/processTypes"
+import { getPokemon } from "../API/pokemon-api"
 
 const PokemonCard = (props) => {
-
   const location = useLocation()
+  
+  const [pokemonType, setPokemonType] = useState([]);
+  
+  useEffect(() => {
+    getPokemon(`${location.pathname}${props.id}`)
+    .then((data) => {
+      setPokemonType(data);
+    });
+  }, [`${location.pathname}${props.id}`]);
+
+  const { types } = pokemonType;
+
+
+
+
+
+
+  
 
   return (
       <NavLink 
@@ -23,7 +42,8 @@ const PokemonCard = (props) => {
         </div>
 
         <div className="card__content">
-          <div/>
+          <div></div>
+
 
           <img
             className="card__img" 
