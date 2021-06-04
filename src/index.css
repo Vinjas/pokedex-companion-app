@@ -103,6 +103,7 @@ body {
   margin-top: 50px;
   text-decoration: none;
   box-shadow: 0px 4px 5px rgba(94, 191, 98, 0.35);
+  transition: all 0.2s;
 }
 .bigbutton__pokeball {
   background: url("./images/button__pokeball--big.png");
@@ -110,6 +111,14 @@ body {
   width: 75px;
   background-repeat: no-repeat;
   background-position: bottom right;
+}
+.bigbutton:hover {
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+.bigbutton:active, .bigbutton:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35);
 }
 
 .home__row {
@@ -126,6 +135,7 @@ body {
   margin-top: 10px;
   text-decoration: none;
   min-width: 48%;
+  transition: all 0.2s;
 }
 .button__items {
   background: #F7776A;
@@ -149,6 +159,14 @@ body {
   width: 50px;
   background-repeat: no-repeat;
   background-position: bottom right;
+}
+.button:hover {
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+.button:active, .button:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35);
 }
 
 .cards {

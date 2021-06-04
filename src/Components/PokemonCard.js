@@ -2,8 +2,9 @@ import { NavLink, useLocation } from "react-router-dom";
 import React from 'react';
 
 const PokemonCard = (props) => {
-  const location = useLocation();
-  
+
+  const location = useLocation()
+
   return (
       <NavLink 
       className="card" 
@@ -20,7 +21,7 @@ const PokemonCard = (props) => {
 
         <img
           className="card__img" 
-          src={`https://pokeres.bastionbot.org/images/pokemon/${props.id}.png`} 
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`} 
           alt={props.name}
         />
       </NavLink>
