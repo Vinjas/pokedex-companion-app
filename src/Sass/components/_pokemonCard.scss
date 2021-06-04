@@ -13,12 +13,14 @@
         display: flex;
         justify-content: space-between;
         padding-bottom: 5px;
+        flex-flow: row nowrap;
         
     }
 
     &__content {
         display: flex;
         justify-content: space-between;
+        
     }
 
     &__title {
@@ -34,20 +36,9 @@
     }
 
     &__img {
-        height: 7rem;
-        width: 7rem;
-    }
-
-    &__pokeball {
-        background: url("./images/button__pokeball.png");
-        background-size: 100%;
-        width: 70px;
-        height: 70px;
-        background-repeat: no-repeat;
-        position: relative;
-        top: 14px;
-        left: 20px;
-        
+        height: 6rem;
+        width: 6rem;
+        bottom: 50px;        
     }
 
     &:hover {
