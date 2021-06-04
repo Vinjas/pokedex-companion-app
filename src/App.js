@@ -9,8 +9,6 @@ import Pokemon from "./Components/Pokemon"
 import TypesList from "./Containers/TypesList"
 import Moves from "./Containers/Moves"
 
-import NavBar from "./navBar"
-
 const App = () => {
     return (
       <div className="App">

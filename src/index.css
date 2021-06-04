@@ -25,6 +25,12 @@ body {
 @media (min-width: 700px) {
   body {
     background-size: 750px;
+    padding: 0 10rem 0 10rem;
+  }
+}
+@media (min-width: 950px) {
+  body {
+    padding: 0 20rem 0 20rem;
   }
 }
 .header {
@@ -119,7 +125,7 @@ body {
   padding-left: 30px;
   margin-top: 10px;
   text-decoration: none;
-  max-width: 48%;
+  min-width: 48%;
 }
 .button__items {
   background: #F7776A;
