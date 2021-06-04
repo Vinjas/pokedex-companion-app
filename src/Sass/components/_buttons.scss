@@ -1,0 +1,65 @@
+.bigbutton {
+    display: flex;
+    justify-content: space-between;
+    background: $green-button;
+    border-radius: 10px;
+    padding-left: 30px;
+    margin-top: 50px;
+    text-decoration: none;
+    box-shadow: 0px 4px 5px rgba(94, 191, 98, 0.35);
+    
+    &__pokeball {
+        background: url("./images/button__pokeball--big.png");
+        background-size: 100%;
+        width: 75px;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }    
+}
+
+.home__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    background: $green-button;
+    border-radius: 10px;
+    padding-left: 30px;
+    margin-top: 10px;
+    text-decoration: none;
+    max-width: 48%;
+    
+
+    &__items {
+        background: $red-button;
+        box-shadow: 0px 4px 5px rgba(247, 119, 106, 0.35);
+    }
+
+    &__moves {
+        background: $blue-button;
+        box-shadow: 0px 4px 5px rgba(89, 169, 242, 0.35);
+    }
+
+    &__types {
+        background: $yellow_button;
+        box-shadow: 0px 4px 5px rgba(255, 206, 75, 0.35);
+    }
+
+    &__typeschart {
+        background: $purple_button;
+        padding: 37px 0 0 30px;
+        box-shadow: 0px 4px 5px rgba(184, 98, 207, 0.35);
+    }
+
+    &__pokeball {
+        background: url("./images/button__pokeball.png");
+        background-size: 100%;
+        width: 50px;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        
+    }
+}

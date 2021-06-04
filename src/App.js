@@ -24,8 +24,6 @@ const App = () => {
                   <Route path='/types' component={TypesList} />
                   <Route path='/moves' component={Moves} />
               </Switch>
-
-              <NavBar />   
           </div>
         </Router>
       </div>

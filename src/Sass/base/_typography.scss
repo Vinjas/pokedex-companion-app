@@ -6,3 +6,29 @@
     color: transparent;
     -webkit-text-stroke: 3px $light-blue;
 }
+
+.home__header {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: left;
+    margin-top: 90px;
+}
+
+.bigbutton__title {
+    color: $pure-white;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 37px 0 13px 0;
+}
+
+.button__title {
+    color: $pure-white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 37px 0 13px 0;
+
+    &--typechart {
+        padding: 0;
+    }
+}

@@ -14,10 +14,19 @@ html {
 body {
   box-sizing: border-box;
   padding: 3rem;
-  text-align: center;
-  background-image: linear-gradient(to right bottom, rgba(247, 247, 247, 0.8), rgba(238, 238, 238, 0.8)), url(./images/palm-leaf.png);
+  color: #0e1111;
+  background: url(./images/background__app.jpg);
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-attachment: fixed;
+  background-position: right top;
 }
 
+@media (min-width: 700px) {
+  body {
+    background-size: 750px;
+  }
+}
 .primary-heading {
   font-size: 8rem;
   padding: 2rem;
@@ -25,6 +34,31 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-stroke: 3px #2a75bb;
+}
+
+.home__header {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  text-align: left;
+  margin-top: 90px;
+}
+
+.bigbutton__title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 37px 0 13px 0;
+}
+
+.button__title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 37px 0 13px 0;
+}
+.button__title--typechart {
+  padding: 0;
 }
 
 .card {
@@ -54,12 +88,75 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35);
 }
 
+.bigbutton {
+  display: flex;
+  justify-content: space-between;
+  background: #5EBF62;
+  border-radius: 10px;
+  padding-left: 30px;
+  margin-top: 50px;
+  text-decoration: none;
+  box-shadow: 0px 4px 5px rgba(94, 191, 98, 0.35);
+}
+.bigbutton__pokeball {
+  background: url("./images/button__pokeball--big.png");
+  background-size: 100%;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+.home__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  background: #5EBF62;
+  border-radius: 10px;
+  padding-left: 30px;
+  margin-top: 10px;
+  text-decoration: none;
+  max-width: 48%;
+}
+.button__items {
+  background: #F7776A;
+  box-shadow: 0px 4px 5px rgba(247, 119, 106, 0.35);
+}
+.button__moves {
+  background: #59A9F2;
+  box-shadow: 0px 4px 5px rgba(89, 169, 242, 0.35);
+}
+.button__types {
+  background: #FFCE4B;
+  box-shadow: 0px 4px 5px rgba(255, 206, 75, 0.35);
+}
+.button__typeschart {
+  background: #B862CF;
+  padding: 37px 0 0 30px;
+  box-shadow: 0px 4px 5px rgba(184, 98, 207, 0.35);
+}
+.button__pokeball {
+  background: url("./images/button__pokeball.png");
+  background-size: 100%;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
   min-width: 90vh;
+}
+
+.pokeball__small {
+  background: url("./images/background__pokeball--transparent.png");
+  background-size: 50px;
 }
 
 /*# sourceMappingURL=index.css.map */

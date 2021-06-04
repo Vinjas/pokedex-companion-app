@@ -14,11 +14,16 @@ html {
 body {
     box-sizing: border-box;
     padding: 3rem;
-    text-align: center;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba($gray-light-1, 0.8),
-        rgba($gray-light-2, 0.8)
-    ),
-    url(./images/palm-leaf.png)
+    color: $black;
+    background: url(./images/background__app.jpg);
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-attachment: fixed;
+    background-position: right top;
+}
+
+@media (min-width: 700px) {
+    body {
+        background-size: 750px;
+    }
 }
