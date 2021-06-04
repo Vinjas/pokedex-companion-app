@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getPokemon } from '../API/pokemon-api';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const Pokemon = () => {
   const location = useLocation();
@@ -18,6 +18,10 @@ const Pokemon = () => {
 
   return (
     <div>
+      <NavLink to={{pathname: "/pokemon/"}}>
+        <button>Back</button>
+      </NavLink>
+      
       <h2>{name}</h2>
       <img
         className='card__img'

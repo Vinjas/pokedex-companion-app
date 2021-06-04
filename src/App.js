@@ -18,7 +18,7 @@ const App = () => {
           <div>
               <Switch>
                   <Route exact path='/' component={Home} />
-                  <Route path='/pokemon' component={PokemonList} />
+                  <Route exact path='/pokemon' component={PokemonList} />
                   <Route path='/pokemon/:id' component={Pokemon} />
 
                   <Route path='/types' component={TypesList} />
