@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-//import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom"
 
 import PokemonCard from "../Components/PokemonCard"
 import { getPokemons } from "../API/pokemons"
@@ -14,14 +14,20 @@ const AllPokemon = () => {
   }, []);
 
   return (
-    <div className="cards">
-      {Object.entries(pokemons)[3] && 
-        Object.entries(pokemons)[3][1].map((pokemon, index) => {
-          return <PokemonCard 
-            key={index} 
-            {...pokemon} 
-            id={index + 1}/>
-        })}
+    <div>
+      <NavLink to={{pathname: "/"}}>
+        <button>Back</button>
+      </NavLink>
+            
+      <div className="cards">
+        {Object.entries(pokemons)[3] && 
+          Object.entries(pokemons)[3][1].map((pokemon, index) => {
+            return <PokemonCard 
+              key={index} 
+              {...pokemon} 
+              id={index + 1}/>
+          })}
+      </div>
     </div>
   );  
 }
