@@ -13,6 +13,7 @@ const Pokemon = () => {
       setPokemon(data);
     });
   }, [location.pathname]);
+  
 
   const { id, name, height, weight, base_experience } = pokemon;
 
