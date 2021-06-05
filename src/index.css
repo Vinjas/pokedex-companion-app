@@ -105,8 +105,9 @@ body {
   display: none;
 }
 .card__id {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.7);
   font-weight: normal;
+  font-size: 16px;
 }
 .card__img {
   height: 6rem;
