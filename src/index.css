@@ -94,6 +94,21 @@ body {
   font-size: 16px;
   text-transform: capitalize;
 }
+.card__types {
+  display: flex;
+  flex-direction: column;
+}
+.card__type {
+  color: #fff;
+  text-transform: capitalize;
+  border-radius: 5px;
+  background: rgba(14, 17, 17, 0.1);
+  padding: 3px 7px;
+  margin-top: 5px;
+}
+.card__type--null {
+  display: none;
+}
 .card__id {
   color: #fff;
   font-weight: normal;

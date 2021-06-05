@@ -30,6 +30,24 @@
         text-transform: capitalize;
     }
 
+    &__types {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__type {
+        color: $pure-white;
+        text-transform: capitalize;
+        border-radius: 5px;
+        background:rgba($black, 0.1);
+        padding: 3px 7px;
+        margin-top: 5px;
+    }
+
+    &__type--null {
+        display: none;
+    }
+
     &__id {
         color: $pure-white;
         font-weight: normal;

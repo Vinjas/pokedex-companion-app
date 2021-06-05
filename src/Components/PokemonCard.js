@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+import classNames from "classnames"
 
 import zeroIDs from "../utils/zeroIDs"
 import { getPokemon } from "../API/pokemon-api"
@@ -46,11 +47,13 @@ const PokemonCard = (props) => {
         </div>
 
         <div className="card__content">
-          <div>
-            {pokemonType1}
-          </div>
-          <div>
-            {pokemonType2}
+          <div className="card__types">
+            <div className="card__type">{pokemonType1}</div>
+            <div className={classNames({
+              'card__type': pokemonType2,
+              'card__type--null': !pokemonType2,
+            })}>
+            {pokemonType2}</div>
           </div>
 
           <img
