@@ -62,6 +62,35 @@ body {
   font-weight: normal;
 }
 
+.more {
+  display: flex;
+  justify-content: center;
+}
+.more__pokemon {
+  display: flex;
+  justify-content: center;
+  background-color: #0e1111;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  transition: all 0.2s;
+  border-radius: 200px;
+  text-decoration: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 15px;
+  min-width: 70px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+}
+.more__pokemon:hover {
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+.more__pokemon:active, .more__pokemon:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35);
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -72,6 +101,7 @@ body {
   min-width: 48.5%;
   margin-top: 8px;
   padding: 10px 20px 10px 20px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
 }
 .card__header {
   display: flex;
@@ -119,108 +149,111 @@ body {
   background-size: 110%;
   background-repeat: no-repeat;
   background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(202, 202, 191, 0.5);
 }
 .card__grass {
   background: url("./images/types/grass.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
   background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(73, 208, 176, 0.5);
 }
 .card__fire {
   background: url("./images/types/fire.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
   background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(247, 119, 106, 0.5);
 }
 .card__water {
   background: url("./images/types/water.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(116, 187, 255, 0.5);
 }
 .card__fighting {
   background: url("./images/types/fighting.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(177, 115, 106, 0.5);
 }
 .card__flying {
   background: url("./images/types/flying.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(155, 187, 255, 0.5);
 }
 .card__poison {
   background: url("./images/types/poison.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(123, 84, 141, 0.5);
 }
 .card__ground {
   background: url("./images/types/ground.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(231, 211, 144, 0.5);
 }
 .card__rock {
   background: url("./images/types/rock.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(201, 192, 152, 0.5);
 }
 .card__bug {
   background: url("./images/types/bug.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(199, 207, 113, 0.5);
 }
 .card__ghost {
   background: url("./images/types/ghost.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(141, 138, 200, 0.5);
 }
 .card__electric {
   background: url("./images/types/electric.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(255, 206, 75, 0.5);
 }
 .card__psychic {
   background: url("./images/types/psychic.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(239, 148, 197, 0.5);
 }
 .card__ice {
   background: url("./images/types/ice.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(190, 246, 254, 0.5);
 }
 .card__dragon {
   background: url("./images/types/dragon.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(172, 158, 254, 0.5);
 }
 .card__dark {
   background: url("./images/types/dark.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(134, 121, 114, 0.5);
 }
 .card__steel {
   background: url("./images/types/steel.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(196, 194, 219, 0.5);
 }
 .card__fairy {
   background: url("./images/types/fairy.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position: bottom right;
+  box-shadow: 0px 4px 5px rgba(249, 208, 252, 0.5);
 }
 .card:hover {
   transform: translateY(-3px);
