@@ -114,62 +114,112 @@ body {
   bottom: 50px;
 }
 .card__normal {
-  background: #B6B6A8;
+  background: url("./images/types/normal.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__grass {
-  background-color: #8BD44F;
   background: url("./images/types/grass.jpg");
   background-size: 110%;
   background-repeat: no-repeat;
   background-position: bottom right;
 }
 .card__fire {
-  background: #FA5543;
+  background: url("./images/types/fire.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__water {
-  background: #56AEFF;
+  background: url("./images/types/water.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__fighting {
-  background: #A75543;
+  background: url("./images/types/fighting.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__flying {
-  background: #79A4FF;
+  background: url("./images/types/flying.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__poison {
-  background: #A15899;
+  background: url("./images/types/poison.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__ground {
-  background: #EDCB56;
+  background: url("./images/types/ground.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__rock {
-  background: #CDBC72;
+  background: url("./images/types/rock.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__bug {
-  background: #C2D120;
+  background: url("./images/types/bug.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__ghost {
-  background: #7773D4;
+  background: url("./images/types/ghost.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__electric {
-  background: #FEE63E;
+  background: url("./images/types/electric.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__psychic {
-  background: #F461B0;
+  background: url("./images/types/psychic.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__ice {
-  background: #96F1FF;
+  background: url("./images/types/ice.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__dragon {
-  background: #8975FF;
+  background: url("./images/types/dragon.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__dark {
-  background: #8F6956;
+  background: url("./images/types/dark.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__steel {
-  background: #C4C2DB;
+  background: url("./images/types/steel.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card__fairy {
-  background: #FAADFF;
+  background: url("./images/types/fairy.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 .card:hover {
   transform: translateY(-3px);

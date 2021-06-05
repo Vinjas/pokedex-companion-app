@@ -61,67 +61,98 @@
     }
 
     &__normal {
-        background: $normal;
+        background: url("./images/types/normal.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;
     }
     &__grass {
-        background-color: $grass;
         background: url("./images/types/grass.jpg");
         background-size: 110%;
         background-repeat: no-repeat;
         background-position: bottom right;
-
     }
     &__fire {
-        background: $fire;
-    }
+        background: url("./images/types/fire.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__water {
-        background: $water;
-    }
+        background: url("./images/types/water.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__fighting {
-        background: $fighting;
-    }
+        background: url("./images/types/fighting.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__flying {
-        background: $flying;
-    }
+        background: url("./images/types/flying.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__poison {
-        background: $poison;
-    }
+        background: url("./images/types/poison.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__ground {
-        background: $ground;
-    }
+        background: url("./images/types/ground.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__rock {
-        background: $rock;
-    }
+        background: url("./images/types/rock.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__bug {
-        background: $bug;
-    }
+        background: url("./images/types/bug.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__ghost {
-        background: $ghost;
-    }
+        background: url("./images/types/ghost.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__electric {
-        background: $electric;
-    }
+        background: url("./images/types/electric.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__psychic {
-        background: $psychic;
-    }
+        background: url("./images/types/psychic.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__ice {
-        background: $ice;
-    }
+        background: url("./images/types/ice.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__dragon {
-        background: $dragon;
-    }
+        background: url("./images/types/dragon.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__dark {
-        background: $dark;
-    }
+        background: url("./images/types/dark.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__steel {
-        background: $steel;
-    }
+        background: url("./images/types/steel.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    }
     &__fairy {
-        background: $fairy;
+        background: url("./images/types/fairy.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;    
     }
-
-
-
 
     &:hover {
         transform: translateY(-3px);
