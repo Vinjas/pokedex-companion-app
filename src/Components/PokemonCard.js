@@ -45,7 +45,7 @@ const PokemonCard = (props) => {
         "card__ground": (pokemonType1 === "ground"),
         "card__rock": (pokemonType1 === "rock"),
         "card__bug": (pokemonType1 === "bug"),
-        "card__electric": (pokemonType1 === "ghost"),
+        "card__ghost": (pokemonType1 === "ghost"),
         "card__psychic": (pokemonType1 === "psychic"),
         "card__ice": (pokemonType1 === "ice"),
         "card__dragon": (pokemonType1 === "dragon"),

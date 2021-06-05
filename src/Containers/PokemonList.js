@@ -13,7 +13,7 @@ const AllPokemon = () => {
     getPokemons(limit).then((data) => {
       setPokemons(data);
     });
-  }, []);
+  });
 
   function useForceUpdate(){   
     return () => {
@@ -23,6 +23,8 @@ const AllPokemon = () => {
       });
     };
   } 
+  const forceUpdate = useForceUpdate()
+
 
   return (
     <div>
@@ -39,8 +41,8 @@ const AllPokemon = () => {
           })}
       </div>
       
-      <div>
-          <button onClick={useForceUpdate()}>Pagination: </button>
+      <div className="more">
+          <div className="more__pokemon" onClick={forceUpdate}>+</div>
       </div>
 
     </div>
