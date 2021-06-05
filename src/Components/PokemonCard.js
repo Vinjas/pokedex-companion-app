@@ -33,7 +33,27 @@ const PokemonCard = (props) => {
 
   return (
       <NavLink 
-      className="card" 
+      className={classNames({
+        card: true,
+        "card__normal": (pokemonType1 === "normal"),
+        "card__grass": (pokemonType1 === "grass"),
+        "card__fire": (pokemonType1 === "fire"),
+        "card__water": (pokemonType1 === "water"),
+        "card__fighting": (pokemonType1 === "fighting"),
+        "card__flying": (pokemonType1 === "flying"),
+        "card__poison": (pokemonType1 === "poison"),
+        "card__ground": (pokemonType1 === "ground"),
+        "card__rock": (pokemonType1 === "rock"),
+        "card__bug": (pokemonType1 === "bug"),
+        "card__electric": (pokemonType1 === "ghost"),
+        "card__psychic": (pokemonType1 === "psychic"),
+        "card__ice": (pokemonType1 === "ice"),
+        "card__dragon": (pokemonType1 === "dragon"),
+        "card__dark": (pokemonType1 === "dark"),
+        "card__steel": (pokemonType1 === "steel"),
+        "card__fairy": (pokemonType1 === "fairy"),
+        "card__electric": (pokemonType1 === "electric"),
+      })} 
       to={
         { 
           pathname: `${location.pathname}${props.id}`,

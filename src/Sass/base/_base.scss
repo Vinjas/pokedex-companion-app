@@ -13,7 +13,7 @@ html {
 
 body {
     box-sizing: border-box;
-    padding: 3rem;
+    padding: 3rem 1.5rem;
     color: $black;
     background: url(./images/background__app.jpg);
     background-repeat: no-repeat;
@@ -29,8 +29,4 @@ body {
     }
 }
 
-@media (min-width: 950px) {
-    body {
-        padding: 0 20rem 0 20rem;
-    }
-}
+
