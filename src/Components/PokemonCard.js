@@ -1,11 +1,34 @@
 import { NavLink, useLocation } from "react-router-dom";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import zeroIDs from "../utils/zeroIDs"
+import { getPokemon } from "../API/pokemon-api"
 
 const PokemonCard = (props) => {
-
   const location = useLocation()
+  
+  const [pokemonType1, setPokemonType1] = useState([]);
+  const [pokemonType2, setPokemonType2] = useState([]);
+  
+  useEffect(() => {
+    getPokemon(`${location.pathname}${props.id}`)
+    .then((data) => {
+      let type = ""
+      type += data.types[0].type.name
+      setPokemonType1(type);
+    });
+  }, [`${location.pathname}${props.id}`]);
+
+  useEffect(() => {
+    getPokemon(`${location.pathname}${props.id}`)
+    .then((data) => {
+      let type = ""
+      if ((data.types).length > 1) {
+        type += data.types[1].type.name
+      }
+      setPokemonType2(type);
+    });
+  }, [`${location.pathname}${props.id}`]);
 
   return (
       <NavLink 
@@ -23,7 +46,12 @@ const PokemonCard = (props) => {
         </div>
 
         <div className="card__content">
-          <div/>
+          <div>
+            {pokemonType1}
+          </div>
+          <div>
+            {pokemonType2}
+          </div>
 
           <img
             className="card__img" 
@@ -31,13 +59,7 @@ const PokemonCard = (props) => {
             /* https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`} */
             alt={props.name}
           />
-          
-
         </div>
-        
-        
-
-
       </NavLink>
   );
 }
