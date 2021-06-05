@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getPokemon } from '../API/pokemon-api';
+import { getPokemon } from '../API/get-pokemon';
 import { NavLink, useLocation } from 'react-router-dom';
 
 const Pokemon = () => {

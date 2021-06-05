@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import classNames from "classnames"
 
 import zeroIDs from "../utils/zeroIDs"
-import { getPokemon } from "../API/pokemon-api"
+import { getPokemon } from "../API/get-pokemon"
 
 const PokemonCard = (props) => {
   const location = useLocation()
