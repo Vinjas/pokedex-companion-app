@@ -34,7 +34,11 @@ const AllPokemon = () => {
 
       <h1 className="header header__pokedex">Pokedex</h1>  
 
-      <NavLink className="filter__button" to={{pathname: "/filter/type"}}>
+      <NavLink className="filter__button" 
+      to={{
+        pathname: "/filter/type",
+        state: "fire"
+        }}>
         <button>Fire</button>
       </NavLink>      
 

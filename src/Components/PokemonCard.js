@@ -10,12 +10,13 @@ const PokemonCard = (props) => {
   
   const [pokemonType1, setPokemonType1] = useState([]);
   const [pokemonType2, setPokemonType2] = useState([]);
-  
+
   useEffect(() => {
     getPokemon(`${location.pathname}${props.id}`)
     .then((data) => {
       let type = ""
       type += data.types[0].type.name
+      console.log(props)
       setPokemonType1(type);
     });
   }, [location.pathname, props.id]);
@@ -30,6 +31,7 @@ const PokemonCard = (props) => {
       setPokemonType2(type);
     });
   }, [location.pathname, props.id]);
+
 
   return (
       <NavLink 
