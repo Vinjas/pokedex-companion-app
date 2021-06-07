@@ -24,9 +24,8 @@ const FilterPokemon = () => {
     fetch("../data.json")
     .then((response) => response.json())
     .then((data) => {
-      let propType = location.state.charAt(0).toUpperCase() + location.state.slice(1);
       let newData = data.filter(elem => {
-        return elem.typeList[0] === propType
+        return elem.typeList[0] === location.state
       })
       setFilteredPokemons(newData)
     })
@@ -38,15 +37,11 @@ const FilterPokemon = () => {
 
   return (
     <div>
-      <NavLink className="back__button" to={{pathname: "/"}}>
+      <NavLink className="back__button" to={{pathname: "/pokemon"}}>
         <button>Back</button>
       </NavLink>
 
-      <h1 className="header header__pokedex">Pokedex</h1>  
-
-      <NavLink className="filter__button" to={{pathname: "/filter/type"}}>
-        <button>Fire</button>
-      </NavLink>      
+      <h1 className="header header__pokedex">Pokedex</h1>     
 
       <div className="cards">
       {Object.entries(filteredPokemons.map((pokemon) => {

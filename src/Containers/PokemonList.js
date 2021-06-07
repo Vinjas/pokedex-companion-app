@@ -28,20 +28,36 @@ const AllPokemon = () => {
 
   return (
     <div>
+      {/*
+      BACK BUTTON
+      */}
       <NavLink className="back__button" to={{pathname: "/"}}>
         <button>Back</button>
       </NavLink>
 
       <h1 className="header header__pokedex">Pokedex</h1>  
 
+      {/*
+      FILTER BUTTONS
+      */}
       <NavLink className="filter__button" 
       to={{
         pathname: "/filter/type",
-        state: "fire"
+        state: "Fire"
         }}>
         <button>Fire</button>
-      </NavLink>      
+      </NavLink>
+      <NavLink className="filter__button" 
+      to={{
+        pathname: "/filter/type",
+        state: "Grass"
+        }}>
+        <button>Grass</button>
+      </NavLink>     
 
+      {/*
+      POKEMON CARDS
+      */}
       <div className="cards">
         {Object.entries(pokemons)[3] && 
           Object.entries(pokemons)[3][1].map((pokemon, index) => {
@@ -49,6 +65,9 @@ const AllPokemon = () => {
           })}
       </div>
       
+      {/*
+      MORE BUTTON
+      */}
       <div className="more">
           <div className="more__pokemon" onClick={forceUpdate}>+</div>
       </div>
