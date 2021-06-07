@@ -7,14 +7,14 @@ import { getPokemon } from "../API/get-pokemon"
 
 const AllPokemon = () => {
   const [pokemons, setPokemons] = useState([])
-  const [limit, setLimit] = useState(40);
-  const [filter, setFilter] = useState([])
+  const [limit, setLimit] = useState(80);
 
   useEffect(() => {
     fetch("../data.json")
     .then((response) => response.json())
     .then((data) => {
-      setPokemons(data)
+      let limitData = data.slice(0, limit)
+      setPokemons(limitData)
     })
   }, []);
     
@@ -23,7 +23,7 @@ const AllPokemon = () => {
     });
   });*/
 
-  function useForceUpdate(filter) {   
+  function useFilterUpdate(filter) {   
     return () => {
       fetch("../data.json")
       .then((response) => response.json())
@@ -35,8 +35,19 @@ const AllPokemon = () => {
       });
     };
   } 
-  const forceUpdate = useForceUpdate()
 
+  function useMoreUpdate() {   
+    return () => {
+      fetch("../data.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setLimit(limit + 40)
+        let limitData = data.slice(0, limit)
+        setPokemons(limitData)
+      })
+    };
+  } 
+  const morePokemons = useMoreUpdate()
 
   return (
     <div>
@@ -53,17 +64,17 @@ const AllPokemon = () => {
       FILTER BUTTONS
       */}
       <button
-      onClick={useForceUpdate("Fire")}>
+      onClick={useFilterUpdate("Fire")}>
         Fire
       </button>
 
       <button
-      onClick={useForceUpdate("Grass")}>
+      onClick={useFilterUpdate("Grass")}>
         Grass
       </button>
 
       <button
-      onClick={useForceUpdate("Water")}>
+      onClick={useFilterUpdate("Water")}>
         Water
       </button>
 
@@ -81,7 +92,7 @@ const AllPokemon = () => {
       MORE BUTTON
       */}
       <div className="more">
-          <div className="more__pokemon" onClick={forceUpdate}>+</div>
+          <div className="more__pokemon" onClick={morePokemons}>+</div>
       </div>
 
     </div>
