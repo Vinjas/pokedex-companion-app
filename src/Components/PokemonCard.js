@@ -12,17 +12,16 @@ const PokemonCard = (props) => {
   const [pokemonType2, setPokemonType2] = useState([]);
 
   useEffect(() => {
-    getPokemon(`${location.pathname}${props.id}`)
+    getPokemon(props.id)
     .then((data) => {
       let type = ""
       type += data.types[0].type.name
-      console.log(props)
       setPokemonType1(type);
     });
   }, [location.pathname, props.id]);
 
   useEffect(() => {
-    getPokemon(`${location.pathname}${props.id}`)
+    getPokemon(props.id)
     .then((data) => {
       let type = ""
       if ((data.types).length > 1) {
@@ -58,7 +57,7 @@ const PokemonCard = (props) => {
       })} 
       to={
         { 
-          pathname: `${location.pathname}${props.id}`,
+          pathname: `${props.id}`,
           state: `${props.id}`  
         }
       }

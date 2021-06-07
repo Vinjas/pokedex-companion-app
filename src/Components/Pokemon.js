@@ -8,18 +8,17 @@ const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
 
   useEffect(() => {
-    getPokemon(location.pathname)
+    getPokemon(location.state)
     .then((data) => {
       setPokemon(data);
     });
   }, [location.pathname]);
-  
 
   const { id, name, height, weight, base_experience } = pokemon;
 
   return (
     <div>
-      <NavLink to={{pathname: "/pokemon/"}}>
+      <NavLink to={{pathname: "/pokedex/"}}>
         <button>Back</button>
       </NavLink>
       

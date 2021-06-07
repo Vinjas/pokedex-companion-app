@@ -8,18 +8,30 @@ import { getPokemon } from "../API/get-pokemon"
 const AllPokemon = () => {
   const [pokemons, setPokemons] = useState([])
   const [limit, setLimit] = useState(40);
+  const [filter, setFilter] = useState([])
 
   useEffect(() => {
-    getPokemons(limit).then((data) => {
+    fetch("../data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      setPokemons(data)
+    })
+  }, []);
+    
+    /*getPokemons(limit).then((data) => {
       setPokemons(data);
     });
-  });
+  });*/
 
-  function useForceUpdate(){   
+  function useForceUpdate(filter) {   
     return () => {
-      setLimit(limit + 20);
-      getPokemons(limit).then((data) => {
-        setPokemons(data);
+      fetch("../data.json")
+      .then((response) => response.json())
+      .then((data) => {
+        let newData = data.filter(elem => {
+          return elem.typeList[0] === filter
+        })
+        setPokemons(newData);
       });
     };
   } 
@@ -40,29 +52,29 @@ const AllPokemon = () => {
       {/*
       FILTER BUTTONS
       */}
-      <NavLink className="filter__button" 
-      to={{
-        pathname: "/filter/type",
-        state: "Fire"
-        }}>
-        <button>Fire</button>
-      </NavLink>
-      <NavLink className="filter__button" 
-      to={{
-        pathname: "/filter/type",
-        state: "Grass"
-        }}>
-        <button>Grass</button>
-      </NavLink>     
+      <button
+      onClick={useForceUpdate("Fire")}>
+        Fire
+      </button>
+
+      <button
+      onClick={useForceUpdate("Grass")}>
+        Grass
+      </button>
+
+      <button
+      onClick={useForceUpdate("Water")}>
+        Water
+      </button>
 
       {/*
       POKEMON CARDS
       */}
       <div className="cards">
-        {Object.entries(pokemons)[3] && 
-          Object.entries(pokemons)[3][1].map((pokemon, index) => {
-            return <PokemonCard key={index} {...pokemon} id={index + 1}/>
-          })}
+      {Object.entries(pokemons.map((pokemon) => {
+            return <PokemonCard key={pokemon.id} {...pokemon} id={pokemon.id}/>
+          }
+      ))}
       </div>
       
       {/*

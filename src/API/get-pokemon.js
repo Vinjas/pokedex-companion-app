@@ -1,4 +1,4 @@
-const URL = 'https://pokeapi.co/api/v2';
+const URL = 'https://pokeapi.co/api/v2/pokemon/';
 
 export const getPokemon = (pathName) => {
   return fetch(`${URL}${pathName}`)

@@ -9,7 +9,7 @@ const Home = () => {
             <h1 className="header">What are <br/> you looking for?</h1>
             <NavLink
             className="bigbutton"
-            to = {{pathname: "pokemon/"}}
+            to = {{pathname: "pokedex/"}}
             >    
                     <h2 className="bigbutton__title">Pokedex</h2>
                     <div className="bigbutton__pokeball"/>

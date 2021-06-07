@@ -17,9 +17,9 @@ const App = () => {
           <div>
               <Switch>
                   <Route exact path='/' component={Home} />
-                  <Route exact path='/pokemon' component={PokemonList} />
-                  <Route path='/filter/type/' component={FilterPokemon} />
-                  <Route path='/pokemon/:id' component={Pokemon} />
+                  <Route exact path='/pokedex' component={PokemonList} />
+                  <Route path='/filter' component={FilterPokemon} />
+                  <Route path='/pokedex/:id' component={Pokemon} />
 
                   <Route path='/types' component={TypesList} />
                   <Route path='/moves' component={Moves} />

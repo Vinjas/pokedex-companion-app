@@ -31,13 +31,10 @@ const FilterPokemon = () => {
     })
   }, []);
 
-  console.log(pokemons)
-  console.log(filteredPokemons)
-
 
   return (
     <div>
-      <NavLink className="back__button" to={{pathname: "/pokemon"}}>
+      <NavLink className="back__button" to={{pathname: "/pokedex"}}>
         <button>Back</button>
       </NavLink>
 
