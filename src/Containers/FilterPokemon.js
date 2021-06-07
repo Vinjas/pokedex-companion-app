@@ -16,14 +16,7 @@ const FilterPokemon = () => {
     fetch("../data.json")
     .then((response) => response.json())
     .then((data) => {
-      /*let newData = Object.entries(data)[2][1].typeList[0]*/
-    
       setPokemons(data)
-      
-      /*data.filter((pokemon) => {
-        return data["typeList"][0] === location.state
-      })
-      setPokemons(newData);*/
     })
   }, []);
 
@@ -31,21 +24,14 @@ const FilterPokemon = () => {
     fetch("../data.json")
     .then((response) => response.json())
     .then((data) => {
-      /*let newData = data[3].typeList[0]*/
       let propType = location.state.charAt(0).toUpperCase() + location.state.slice(1);
       let newData = data.filter(elem => {
         return elem.typeList[0] === propType
       })
       setFilteredPokemons(newData)
-
     })
   }, []);
 
-  /*const pokemonMatch = pokemons.filter(elem => {
-    return elem.typeList[0] === location.state
-  })*/
-
-  console.log(location.state)
   console.log(pokemons)
   console.log(filteredPokemons)
 
@@ -63,10 +49,10 @@ const FilterPokemon = () => {
       </NavLink>      
 
       <div className="cards">
-        {/*Object.entries(pokemons)[2][1].typeList[0] === location.type ?
-          <PokemonCard key={Object.entries(pokemons)[2][1].id} id={Object.entries(pokemons)[2][1].id}/> : null
-        */}
-          
+      {Object.entries(filteredPokemons.map((pokemon) => {
+            return <PokemonCard key={pokemon.id} {...pokemon} id={pokemon.id}/>
+          }
+      ))}        
       </div>
 
     </div>
