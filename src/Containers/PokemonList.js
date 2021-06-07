@@ -7,7 +7,7 @@ import { getPokemon } from "../API/get-pokemon"
 
 const AllPokemon = () => {
   const [pokemons, setPokemons] = useState([])
-  const [limit, setLimit] = useState(80);
+  const limit = 80;
 
   useEffect(() => {
     fetch("../data.json")
@@ -41,8 +41,9 @@ const AllPokemon = () => {
       fetch("../data.json")
       .then((response) => response.json())
       .then((data) => {
-        setLimit(limit + 40)
-        let limitData = data.slice(0, limit)
+        let newLimit = 0
+        newLimit = limit + 40
+        let limitData = data.slice(0, newLimit)
         setPokemons(limitData)
       })
     };
@@ -82,10 +83,10 @@ const AllPokemon = () => {
       POKEMON CARDS
       */}
       <div className="cards">
-      {Object.entries(pokemons.map((pokemon) => {
+      {pokemons.map((pokemon) => {
             return <PokemonCard key={pokemon.id} {...pokemon} id={pokemon.id}/>
           }
-      ))}
+      )}
       </div>
       
       {/*
