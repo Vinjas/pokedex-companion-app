@@ -4,27 +4,20 @@ import { NavLink } from "react-router-dom"
 import PokemonCard from "../Components/PokemonCard"
 import { getPokemons } from "../API/pokemons"
 import { getPokemon } from "../API/get-pokemon"
+import { FilterPoke } from "../API/filter-pokemon"
 
-const AllPokemon = () => {
+const FilterPokemon = () => {
   const [pokemons, setPokemons] = useState([])
-  const [limit, setLimit] = useState(40);
 
   useEffect(() => {
-    getPokemons(limit).then((data) => {
-      setPokemons(data);
-    });
-  });
-
-  function useForceUpdate(){   
-    return () => {
-      setLimit(limit + 20);
-      getPokemons(limit).then((data) => {
+    fetch("../data.json")
+    .then((response) => response.json())
+    .then((data) => {
         setPokemons(data);
-      });
-    };
-  } 
-  const forceUpdate = useForceUpdate()
+    })
+  }, []);
 
+  console.log(pokemons)
 
   return (
     <div>
@@ -39,18 +32,14 @@ const AllPokemon = () => {
       </NavLink>      
 
       <div className="cards">
-        {Object.entries(pokemons)[3] && 
+        {/*{Object.entries(pokemons)[3] && 
           Object.entries(pokemons)[3][1].map((pokemon, index) => {
             return <PokemonCard key={index} {...pokemon} id={index + 1}/>
-          })}
-      </div>
-      
-      <div className="more">
-          <div className="more__pokemon" onClick={forceUpdate}>+</div>
+          })}*/}
       </div>
 
     </div>
   );  
 }
 
-export default AllPokemon;
+export default FilterPokemon;
