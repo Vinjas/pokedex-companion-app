@@ -364,7 +364,6 @@ body {
 .dropmenu__row {
   display: flex;
   justify-content: space-between;
-  background: rgba(14, 17, 17, 0.1);
 }
 .dropmenu__header {
   color: #0e1111;
@@ -378,7 +377,7 @@ body {
   outline: none;
   border: none;
   cursor: pointer;
-  margin-right: 15px;
+  width: 23%;
   /*&:hover {
       background-color: rgba($black, 0.3);
       color: $pure-white;
@@ -391,7 +390,7 @@ body {
 }
 .dropmenu__header--row {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .dropmenu__item {
   color: #fff;
@@ -405,9 +404,15 @@ body {
   outline: none;
   border: 2px solid rgba(14, 17, 17, 0.1);
   cursor: pointer;
+  width: 23%;
 }
 .dropmenu__item:hover {
   box-shadow: 0px 2px 3px rgba(14, 17, 17, 0.3);
+}
+.dropmenu__item---gen {
+  background: rgba(14, 17, 17, 0.3);
+  color: #0e1111;
+  width: 48%;
 }
 .dropmenu__item--normal {
   background: #cacabf;

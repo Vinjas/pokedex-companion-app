@@ -33,7 +33,19 @@ const AllPokemon = () => {
     };
   } 
 
-  const openTypeMenu = () => setTypeFilter(!typeFilter)
+  function useGenUpdate(from, to) {   
+    return () => {
+      fetch("../data.json")
+      .then((response) => response.json())
+      .then((data) => {
+        let newData = data.filter(elem => {
+          return elem.id >= from && elem.id <= to
+        })
+        setGenFilter(!genFilter);
+        setPokemons(newData);
+      });
+    };
+  } 
 
   function useMoreUpdate() {   
     return () => {
@@ -47,7 +59,10 @@ const AllPokemon = () => {
       })
     };
   } 
+  
   const morePokemons = useMoreUpdate()
+  const openTypeMenu = () => setTypeFilter(!typeFilter)
+  const openGenMenu = () => setGenFilter(!genFilter)
 
   return (
     <div>
@@ -71,9 +86,73 @@ const AllPokemon = () => {
         </button>
 
         <button
-        className="dropmenu__header">
-        Generation
+        className="dropmenu__header"
+        onClick={openGenMenu}>
+        Gen
         </button>
+
+        <div style={{width: '49%'}}></div>
+      </div>
+
+      {/*
+      FILTER MENUS
+      */}
+      <div className={`${genFilter ? 'dropmenu' : 'dropmenu__inactive'}`}>
+        <div className="dropmenu__row">
+          <button
+            className="dropmenu__item dropmenu__item---gen"
+            onClick={useGenUpdate(0, 151)}>
+            Gen I Kanto
+          </button>
+          
+          <button
+            className="dropmenu__item dropmenu__item---gen"
+            onClick={useGenUpdate(152, 251)}>
+            Gen II Johto
+          </button>
+        </div>
+
+        <div className="dropmenu__row">
+          <button
+            className="dropmenu__item dropmenu__item---gen"
+            onClick={useGenUpdate(252, 386)}>
+            Gen III Hoenn
+          </button>
+          
+          <button
+            className="dropmenu__item dropmenu__item---gen"
+            onClick={useGenUpdate(387, 493)}>
+            Gen IV Sinnoh
+          </button>
+        </div>
+
+        <div className="dropmenu__row">
+          <button
+            className="dropmenu__item dropmenu__item---gen"
+            onClick={useGenUpdate(494, 649)}>
+            Gen V Unova
+          </button>
+          
+          <button
+            className="dropmenu__item dropmenu__item---gen"
+            onClick={useGenUpdate(650, 721)}>
+            Gen VI Kalos
+          </button>
+        </div>
+
+        <div className="dropmenu__row">
+          <button
+            className="dropmenu__item dropmenu__item---gen"
+            onClick={useGenUpdate(722, 809)}>
+            Gen VII Alola
+          </button>
+          
+          <button
+            className="dropmenu__item dropmenu__item---gen"
+            onClick={useGenUpdate(810, 898)}>
+            Gen VIII Galar
+          </button>
+        </div>     
       </div>
 
       <div className={`${typeFilter ? 'dropmenu' : 'dropmenu__inactive'}`}>
@@ -194,11 +273,12 @@ const AllPokemon = () => {
             Fairy
           </button>
 
-          <div style={{width: '50%'}}></div>
+          <div style={{width: '49%'}}></div>
 
         </div>
 
       </div>   
+
 
       {/*
       POKEMON CARDS
