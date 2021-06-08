@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom"
 
 import PokemonCard from "../Components/PokemonCard"
-import { getPokemons } from "../API/pokemons"
-import { getPokemon } from "../API/get-pokemon"
 
 const AllPokemon = () => {
   const [pokemons, setPokemons] = useState([])
+  const [typeFilter, setTypeFilter] = useState(false)
+  const [genFilter, setGenFilter] = useState(false)
+  
   const limit = 80;
 
   useEffect(() => {
@@ -17,11 +18,6 @@ const AllPokemon = () => {
       setPokemons(limitData)
     })
   }, []);
-    
-    /*getPokemons(limit).then((data) => {
-      setPokemons(data);
-    });
-  });*/
 
   function useFilterUpdate(filter) {   
     return () => {
@@ -29,12 +25,14 @@ const AllPokemon = () => {
       .then((response) => response.json())
       .then((data) => {
         let newData = data.filter(elem => {
-          return elem.typeList[0] === filter
+          return elem.typeList[0] === filter || elem.typeList[1] === filter
         })
         setPokemons(newData);
       });
     };
   } 
+
+  const openTypeMenu = () => setTypeFilter(!typeFilter)
 
   function useMoreUpdate() {   
     return () => {
@@ -65,19 +63,27 @@ const AllPokemon = () => {
       FILTER BUTTONS
       */}
       <button
-      onClick={useFilterUpdate("Fire")}>
-        Fire
+      onClick={openTypeMenu}
+      >
+      Type
       </button>
+      
+      <div className={`${typeFilter ? 'menu__dropType--active' : 'menu__dropType--inactive'}`}>
+        <button
+        onClick={useFilterUpdate("Fire")}>
+          Fire
+        </button>
 
-      <button
-      onClick={useFilterUpdate("Grass")}>
-        Grass
-      </button>
+        <button
+        onClick={useFilterUpdate("Grass")}>
+          Grass
+        </button>
 
-      <button
-      onClick={useFilterUpdate("Water")}>
-        Water
-      </button>
+        <button
+        onClick={useFilterUpdate("Water")}>
+          Water
+        </button>
+      </div>   
 
       {/*
       POKEMON CARDS
