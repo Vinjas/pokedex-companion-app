@@ -27,6 +27,7 @@ const AllPokemon = () => {
         let newData = data.filter(elem => {
           return elem.typeList[0] === filter || elem.typeList[1] === filter
         })
+        setTypeFilter(!typeFilter);
         setPokemons(newData);
       });
     };
@@ -62,27 +63,141 @@ const AllPokemon = () => {
       {/*
       FILTER BUTTONS
       */}
-      <button
-      onClick={openTypeMenu}
-      >
-      Type
-      </button>
-      
-      <div className={`${typeFilter ? 'menu__dropType--active' : 'menu__dropType--inactive'}`}>
+      <div className="dropmenu__header--row">
         <button
-        onClick={useFilterUpdate("Fire")}>
-          Fire
+        className="dropmenu__header"
+        onClick={openTypeMenu}>
+        Type
         </button>
 
         <button
-        onClick={useFilterUpdate("Grass")}>
-          Grass
+        className="dropmenu__header">
+        Generation
         </button>
+      </div>
 
-        <button
-        onClick={useFilterUpdate("Water")}>
-          Water
-        </button>
+      <div className={`${typeFilter ? 'dropmenu' : 'dropmenu__inactive'}`}>
+        <div className="dropmenu__row">
+          <button
+          className="dropmenu__item dropmenu__item--normal"
+          onClick={useFilterUpdate("Normal")}>
+            Normal
+          </button>
+          
+          <button
+          className="dropmenu__item dropmenu__item--grass"
+          onClick={useFilterUpdate("Grass")}>
+            Grass
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--fire"
+          onClick={useFilterUpdate("Fire")}>
+            Fire
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--water"
+          onClick={useFilterUpdate("Water")}>
+            Water
+          </button>
+        </div>
+
+        <div className="dropmenu__row">
+          <button
+          className="dropmenu__item dropmenu__item--fighting"
+          onClick={useFilterUpdate("Fighting")}>
+            Fighting
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--flying"
+          onClick={useFilterUpdate("Flying")}>
+            Flying
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--bug"
+          onClick={useFilterUpdate("Bug")}>
+            Bug
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--ground"
+          onClick={useFilterUpdate("Ground")}>
+            Ground
+          </button>
+        </div>
+
+        <div className="dropmenu__row">
+          <button
+          className="dropmenu__item dropmenu__item--rock"
+          onClick={useFilterUpdate("Rock")}>
+            Rock
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--poison"
+          onClick={useFilterUpdate("Poison")}>
+            Poison
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--ghost"
+          onClick={useFilterUpdate("Ghost")}>
+            Ghost
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--psychic"
+          onClick={useFilterUpdate("Psychic")}>
+            Psychic
+          </button>
+        </div>
+
+        <div className="dropmenu__row">
+          <button
+          className="dropmenu__item dropmenu__item--ice"
+          onClick={useFilterUpdate("Ice")}>
+            Ice
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--dragon"
+          onClick={useFilterUpdate("Dragon")}>
+            Dragon
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--dark"
+          onClick={useFilterUpdate("Dark")}>
+            Dark
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--electric"
+          onClick={useFilterUpdate("Electric")}>
+            Electric
+          </button>
+        </div>
+
+        <div className="dropmenu__row">
+          <button
+          className="dropmenu__item dropmenu__item--steel"
+          onClick={useFilterUpdate("Steel")}>
+            Steel
+          </button>
+
+          <button
+          className="dropmenu__item dropmenu__item--fairy"
+          onClick={useFilterUpdate("Fairy")}>
+            Fairy
+          </button>
+
+          <div style={{width: '50%'}}></div>
+
+        </div>
+
       </div>   
 
       {/*

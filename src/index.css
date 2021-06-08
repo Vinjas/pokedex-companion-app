@@ -358,6 +358,115 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35);
 }
 
+.dropmenu__inactive {
+  display: none;
+}
+.dropmenu__row {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(14, 17, 17, 0.1);
+}
+.dropmenu__header {
+  color: #0e1111;
+  font-weight: normal;
+  font-family: "Rubik", sans-serif;
+  text-transform: capitalize;
+  border-radius: 5px;
+  background: rgba(14, 17, 17, 0.1);
+  padding: 6px 13px;
+  margin-top: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 15px;
+  /*&:hover {
+      background-color: rgba($black, 0.3);
+      color: $pure-white;
+  }
+  &:active,
+  &:focus {
+      background-color: rgba($black, 0.3);
+      color: $pure-white;
+  }*/
+}
+.dropmenu__header--row {
+  display: flex;
+  justify-content: flex-start;
+}
+.dropmenu__item {
+  color: #fff;
+  font-weight: normal;
+  font-family: "Rubik", sans-serif;
+  text-transform: capitalize;
+  border-radius: 5px;
+  background: rgba(14, 17, 17, 0.1);
+  padding: 4px 13px;
+  margin: 3px 0 5px 0;
+  outline: none;
+  border: 2px solid rgba(14, 17, 17, 0.1);
+  cursor: pointer;
+}
+.dropmenu__item:hover {
+  box-shadow: 0px 2px 3px rgba(14, 17, 17, 0.3);
+}
+.dropmenu__item--normal {
+  background: #cacabf;
+  color: #0e1111;
+}
+.dropmenu__item--grass {
+  background: #49D0B0;
+}
+.dropmenu__item--fire {
+  background: #f7776a;
+}
+.dropmenu__item--water {
+  background: #74BBFF;
+}
+.dropmenu__item--ground {
+  background: #e7d390;
+}
+.dropmenu__item--rock {
+  background: #c9c098;
+}
+.dropmenu__item--electric {
+  background: #ffce4b;
+}
+.dropmenu__item--bug {
+  background: #c7cf71;
+}
+.dropmenu__item--poison {
+  background: #7B548D;
+}
+.dropmenu__item--dark {
+  background: #867972;
+}
+.dropmenu__item--dragon {
+  background: #ac9efe;
+}
+.dropmenu__item--ice {
+  background: #bef6fe;
+  color: #0e1111;
+}
+.dropmenu__item--fighting {
+  background: #B1736A;
+}
+.dropmenu__item--flying {
+  background: #9bbbff;
+}
+.dropmenu__item--ghost {
+  background: #8d8ac8;
+}
+.dropmenu__item--psychic {
+  background: #ef94c5;
+}
+.dropmenu__item--steel {
+  background: #C4C2DB;
+}
+.dropmenu__item--fairy {
+  background: #f9d0fc;
+  color: #0e1111;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
