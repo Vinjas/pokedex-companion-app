@@ -303,6 +303,9 @@ const AllPokemon = (props) => {
 
       </div>   
 
+      {/*
+      SEARCH BAR
+      */}
       <SearchBar 
        input={input} 
        onChange={updateInput}
@@ -314,7 +317,7 @@ const AllPokemon = (props) => {
 
             <div className="cards">
             {pokemons.map((pokemon) => {
-                  return  <LazyLoad className="none"><PokemonCard resultList={pokemons} key={pokemon.id} {...pokemon} id={pokemon.id}/></LazyLoad>
+                  return  <LazyLoad><PokemonCard resultList={pokemons} key={pokemon.id} {...pokemon} id={pokemon.id}/></LazyLoad>
                 }
             )}
             </div>     

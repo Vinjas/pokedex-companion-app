@@ -1,14 +1,24 @@
 import { NavLink } from "react-router-dom"
+import React, { useState } from 'react';
+
+import SearchBar from "../Components/SearchBar-home"
 //import { pokeballBack } from "../images/palm-leaf.png"
 
 //const pokeballBack = require("./images/background__pokeball--transparent.png")
 
+
 const Home = () => {
+    const [input, setInput] = useState('');
+
+    
     return (
         <div className="home__page">
             <h1 className="header">What are <br/> you looking for?</h1>
             
-            
+            <SearchBar 
+                input={input} 
+                onChange={setInput}
+            />
             
             <NavLink
             className="bigbutton"

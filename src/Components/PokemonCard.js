@@ -58,7 +58,7 @@ const PokemonCard = (props) => {
       })} 
       to={
         { 
-          pathname: `${props.id}`,
+          pathname: `/pokedex/${props.id}`,
           state: `${props.id}`  
         }
       }

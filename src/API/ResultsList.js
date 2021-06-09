@@ -1,18 +1,30 @@
 import React from 'react';
+import LazyLoad from "react-lazyload"
+import { useLocation } from "react-router-dom"
+
 import PokemonCard from "../Components/PokemonCard"
 
 const ResultsList = ({resultList=[]}) => {
+  
   return (
     <>
-      <div className="cards">
-      {resultList.map((pokemon) => {
-        if (pokemon) { 
-            return <PokemonCard key={pokemon.id} {...pokemon} id={pokemon.id}/>
+      <h2>Pokemons</h2>
+        <div className="cards">
+        {resultList.map((pokemon) => {
+          if (pokemon) { 
+              return <LazyLoad><PokemonCard key={pokemon.id} {...pokemon} id={pokemon.id}/></LazyLoad>
+            }
+          return "Pokemon not found"
           }
-        return null
-        }
-      )}
-      </div>
+        )}
+        </div>
+
+        <h2>Items</h2>
+
+        <h2>Moves</h2>
+
+        <h2>Types</h2>
+          
     </>
   );
 }
