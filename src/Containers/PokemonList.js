@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom"
 
 import PokemonCard from "../Components/PokemonCard"
+import SearchBar from '../Components/SearchBar';
 
-const AllPokemon = () => {
+const AllPokemon = (props) => {
   const [pokemons, setPokemons] = useState([])
   const [typeFilter, setTypeFilter] = useState(false)
   const [genFilter, setGenFilter] = useState(false)
+
+  const [input, setInput] = useState('');
+  const [resultListDefault, setResultListDefault] = useState();
+  //const [resultList, setResultList] = useState();
   
   const limit = 80;
 
@@ -14,10 +19,21 @@ const AllPokemon = () => {
     fetch("../data.json")
     .then((response) => response.json())
     .then((data) => {
+      setResultListDefault(data)
       let limitData = data.slice(0, limit)
+      //setResultList(limitData)
       setPokemons(limitData)
     })
   }, []);
+
+  const updateInput = async (input) => {
+    const filtered = resultListDefault.filter(pokemon => {
+     return pokemon.name.toLowerCase().includes(input.toLowerCase())
+    })
+    setInput(input);
+    setPokemons(filtered);
+ }
+
 
   function useFilterUpdate(filter) {   
     return () => {
@@ -70,7 +86,11 @@ const AllPokemon = () => {
       BACK BUTTON
       */}
       <NavLink className="back__button" to={{pathname: "/"}}>
-        <button>Back</button>
+        <img
+          alt = "back-icon"
+          src = "../svg/arrow-left-solid.svg"
+          style = {{width:26}}
+        />
       </NavLink>
 
       <h1 className="header header__pokedex">Pokedex</h1>  
@@ -279,13 +299,17 @@ const AllPokemon = () => {
 
       </div>   
 
+      <SearchBar 
+       input={input} 
+       onChange={updateInput}
+      />
 
       {/*
       POKEMON CARDS
       */}
       <div className="cards">
       {pokemons.map((pokemon) => {
-            return <PokemonCard key={pokemon.id} {...pokemon} id={pokemon.id}/>
+            return <PokemonCard resultList={pokemons} key={pokemon.id} {...pokemon} id={pokemon.id}/>
           }
       )}
       </div>

@@ -1,0 +1,33 @@
+.searchbar {
+    display: flex;
+    width: 100%;
+    background:rgba($black, 0.1);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 10px;
+    outline: $black;
+    padding: 7px;
+
+    &__icon {
+        padding: 3px;
+    }
+
+    &__bar {
+        width: 100%;
+        font-weight: normal;
+        background: none;
+        border: none;
+        font-size: 14px;
+        font-family: $default;
+        color: $black;
+        outline: none;
+        padding-left: 13px;
+    }
+}
+
+.searchbar input::placeholder {
+    color: rgba($black, 0.7);
+    font-weight: normal;
+    opacity: 1;
+}
