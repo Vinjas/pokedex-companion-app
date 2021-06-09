@@ -8,7 +8,6 @@ import Pokemon from "./Components/Pokemon"
 
 import TypesList from "./Containers/TypesList"
 import Moves from "./Containers/Moves"
-import SearchPage from "./Containers/SearchResult"
 
 const App = () => {
     return (
@@ -19,7 +18,6 @@ const App = () => {
                   <Route exact path='/' component={Home} />
                   <Route exact path='/pokedex' component={PokemonList} />
                   <Route path='/pokedex/:id' component={Pokemon} />
-                  <Route path='/searchpage' component={SearchPage} />
 
 
                   <Route exact path='/types' component={TypesList} />
