@@ -7,6 +7,13 @@ const Home = () => {
     return (
         <div className="home__page">
             <h1 className="header">What are <br/> you looking for?</h1>
+            
+            <NavLink
+            to={{pathname: "searchpage/"}}>
+                <button>Search</button>
+            </NavLink>
+            
+            
             <NavLink
             className="bigbutton"
             to = {{pathname: "pokedex/"}}
