@@ -1,3 +1,14 @@
+.lazyload-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: none;
+    transition: all 0.2s;
+    border-radius: 10px;
+    text-decoration: none;
+    min-width: 48.5%;
+    margin-top: 8px;
+}
+
 .more {
     display: flex;
     justify-content: center;

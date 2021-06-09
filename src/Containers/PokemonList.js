@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom"
+import LazyLoad from "react-lazyload"
+import { TransitionGroup } from 'react-transition-group'
 
 import PokemonCard from "../Components/PokemonCard"
 import SearchBar from '../Components/SearchBar';
+
+
 
 const AllPokemon = (props) => {
   const [pokemons, setPokemons] = useState([])
@@ -307,12 +311,16 @@ const AllPokemon = (props) => {
       {/*
       POKEMON CARDS
       */}
-      <div className="cards">
-      {pokemons.map((pokemon) => {
-            return <PokemonCard resultList={pokemons} key={pokemon.id} {...pokemon} id={pokemon.id}/>
-          }
-      )}
-      </div>
+
+            <div className="cards">
+            {pokemons.map((pokemon) => {
+                  return  <LazyLoad className="none"><PokemonCard resultList={pokemons} key={pokemon.id} {...pokemon} id={pokemon.id}/></LazyLoad>
+                }
+            )}
+            </div>     
+
+          
+      
       
       {/*
       MORE BUTTON

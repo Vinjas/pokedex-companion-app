@@ -8,11 +8,12 @@ const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
 
   useEffect(() => {
-    getPokemon(location.state)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${location.state}`)
+    .then((response) => response.json())
     .then((data) => {
       setPokemon(data);
-    });
-  }, [location.pathname]);
+    })
+  }, [location.state]);
 
   const { id, name, height, weight, base_experience } = pokemon;
 

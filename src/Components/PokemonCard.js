@@ -1,6 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import classNames from "classnames"
+import LazyLoad from "react-lazyload"
 
 import zeroIDs from "../utils/zeroIDs"
 import { getPokemon } from "../API/get-pokemon"
@@ -77,12 +78,15 @@ const PokemonCard = (props) => {
             {pokemonType2}</div>
           </div>
 
-          <img
-            className="card__img" 
-            src={`https://pokeres.bastionbot.org/images/pokemon/${props.id}.png`}
-            /* https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`} */
-            alt={props.name}
-          />
+          <LazyLoad height={"100%"}>
+            <img
+              className="card__img" 
+              src={`https://pokeres.bastionbot.org/images/pokemon/${props.id}.png`}
+              /* https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`} */
+              alt={props.name}
+            />
+          </LazyLoad>
+
         </div>
       </NavLink>
   );
