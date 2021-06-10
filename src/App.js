@@ -5,7 +5,7 @@ import PokemonList from "./Containers/PokemonList"
 import Home from "./Containers/Home"
 import SearchPage from "./Containers/SearchResult"
 //COMPONENTS
-import Pokemon from "./Components/Pokemon"
+import Pokemon from "./Containers/Pokemon"
 
 import TypesList from "./Containers/TypesList"
 import Moves from "./Containers/Moves"

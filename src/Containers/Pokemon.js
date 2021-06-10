@@ -60,16 +60,6 @@ const Pokemon = () => {
 
   return (
     <div className="page__pokemon">
-      <NavLink className="back__button" to={{pathname: "/pokedex/"}}>
-        <img
-          alt = "back-icon"
-          src = "../svg/arrow-left-solid.svg"
-          style = {{width:20}}
-        />
-      </NavLink>
-        
-      <button onClick={getEvolution()}>Evolution</button> 
-
       <div className={classNames({
         back: true,
         "back__normal": (pokemonType === "normal"),
@@ -90,14 +80,22 @@ const Pokemon = () => {
         "back__steel": (pokemonType === "steel"),
         "back__fairy": (pokemonType === "fairy"),
         "back__electric": (pokemonType === "electric"),
-      })} >         
-        
+      })}>         
+
+      <NavLink className="back__button" to={{pathname: "/"}}>
+        <img
+          alt = "back-icon"
+          src = "../svg/arrow-left-solid.svg"
+          style = {{width:26}}
+        />
+      </NavLink>
+
         <div className="pokemon__name">
           <h2>
             {name}
           </h2>
 
-          <h3>
+          <h3 style={{"font-weight": "normal"}}>
             {Object.entries(pokemon)[6] && Object.entries(pokemon)[6].map((id, index) => {
               if(index === 1) {
                 return `#${zeroIDs(id)}`
