@@ -12,7 +12,7 @@ const Home = () => {
 
     
     return (
-        <div className="home__page">
+        <div className="page__home home__page">
             <h1 className="header">What are <br/> you looking for?</h1>
             
             <SearchBar 

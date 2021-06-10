@@ -85,7 +85,7 @@ const AllPokemon = (props) => {
   const openGenMenu = () => setGenFilter(!genFilter)
 
   return (
-    <div>
+    <div className="page__pokemonlist">
       {/*
       BACK BUTTON
       */}

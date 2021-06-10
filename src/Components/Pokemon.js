@@ -3,20 +3,24 @@ import { NavLink, useLocation } from 'react-router-dom';
 import classNames from "classnames"
 
 import zeroIDs from "../utils/zeroIDs"
+import { getPokemon } from "../API/get-pokemon"
 
 
 const Pokemon = () => {
   const location = useLocation();
 
   const [pokemon, setPokemon] = useState([]);
+  const [pokemonType, setPokemonType] = useState([])
   const [pokemonSpecies, setPokemonSpecies] = useState([])
   const [evolutionChain, setEvolutionChain] = useState ([])
   const [evolutionInfo, setEvolutionInfo] = useState ([])
 
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${location.state}`)
-    .then((response) => response.json())
+    getPokemon(location.state)
     .then((data) => {
+      let type = ""
+      type += data.types[0].type.name
+      setPokemonType(type);
       setPokemon(data);
     })
   }, [location.state]);
@@ -40,10 +44,8 @@ const Pokemon = () => {
     }
   };
 
-  
-  const { id, height, weight, base_experience } = pokemon;
+  const { name, id, height, weight, base_experience } = pokemon;
 
-  
   const twoTypes = twoTypesCheck()
   function twoTypesCheck() {
     let check = false
@@ -56,11 +58,8 @@ const Pokemon = () => {
       return check
   }
 
-  console.log(Object.entries(pokemon)[10])
-
-
   return (
-    <div className="pokemon">
+    <div className="page__pokemon">
       <NavLink className="back__button" to={{pathname: "/pokedex/"}}>
         <img
           alt = "back-icon"
@@ -68,41 +67,58 @@ const Pokemon = () => {
           style = {{width:20}}
         />
       </NavLink>
-      
-      <button onClick={getEvolution()}>Evolution</button>
+        
+      <button onClick={getEvolution()}>Evolution</button> 
 
-      <div className="pokemon__header">
+      <div className={classNames({
+        back: true,
+        "back__normal": (pokemonType === "normal"),
+        "back__grass": (pokemonType === "grass"),
+        "back__fire": (pokemonType === "fire"),
+        "back__water": (pokemonType === "water"),
+        "back__fighting": (pokemonType === "fighting"),
+        "back__flying": (pokemonType === "flying"),
+        "back__poison": (pokemonType === "poison"),
+        "back__ground": (pokemonType === "ground"),
+        "back__rock": (pokemonType === "rock"),
+        "back__bug": (pokemonType === "bug"),
+        "back__ghost": (pokemonType === "ghost"),
+        "back__psychic": (pokemonType === "psychic"),
+        "back__ice": (pokemonType === "ice"),
+        "back__dragon": (pokemonType === "dragon"),
+        "back__dark": (pokemonType === "dark"),
+        "back__steel": (pokemonType === "steel"),
+        "back__fairy": (pokemonType === "fairy"),
+        "back__electric": (pokemonType === "electric"),
+      })} >         
+        
         <div className="pokemon__name">
           <h2>
-            {Object.entries(pokemon)[10] && Object.entries(pokemon)[10].map((name, index) => {
-              if(index === 1) {
-                return name.charAt(0).toUpperCase() + name.slice(1)}
-              }
-            )}
+            {name}
           </h2>
 
           <h3>
             {Object.entries(pokemon)[6] && Object.entries(pokemon)[6].map((id, index) => {
               if(index === 1) {
-                return zeroIDs(id)
+                return `#${zeroIDs(id)}`
               }
             })}
           </h3>
         </div>
 
         <div className="pokemon__types">
-            <div className="card__type">
-            {pokemon.types &&
-            pokemon.types.map((type, index) => {
-            if (index === 0) {
-              return <p key={index}>{type['type']['name']}</p>;
-            }
-            })}
+            <div className="pokemon__type">
+              {pokemon.types &&
+              pokemon.types.map((type, index) => {
+                if (index === 0) {
+                  return <p key={index}>{type['type']['name']}</p>;
+                }
+              })}
             </div>
               
             <div className={classNames({
-              'card__type': twoTypes,
-              'card__type--null': !twoTypes,
+              'pokemon__type': twoTypes,
+              'pokemon__type--null': !twoTypes,
             })}>
             {pokemon.types &&
             pokemon.types.map((type, index) => {

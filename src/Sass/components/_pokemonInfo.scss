@@ -2,8 +2,8 @@
     margin: 0 1rem 0 1rem;
 
     &__img {
-        height: 20rem;
-        width: 20rem;
+        height: 15rem;
+        width: 15rem;
         bottom: 50px; 
         
         &--wrapper {
@@ -15,5 +15,133 @@
     &__name {
         display: flex;
         justify-content: space-between;
+        text-transform: capitalize;
+        font-size: 16px;
+        color: $pure-white;
+    }
+
+    &__types {
+        display: flex;
+    }
+
+    &__type {
+        color: $pure-white;
+        text-transform: capitalize;
+        border-radius: 5px;
+        background:rgba($black, 0.1);
+        padding: 3px 7px;
+        margin-top: 5px;
+
+        &--null {
+            display: none;
+        }
+    }
+
+    &__background {
+        background: $grass;
+    }
+}
+
+.back {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: 10px 10px 0 0 ;
+    text-decoration: none;
+    margin-top: 8px;
+    padding: 10px 20px 10px 20px;
+
+    &__normal {
+        background: url("./images/types/normal.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }
+    &__grass {
+        background: url("./images/types/grass.jpg");
+        background-size: 120%;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }
+    &__fire {
+        background: url("./images/types/fire.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: bottom right; 
+    }
+    &__water {
+        background: url("./images/types/water.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__fighting {
+        background: url("./images/types/fighting.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__flying {
+        background: url("./images/types/flying.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__poison {
+        background: url("./images/types/poison.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__ground {
+        background: url("./images/types/ground.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__rock {
+        background: url("./images/types/rock.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__bug {
+        background: url("./images/types/bug.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__ghost {
+        background: url("./images/types/ghost.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__electric {
+        background: url("./images/types/electric.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__psychic {
+        background: url("./images/types/psychic.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__ice {
+        background: url("./images/types/ice.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__dragon {
+        background: url("./images/types/dragon.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__dark {
+        background: url("./images/types/dark.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }    
+    &__steel {
+        background: url("./images/types/steel.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+    }
+    &__fairy {
+        background: url("./images/types/fairy.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
     }
 }
