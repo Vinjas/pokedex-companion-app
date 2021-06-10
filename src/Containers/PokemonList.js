@@ -317,7 +317,7 @@ const AllPokemon = (props) => {
 
             <div className="cards">
             {pokemons.map((pokemon) => {
-                  return  <LazyLoad><PokemonCard resultList={pokemons} key={pokemon.id} {...pokemon} id={pokemon.id}/></LazyLoad>
+                  return  <LazyLoad key={pokemon.id}><PokemonCard resultList={pokemons} key={pokemon.id} {...pokemon} id={pokemon.id}/></LazyLoad>
                 }
             )}
             </div>     

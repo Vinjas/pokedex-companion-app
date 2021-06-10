@@ -528,4 +528,21 @@ body {
   background-size: 50px;
 }
 
+.pokemon {
+  margin: 0 1rem 0 1rem;
+}
+.pokemon__img {
+  height: 20rem;
+  width: 20rem;
+  bottom: 50px;
+}
+.pokemon__img--wrapper {
+  display: flex;
+  justify-content: center;
+}
+.pokemon__name {
+  display: flex;
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=index.css.map */

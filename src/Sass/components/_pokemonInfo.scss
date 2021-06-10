@@ -1,0 +1,19 @@
+.pokemon {
+    margin: 0 1rem 0 1rem;
+
+    &__img {
+        height: 20rem;
+        width: 20rem;
+        bottom: 50px; 
+        
+        &--wrapper {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__name {
+        display: flex;
+        justify-content: space-between;
+    }
+}
