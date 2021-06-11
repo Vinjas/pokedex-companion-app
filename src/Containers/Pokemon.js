@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import classNames from "classnames"
 
 import zeroIDs from "../utils/zeroIDs"
+import { heightConversor, weightConversor } from "../utils/heightWeight"
 import { getPokemon } from "../API/get-pokemon"
 
 
@@ -12,35 +13,37 @@ const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
   const [pokemonType, setPokemonType] = useState([])
   const [pokemonSpecies, setPokemonSpecies] = useState([])
-  const [evolutionChain, setEvolutionChain] = useState ([])
-  const [evolutionInfo, setEvolutionInfo] = useState ([])
+  const [evolutionChain, setEvolutionChain] = useState([])
+  const [evolutionInfo, setEvolutionInfo] = useState([])
+
+  const [menu, setMenu] = useState(1)
 
   useEffect(() => {
     getPokemon(location.state)
-    .then((data) => {
-      let type = ""
-      type += data.types[0].type.name
-      setPokemonType(type);
-      setPokemon(data);
-    })
+      .then((data) => {
+        let type = ""
+        type += data.types[0].type.name
+        setPokemonType(type);
+        setPokemon(data);
+      })
   }, [location.state]);
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${location.state}`)
-    .then((response) => response.json())
-    .then((data) => {
-      setPokemonSpecies(data);
-      setEvolutionChain(data.evolution_chain.url)
-    })
+      .then((response) => response.json())
+      .then((data) => {
+        setPokemonSpecies(data);
+        setEvolutionChain(data.evolution_chain.url)
+      })
   }, [location.state]);
 
   function getEvolution() {
     return () => {
       fetch(evolutionChain)
-      .then((response) => response.json())
-      .then((data) => {
-        setEvolutionInfo(data);
-      })
+        .then((response) => response.json())
+        .then((data) => {
+          setEvolutionInfo(data);
+        })
     }
   };
 
@@ -54,12 +57,28 @@ const Pokemon = () => {
         if (index === 1) {
           check = true
         }
-        })
-      return check
+      })
+    return check
   }
+
+  function translateAbout() {
+    let filterArr = []
+    
+    filterArr = Object.entries(pokemonSpecies)[6][1]
+    .filter((elem) => elem.language.name === "en")
+    
+    return filterArr[filterArr.length - 1].flavor_text
+  }
+  
+
+  console.log(Object.entries(pokemonSpecies)[6] 
+  && Object.entries(pokemonSpecies)[6][1] && translateAbout(Object.entries(pokemonSpecies)[6][1]))
+
 
   return (
     <div className="page__pokemon">
+
+      {/* HEADER */}
       <div className={classNames({
         back: true,
         "back__normal": (pokemonType === "normal"),
@@ -80,24 +99,24 @@ const Pokemon = () => {
         "back__steel": (pokemonType === "steel"),
         "back__fairy": (pokemonType === "fairy"),
         "back__electric": (pokemonType === "electric"),
-      })}>         
+      })}>
 
-      <NavLink className="back__button" to={{pathname: "/"}}>
-        <img
-          alt = "back-icon"
-          src = "../svg/arrow-left-solid.svg"
-          style = {{width:26}}
-        />
-      </NavLink>
+        <NavLink className="back__button" to={{ pathname: "/" }}>
+          <img
+            alt="back-icon"
+            src="../svg/arrow-left-solid.svg"
+            style={{ width: 26 }}
+          />
+        </NavLink>
 
         <div className="pokemon__name">
           <h2>
             {name}
           </h2>
 
-          <h3 style={{"font-weight": "normal"}}>
+          <h3 style={{ "font-weight": "normal" }}>
             {Object.entries(pokemon)[6] && Object.entries(pokemon)[6].map((id, index) => {
-              if(index === 1) {
+              if (index === 1) {
                 return `#${zeroIDs(id)}`
               }
             })}
@@ -105,30 +124,30 @@ const Pokemon = () => {
         </div>
 
         <div className="pokemon__types">
-            <div className="pokemon__type">
-              {pokemon.types &&
+          <div className="pokemon__type">
+            {pokemon.types &&
               pokemon.types.map((type, index) => {
                 if (index === 0) {
                   return <p key={index}>{type['type']['name']}</p>;
                 }
               })}
-            </div>
-              
-            <div className={classNames({
-              'pokemon__type': twoTypes,
-              'pokemon__type--null': !twoTypes,
-            })}>
+          </div>
+
+          <div className={classNames({
+            'pokemon__type': twoTypes,
+            'pokemon__type--null': !twoTypes,
+          })}>
             {pokemon.types &&
-            pokemon.types.map((type, index) => {
-              if (index === 1) {
-                return <p key={index}>{type['type']['name']}</p>;
-              }
-            })}
-            
-            </div>
+              pokemon.types.map((type, index) => {
+                if (index === 1) {
+                  return <p key={index}>{type['type']['name']}</p>;
+                }
+              })}
+
+          </div>
 
         </div>
-        
+
         <div className="pokemon__img--wrapper">
           <img
             className='pokemon__img'
@@ -138,12 +157,67 @@ const Pokemon = () => {
         </div>
       </div>
 
+      {/* MENU */}
+      <div className="pokemon__menu">
+        <button onClick={() => setMenu(1)}>About</button>
+        <button onClick={() => setMenu(2)}>Stats</button>
+        <button onClick={() => setMenu(3)}>Evolution</button>
+        <button onClick={() => setMenu(4)}>Moves</button>
+      </div>
 
-      <ul>
-        <li>Height: {height}</li>
-        <li>Weight: {weight}</li>
-        <li>Base XP:{base_experience}</li>
-      </ul>
+      {/* CONTENT */}
+      <div className="pokemon__content">
+        {menu === 1 &&
+          <div>
+            <div className="pokemon__description">
+              <p>
+                {Object.entries(pokemonSpecies)[6] 
+                && Object.entries(pokemonSpecies)[6][1] 
+                && translateAbout(Object.entries(pokemonSpecies)[6][1])}
+              </p>
+            </div>
+
+            <div className="pokemon__container">
+              
+              <div>
+                  Height
+              </div>
+              <div>
+                {Object.entries(pokemon)[4] && Object.entries(pokemon)[4].map((id, index) => {
+                if (index === 1) {
+                  return `${heightConversor(height)}`
+                }
+              })}
+              </div>
+              
+              <div>
+                  Weight
+              </div>
+              <div>
+                {Object.entries(pokemon)[17] && Object.entries(pokemon)[17].map((id, index) => {
+                if (index === 1) {
+                  return `${weightConversor(weight)}`
+                }
+              })}
+              </div>
+
+
+            </div>
+          </div>
+        }
+      </div>
+
+
+      <p>Base XP:{base_experience}</p>
+
+
+
+
+
+
+
+
+
 
       <ul>
         Abilities:
