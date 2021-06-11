@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useHistory   } from 'react-router-dom';
 import classNames from "classnames"
 
 import zeroIDs from "../utils/zeroIDs"
 import { heightConversor, weightConversor } from "../utils/heightWeight"
 import { getPokemon } from "../API/get-pokemon"
 
-
 const Pokemon = () => {
   const location = useLocation();
+  const history = useHistory();
 
   const [pokemon, setPokemon] = useState([]);
   const [pokemonType, setPokemonType] = useState([])
@@ -102,13 +102,13 @@ const Pokemon = () => {
         "back__electric": (pokemonType === "electric"),
       })}>
 
-        <NavLink className="back__button" to={{ pathname: "/" }}>
+        <div className="back__button" onClick={() => history.goBack()}>
           <img
             alt="back-icon"
-            src="../svg/arrow-left-solid.svg"
+            src="../svg/long-arrow-alt-left-solid.svg"
             style={{ width: 26 }}
           />
-        </NavLink>
+        </div>
 
         <div className="pokemon__name">
           <h2>
@@ -158,18 +158,29 @@ const Pokemon = () => {
         </div>
               {/* MENU */}
       <div className="pokemon__menu ">
-        <div className="pokemon__title pokemon__title--menu" 
+        <div className={classNames({
+        pokemon__title: true,
+        "pokemon__title--menu": (menu != 1),
+        "pokemon__title--active": (menu === 1)
+        })} 
           onClick={() => setMenu(1)}>About</div>
-        <div className="pokemon__title pokemon__title--menu" 
-          onClick={() => setMenu(2)}>Stats</div>
-        <div className="pokemon__title pokemon__title--menu" 
-          onClick={() => setMenu(3)}>Evolution</div>
-        <div className="pokemon__title pokemon__title--menu" 
-          onClick={() => setMenu(4)}>Moves</div>
+        <div className={classNames({
+        pokemon__title: true,
+        "pokemon__title--menu": (menu != 2),
+        "pokemon__title--active": (menu === 2)
+        })}           onClick={() => setMenu(2)}>Stats</div>
+        <div className={classNames({
+        pokemon__title: true,
+        "pokemon__title--menu": (menu != 3),
+        "pokemon__title--active": (menu === 3)
+        })}           onClick={() => setMenu(3)}>Evolution</div>
+        <div className={classNames({
+        pokemon__title: true,
+        "pokemon__title--menu": (menu != 4),
+        "pokemon__title--active": (menu === 4)
+        })}           onClick={() => setMenu(4)}>Moves</div>
       </div>
       </div>
-
-
 
       {/* CONTENT */}
       <div className="pokemon__content">
@@ -177,9 +188,9 @@ const Pokemon = () => {
           <div>
             <div className="pokemon__info pokemon__description">
               <p>
-                '{Object.entries(pokemonSpecies)[6] 
+                {Object.entries(pokemonSpecies)[6] 
                 && Object.entries(pokemonSpecies)[6][1] 
-                && translateAbout(Object.entries(pokemonSpecies)[6][1])}'
+                && translateAbout(Object.entries(pokemonSpecies)[6][1])}
               </p>
             </div>
 

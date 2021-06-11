@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from "react-router-dom"
+import { NavLink, useHistory } from "react-router-dom"
 import LazyLoad from "react-lazyload"
 import { TransitionGroup } from 'react-transition-group'
 
@@ -9,6 +9,8 @@ import SearchBar from '../Components/SearchBar';
 
 
 const AllPokemon = (props) => {
+  const history = useHistory();
+  
   const [pokemons, setPokemons] = useState([])
   const [typeFilter, setTypeFilter] = useState(false)
   const [genFilter, setGenFilter] = useState(false)
@@ -89,13 +91,13 @@ const AllPokemon = (props) => {
       {/*
       BACK BUTTON
       */}
-      <NavLink className="back__button" to={{pathname: "/"}}>
+      <div className="back__button back__button--list" onClick={() => {history.goBack()}}>
         <img
           alt = "back-icon"
-          src = "../svg/arrow-left-solid.svg"
+          src = "../svg/long-arrow-alt-left-solid-black.svg"
           style = {{width:26}}
         />
-      </NavLink>
+      </div>
 
       <h1 className="header header__pokedex">Pokedex</h1>  
 
