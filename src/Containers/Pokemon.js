@@ -48,6 +48,7 @@ const Pokemon = () => {
   };
 
   const { name, id, height, weight, base_experience } = pokemon;
+  const { base_happiness, capture_rate } = pokemonSpecies;
 
   const twoTypes = twoTypesCheck()
   function twoTypesCheck() {
@@ -155,56 +156,95 @@ const Pokemon = () => {
             alt='pokemon-pic'
           />
         </div>
+              {/* MENU */}
+      <div className="pokemon__menu ">
+        <div className="pokemon__title pokemon__title--menu" 
+          onClick={() => setMenu(1)}>About</div>
+        <div className="pokemon__title pokemon__title--menu" 
+          onClick={() => setMenu(2)}>Stats</div>
+        <div className="pokemon__title pokemon__title--menu" 
+          onClick={() => setMenu(3)}>Evolution</div>
+        <div className="pokemon__title pokemon__title--menu" 
+          onClick={() => setMenu(4)}>Moves</div>
+      </div>
       </div>
 
-      {/* MENU */}
-      <div className="pokemon__menu">
-        <button onClick={() => setMenu(1)}>About</button>
-        <button onClick={() => setMenu(2)}>Stats</button>
-        <button onClick={() => setMenu(3)}>Evolution</button>
-        <button onClick={() => setMenu(4)}>Moves</button>
-      </div>
+
 
       {/* CONTENT */}
       <div className="pokemon__content">
         {menu === 1 &&
           <div>
-            <div className="pokemon__description">
+            <div className="pokemon__info pokemon__description">
               <p>
-                {Object.entries(pokemonSpecies)[6] 
+                '{Object.entries(pokemonSpecies)[6] 
                 && Object.entries(pokemonSpecies)[6][1] 
-                && translateAbout(Object.entries(pokemonSpecies)[6][1])}
+                && translateAbout(Object.entries(pokemonSpecies)[6][1])}'
               </p>
             </div>
 
             <div className="pokemon__container">
-              
-              <div>
-                  Height
+              <div className="pokemon__row">
+                <div className="pokemon__title">
+                    Height
+                </div>
+
+                <div className="pokemon__info">
+                  {Object.entries(pokemon)[4] && Object.entries(pokemon)[4].map((id, index) => {
+                  if (index === 1) {
+                    return `${heightConversor(height)}`
+                  }
+                })}
+                </div>
               </div>
-              <div>
-                {Object.entries(pokemon)[4] && Object.entries(pokemon)[4].map((id, index) => {
-                if (index === 1) {
-                  return `${heightConversor(height)}`
-                }
-              })}
-              </div>
-              
-              <div>
-                  Weight
-              </div>
-              <div>
-                {Object.entries(pokemon)[17] && Object.entries(pokemon)[17].map((id, index) => {
-                if (index === 1) {
-                  return `${weightConversor(weight)}`
-                }
-              })}
+              <div className="pokemon__row">
+                <div className="pokemon__title">
+                    Weight
+                </div>
+
+                <div className="pokemon__info">
+                  {Object.entries(pokemon)[17] && Object.entries(pokemon)[17].map((id, index) => {
+                  if (index === 1) {
+                    return `${weightConversor(weight)}`
+                  }
+                })}
+                </div>
               </div>
 
 
             </div>
+          
+            <div>
+            <h3 className="pokemon__title pokemon__title--strong">
+              Training
+            </h3>
+            
+            <div className="pokemon__block">
+              <h4 className="pokemon__title">Base Exp.</h4>
+              <p className="pokemon__info">{base_experience}</p>
+            </div>
+            <div className="pokemon__block">
+              <h4 className="pokemon__title">Capture Rate</h4>
+              <p className="pokemon__info">{capture_rate}</p>
+            </div>
+            <div className="pokemon__block">
+              <h4 className="pokemon__title">Base Happiness</h4>
+              <p className="pokemon__info">{base_happiness}</p>
+            </div>
+
           </div>
+
+
+          <div>
+            <h3 className="pokemon__title pokemon__title--strong">
+              Breeding
+            </h3>
+
+          </div>
+        </div>
+
         }
+
       </div>
 
 
