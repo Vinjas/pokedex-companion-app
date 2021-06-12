@@ -115,7 +115,7 @@ const Pokemon = () => {
             {name}
           </h2>
 
-          <h3 style={{ "font-weight": "normal" }}>
+          <h3 style={{ "font-weight": "normal", "font-size":"1.5rem" }}>
             {Object.entries(pokemon)[6] && Object.entries(pokemon)[6].map((id, index) => {
               if (index === 1) {
                 return `#${zeroIDs(id)}`
