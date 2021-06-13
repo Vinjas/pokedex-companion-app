@@ -615,6 +615,10 @@ body {
   padding: 1.5rem 0 1.5rem 0;
   margin: 1.5rem 0 2.5rem 0;
 }
+.pokemon__flex {
+  display: flex;
+  justify-content: space-between;
+}
 .pokemon__title {
   font-size: 1.4rem;
   font-weight: bold;
@@ -641,6 +645,20 @@ body {
 }
 .pokemon__block {
   display: flex;
+}
+.pokemon__result {
+  color: #343434;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: capitalize;
+  background: #F2F2F2;
+  border-radius: 10px;
+  padding: 0.2rem;
+  min-width: 48%;
+}
+.pokemon__result--inactive {
+  background: none;
+  border: 1px solid #B3B3B3;
 }
 
 .back {

@@ -80,8 +80,8 @@ const Pokemon = () => {
   }
   
 
-  console.log(Object.entries(pokemonSpecies)[10] 
-  && Object.entries(pokemonSpecies)[10][1] && translateGenus(Object.entries(pokemonSpecies)[10][1]))
+  console.log(Object.entries(pokemon)[0]
+  && Object.entries(pokemon)[0][1][1].is_hidden)
 
 
   return (
@@ -206,6 +206,27 @@ const Pokemon = () => {
               </p>
             </div>
 
+            <div>
+              <div className="pokemon__title pokemon__title--strong">Abilities:</div>
+                <div className="pokemon__flex">
+                {pokemon.abilities &&
+                pokemon.abilities.map((ability, index) => {
+                  return (
+                    <div key={index} className={classNames({
+                      pokemon__result: true,
+                      "pokemon__result--inactive": Object.entries(pokemon)[0]
+                      && Object.entries(pokemon)[0][1][index].is_hidden === true,
+                      })}>
+                        {ability['ability']['name']}
+                    </div>
+                  )
+                })}
+                </div> 
+            </div>
+        
+
+
+
             <div className="pokemon__container">
               <div className="pokemon__row">
                 <div className="pokemon__title">
@@ -282,13 +303,6 @@ const Pokemon = () => {
 
 
 
-      <ul>
-        Abilities:
-        {pokemon.abilities &&
-          pokemon.abilities.map((ability, index) => {
-            return <li key={index}>{ability['ability']['name']}</li>;
-          })}
-      </ul>
       <ul>
         Stats:
         {pokemon.stats &&

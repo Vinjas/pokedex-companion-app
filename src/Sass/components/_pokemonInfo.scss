@@ -87,7 +87,11 @@
         border-radius: 10px;
         padding: 1.5rem 0 1.5rem 0;
         margin: 1.5rem 0 2.5rem 0;
+    }
 
+    &__flex {
+        display: flex;
+        justify-content: space-between;
     }
 
     &__title {
@@ -120,6 +124,22 @@
 
     &__block {
         display: flex;
+    }
+
+    &__result {
+        color: $text;
+        font-size: 1.4rem;
+        text-align: center;
+        text-transform: capitalize;
+        background: #F2F2F2;
+        border-radius: 10px;
+        padding: 0.2rem;
+        min-width: 48%;
+        
+        &--inactive {
+            background: none;
+            border: 1px solid  #B3B3B3;
+        }
     }
 }
 
