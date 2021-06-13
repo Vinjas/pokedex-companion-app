@@ -92,6 +92,7 @@
     &__flex {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;    
     }
 
     &__title {
@@ -124,6 +125,8 @@
 
     &__block {
         display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
     }
 
     &__result {
@@ -135,6 +138,7 @@
         border-radius: 10px;
         padding: 0.2rem;
         min-width: 48%;
+        margin-bottom: 0.5rem;
         
         &--inactive {
             background: none;

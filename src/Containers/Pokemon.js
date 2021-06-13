@@ -5,6 +5,7 @@ import classNames from "classnames"
 import zeroIDs from "../utils/zeroIDs"
 import { heightConversor, weightConversor } from "../utils/heightWeight"
 import { getPokemon } from "../API/get-pokemon"
+import { baseHappiness } from '../utils/baseHappiness';
 
 const Pokemon = () => {
   const location = useLocation();
@@ -80,8 +81,7 @@ const Pokemon = () => {
   }
   
 
-  console.log(Object.entries(pokemon)[0]
-  && Object.entries(pokemon)[0][1][1].is_hidden)
+  console.log("")
 
 
   return (
@@ -224,9 +224,6 @@ const Pokemon = () => {
                 </div> 
             </div>
         
-
-
-
             <div className="pokemon__container">
               <div className="pokemon__row">
                 <div className="pokemon__title">
@@ -254,29 +251,34 @@ const Pokemon = () => {
                 })}
                 </div>
               </div>
-
-
             </div>
           
             <div>
-            <h3 className="pokemon__title pokemon__title--strong">
-              Training
-            </h3>
-            
-            <div className="pokemon__block">
-              <h4 className="pokemon__title">Base Exp.</h4>
-              <p className="pokemon__info">{base_experience}</p>
-            </div>
-            <div className="pokemon__block">
-              <h4 className="pokemon__title">Capture Rate</h4>
-              <p className="pokemon__info">{capture_rate}</p>
-            </div>
-            <div className="pokemon__block">
-              <h4 className="pokemon__title">Base Happiness</h4>
-              <p className="pokemon__info">{base_happiness}</p>
-            </div>
+              <h3 className="pokemon__title pokemon__title--strong">Training</h3>
 
-          </div>
+              <div className="pokemon__block">
+                <div className="pokemon__title">Base Exp.</div>
+                <div className="pokemon__result">{base_experience}</div>
+              </div>
+
+              <div className="pokemon__block">
+                <div className="pokemon__title">Base Happiness</div>
+                <div className="pokemon__result">{baseHappiness(base_happiness)}</div>
+              </div>
+
+              <div className="pokemon__block">
+                <div className="pokemon__title">Growth Rate</div>
+                <div className="pokemon__result">
+                {Object.entries(pokemonSpecies)[12] && Object.entries(pokemonSpecies)[12][1].name}
+                </div>
+              </div>
+
+              <div className="pokemon__block">
+                <div className="pokemon__title">Capture Rate</div>
+                <div className="pokemon__result">{capture_rate}</div>
+              </div>
+
+            </div>
 
 
           <div>
