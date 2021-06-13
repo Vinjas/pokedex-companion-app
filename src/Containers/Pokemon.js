@@ -6,6 +6,7 @@ import zeroIDs from "../utils/zeroIDs"
 import { heightConversor, weightConversor } from "../utils/heightWeight"
 import { getPokemon } from "../API/get-pokemon"
 import { baseHappiness } from '../utils/baseHappiness';
+import { genderRates } from "../utils/genderRates"
 
 const Pokemon = () => {
   const location = useLocation();
@@ -49,7 +50,7 @@ const Pokemon = () => {
   };
 
   const { name, id, height, weight, base_experience } = pokemon;
-  const { base_happiness, capture_rate } = pokemonSpecies;
+  const { base_happiness, capture_rate, hatch_counter, gender_rate } = pokemonSpecies;
 
   const twoTypes = twoTypesCheck()
   function twoTypesCheck() {
@@ -285,25 +286,57 @@ const Pokemon = () => {
             <h3 className="pokemon__title pokemon__title--strong">
               Breeding
             </h3>
+            
+            <div className="pokemon__container" style={({"flex-direction": "column", "padding": "2rem"})}>
+              <div className="pokemon__title">Gender</div>
+                <div 
+                  className="pokemon__block"
+                  style={{ justifyContent: "space-around" }} >
+                    <div className="pokemon__flex">
+                      <img
+                        alt="back-icon"
+                        src="../svg/mars-solid.svg"
+                        style={{ width: 17 , "margin-right": "0.5rem"}}
+                      />
+                      <div className="pokemon__title--medium">
+                        {genderRates(gender_rate)[0]}
+                      </div>
+                    </div>
 
+                    <div className="pokemon__flex">
+                      <img
+                        alt="back-icon"
+                        src="../svg/venus-solid.svg"
+                        style={{ width: 13, "margin-right": "0.5rem" }}
+                      />
+                      <div className="pokemon__title--medium">
+                        {genderRates(gender_rate)[1]}
+                      </div>
+                    </div>
+                </div>
+
+              <div className="pokemon__title">Egg Groups</div>
+                <div className="pokemon__flex">
+                  {Object.entries(pokemonSpecies)[3] 
+                  && Object.entries(pokemonSpecies)[3][1].map((name, index) => {
+                    return <div key={`eggGroup${index}`} className="pokemon__result pokemon__result--inactive">
+                      {name.name}
+                    </div>
+                  })}
+                </div>
+
+              <div className="pokemon__title">Hatch Cycle</div>
+                <div className="pokemon__result pokemon__result--inactive">
+                  {hatch_counter}
+                </div>
+
+            </div>
           </div>
         </div>
 
         }
 
       </div>
-
-
-      <p>Base XP:{base_experience}</p>
-
-
-
-
-
-
-
-
-
 
       <ul>
         Stats:
@@ -314,13 +347,6 @@ const Pokemon = () => {
                 {stat['stat']['name']}:<span>{stat.base_stat}</span>
               </li>
             );
-          })}
-      </ul>
-      <ul>
-        Types:
-        {pokemon.types &&
-          pokemon.types.map((type, index) => {
-            return <li key={index}>{type['type']['name']}</li>;
           })}
       </ul>
     </div>
