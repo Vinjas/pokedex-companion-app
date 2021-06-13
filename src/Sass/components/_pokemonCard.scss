@@ -232,9 +232,9 @@
 
 @media (max-width: 400px) {
     .card {
-        background-size: 130%;
+        background-size: 140%;
         background-position: bottom right; 
-
+        max-width: 150px;
     }
 }
 

@@ -285,8 +285,9 @@ body {
 
 @media (max-width: 400px) {
   .card {
-    background-size: 130%;
+    background-size: 140%;
     background-position: bottom right;
+    max-width: 150px;
   }
 }
 @media (min-width: 750px) {
@@ -558,11 +559,9 @@ body {
   color: #fff;
   padding: 0 3rem 0 3rem;
 }
-.pokemon__name h3 {
-  color: #EDEDED;
-}
 .pokemon__types {
   display: flex;
+  justify-content: space-between;
   padding: 0 3rem 0 3rem;
 }
 .pokemon__type {
@@ -576,6 +575,12 @@ body {
 }
 .pokemon__type--null {
   display: none;
+}
+.pokemon__genus {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: end;
+  width: 80%;
 }
 .pokemon__background {
   background: #49D0B0;

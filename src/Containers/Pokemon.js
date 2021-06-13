@@ -70,10 +70,18 @@ const Pokemon = () => {
     
     return filterArr[filterArr.length - 1].flavor_text
   }
+  function translateGenus() {
+    let filterArr = []
+    
+    filterArr = Object.entries(pokemonSpecies)[10][1]
+    .filter((elem) => elem.language.name === "en")
+    
+    return filterArr[filterArr.length - 1].genus
+  }
   
 
-  console.log(Object.entries(pokemonSpecies)[6] 
-  && Object.entries(pokemonSpecies)[6][1] && translateAbout(Object.entries(pokemonSpecies)[6][1]))
+  console.log(Object.entries(pokemonSpecies)[10] 
+  && Object.entries(pokemonSpecies)[10][1] && translateGenus(Object.entries(pokemonSpecies)[10][1]))
 
 
   return (
@@ -115,7 +123,7 @@ const Pokemon = () => {
             {name}
           </h2>
 
-          <h3 style={{ "font-weight": "normal", "font-size":"1.5rem" }}>
+          <h3 style={{"font-size":"1.3rem" }}>
             {Object.entries(pokemon)[6] && Object.entries(pokemon)[6].map((id, index) => {
               if (index === 1) {
                 return `#${zeroIDs(id)}`
@@ -144,9 +152,13 @@ const Pokemon = () => {
                   return <p key={index}>{type['type']['name']}</p>;
                 }
               })}
-
           </div>
-
+          
+          <div className="pokemon__genus">
+            {Object.entries(pokemonSpecies)[10] 
+            && Object.entries(pokemonSpecies)[10][1] 
+            && translateGenus(Object.entries(pokemonSpecies)[10][1])}
+          </div>
         </div>
 
         <div className="pokemon__img--wrapper">
