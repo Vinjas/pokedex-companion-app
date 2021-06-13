@@ -7,6 +7,7 @@ import { heightConversor, weightConversor } from "../utils/heightWeight"
 import { getPokemon } from "../API/get-pokemon"
 import { baseHappiness } from '../utils/baseHappiness';
 import { genderRates } from "../utils/genderRates"
+import { hatchCycle } from "../utils/hatchCycle"
 
 const Pokemon = () => {
   const location = useLocation();
@@ -258,7 +259,7 @@ const Pokemon = () => {
               <h3 className="pokemon__title pokemon__title--strong">Training</h3>
 
               <div className="pokemon__block">
-                <div className="pokemon__title">Base Exp.</div>
+                <div className="pokemon__title">Base exp.</div>
                 <div className="pokemon__result">{base_experience}</div>
               </div>
 
@@ -268,14 +269,14 @@ const Pokemon = () => {
               </div>
 
               <div className="pokemon__block">
-                <div className="pokemon__title">Growth Rate</div>
+                <div className="pokemon__title">Growth rate</div>
                 <div className="pokemon__result">
                 {Object.entries(pokemonSpecies)[12] && Object.entries(pokemonSpecies)[12][1].name}
                 </div>
               </div>
 
               <div className="pokemon__block">
-                <div className="pokemon__title">Capture Rate</div>
+                <div className="pokemon__title">Capture rate</div>
                 <div className="pokemon__result">{capture_rate}</div>
               </div>
 
@@ -327,7 +328,7 @@ const Pokemon = () => {
 
               <div className="pokemon__title">Hatch Cycle</div>
                 <div className="pokemon__result pokemon__result--inactive">
-                  {hatch_counter}
+                  {hatchCycle(hatch_counter)}
                 </div>
 
             </div>

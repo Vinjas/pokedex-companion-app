@@ -15,6 +15,7 @@
     &__name {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         text-transform: capitalize;
         font-size: 1.6rem;
         color: $pure-white;
@@ -163,9 +164,9 @@
 
     &__normal {
         background: url("./images/types/normal.jpg");
-        background-size: 170%;
+        background-size: 180%;
         background-repeat: no-repeat;
-        background-position: bottom right;
+        background-position: top right;
     }
     &__grass {
         background: url("./images/types/grass.jpg");
