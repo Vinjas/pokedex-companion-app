@@ -812,4 +812,9 @@ body {
   padding: 3rem 1.5rem;
 }
 
+.evolution__row {
+  display: flex;
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=index.css.map */

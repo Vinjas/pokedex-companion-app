@@ -2,19 +2,6 @@ import React from 'react';
 
 const Stats = (props) => {
 
-    function sumAllStats() {
-        props.pokemon.stats && props.pokemon.stats.reduce((acc, stat) => {
-            return acc + stat.base_stat
-        })
-    }
-
-    console.log(
-        props.pokemon.stats && props.pokemon.stats.reduce((acc, elem) => {
-            console.log(acc)
-            return acc + elem.base_stat
-        }, 0)
-    )
-
     return (
         <div>
             {props.pokemon.stats &&

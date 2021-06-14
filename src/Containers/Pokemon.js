@@ -209,7 +209,7 @@ const Pokemon = () => {
             <div className="pokemon__content">
                 {menu === 1 && <About pokemon={pokemon} pokemonSpecies={pokemonSpecies} /> }
                 {menu === 2 && <Stats pokemon={pokemon} /> }
-                {menu === 3 && <Evolution pokemon={pokemon} /> }
+                {menu === 3 && <Evolution pokemon={pokemon} evolutionChain={evolutionChain} /> }
                 {menu === 4 && <Moves pokemon={pokemon} /> }
             </div>
         </div>
