@@ -80,7 +80,12 @@ const Evolution = (props) => {
 
             <div className="evolution__row"> 
                 <div>
-                    {evoFirstId ? evoBaseName : "No evolution for this Pokémon"}
+                    <img
+                        className="card__img" 
+                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
+                        alt={evoBaseId}
+                    />
+                    <div>{evoFirstId ? evoBaseName : "No evolution for this Pokémon"}</div>
                 </div>
                 <div>
                     {evoFirstTrigger}
@@ -89,13 +94,23 @@ const Evolution = (props) => {
                     {evoFirstTrigger === "use-item" && evoFirstReq.item.name}
                 </div>
                 <div>
-                    {evoFirstName}
+                    <img
+                        className="card__img" 
+                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
+                        alt={evoFirstId}
+                    />
+                    <div>{evoFirstName}</div>
                 </div>
             </div>
 
             <div className="evolution__row"> 
                 <div>
-                    {evoSecondsId ? evoFirstName : ""}
+                    <img
+                        className="card__img" 
+                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
+                        alt={evoFirstId}
+                    />
+                    <div>{evoSecondsId ? evoFirstName : ""}</div>
                 </div>
                 <div>
                     {evoSecondsTrigger}
@@ -104,14 +119,24 @@ const Evolution = (props) => {
                     {evoSecondsTrigger === "use-item" && evoSecondsReq.item.name}
                 </div>
                 <div>
-                    {evoSecondsName}
+                    <img
+                        className="card__img" 
+                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoSecondsId}.png`}
+                        alt={evoSecondsId}
+                    />
+                    <div>{evoSecondsName}</div>
                 </div>
             </div>
 
             {evoAlt1Id &&
                 <div className="evolution__row"> 
                 <div>
-                    {evoBaseName}
+                    <img
+                        className="card__img" 
+                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
+                        alt={evoBaseId}
+                    />
+                    <div>{evoBaseName}</div>
                 </div>
                 <div>
                     {evoAlt1Trigger}
@@ -120,14 +145,24 @@ const Evolution = (props) => {
                     {evoAlt1Trigger === "use-item" && evoAlt1Req.item.name}
                 </div>
                 <div>
-                    {evoAlt1Name}
+                    <img
+                        className="card__img" 
+                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoAlt1Id}.png`}
+                        alt={evoAlt1Id}
+                    />
+                    <div>{evoAlt1Name}</div>
                 </div>
             </div>
             }
             {evoAlt2Id &&
                 <div className="evolution__row"> 
                 <div>
-                    {evoFirstName}
+                    <img
+                        className="card__img" 
+                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
+                        alt={evoFirstId}
+                    />
+                    <div>{evoFirstName}</div>
                 </div>
                 <div>
                     {evoAlt2Trigger}
