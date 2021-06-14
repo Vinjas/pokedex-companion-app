@@ -1,6 +1,5 @@
 import React from 'react';
 import LazyLoad from "react-lazyload"
-import { useLocation } from "react-router-dom"
 
 import PokemonCard from "../Components/PokemonCard"
 

@@ -788,6 +788,19 @@ body {
   background-position: top right;
 }
 
+.stats {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+.stats__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 16.5vh;
+  margin: 1rem 0;
+}
+
 .page__pokemon {
   margin: 0;
   background: #fff;
