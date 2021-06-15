@@ -91,13 +91,14 @@ const AllPokemon = (props) => {
       {/*
       BACK BUTTON
       */}
-      <div className="back__button back__button--list" onClick={() => {history.goBack()}}>
+        <NavLink className="back__button back__button--list" 
+        to = {{pathname: "/"}}>
         <img
           alt = "back-icon"
           src = "../svg/long-arrow-alt-left-solid-black.svg"
           style = {{width:26}}
         />
-      </div>
+      </NavLink>
 
       <h1 className="header header__pokedex">Pokedex</h1>  
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useHistory, NavLink } from 'react-router-dom';
 import classNames from "classnames"
 
 import zeroIDs from "../utils/zeroIDs"
@@ -101,13 +101,14 @@ const Pokemon = () => {
             "back__electric": (pokemonType === "electric"),
             })}>
 
-            <div className="back__button" onClick={() => history.goBack()}>
+            <NavLink className="back__button"
+            to = {{pathname: "/pokedex"}}>
                 <img
                 alt="back-icon"
                 src="../svg/long-arrow-alt-left-solid.svg"
                 style={{ width: 26 }}
                 />
-            </div>
+            </NavLink>
 
             <div className="pokemon__name">
                 <h2>
