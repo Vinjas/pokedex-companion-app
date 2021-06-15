@@ -17,6 +17,15 @@ const MoveList = (props) => {
     })
 
 
+    function lvlLearned() {
+        if(props.moves.version_group_details && props.moves.version_group_details[0].level_learned_at === 0) {
+            return "-"
+        } else {
+            return props.moves.version_group_details && props.moves.version_group_details[0].level_learned_at
+        }
+    }
+    const level = lvlLearned()
+
 
     return (
         <div>            
@@ -61,7 +70,8 @@ const MoveList = (props) => {
                         <MoveCard 
                             key={props.id }{...elem}
                             moveName={elem.move && elem.move.name}
-                            moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}   
+                            moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}
+                            level={elem.version_group_details && elem.version_group_details[0].level_learned_at}   
                         />
                     )
                     }
@@ -77,6 +87,7 @@ const MoveList = (props) => {
                             key={props.id }{...elem}
                             moveName={elem.move && elem.move.name}
                             moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}   
+                            level={elem.version_group_details && elem.version_group_details[0].level_learned_at}                               
                         />
                     )
                     }
@@ -91,7 +102,8 @@ const MoveList = (props) => {
                         <MoveCard 
                             key={props.id }{...elem}
                             moveName={elem.move && elem.move.name}
-                            moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}   
+                            moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}
+                            level={elem.version_group_details && elem.version_group_details[0].level_learned_at}   
                         />
                     )
                     }
