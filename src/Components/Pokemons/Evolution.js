@@ -31,13 +31,15 @@ const Evolution = (props) => {
         .then((response) => response.json())
         .then((data) => {
             setEvolutionInfo(data);
+            let regex = /\b(\d+)/g
 
-            setEvoBaseId(data.id);
+            setEvoBaseId(data.chain.species.url
+            .match(regex));
             setEvoBaseName(data.chain.species.name)
 
             if(data.chain.evolves_to.length !== 0) {
                 setEvoFirstId((data.chain.evolves_to[0].species.url)
-                [(data.chain.evolves_to[0].species.url.length - 2)])
+                .match(regex))
                 setEvoFirstName(data.chain.evolves_to[0].species.name)
                 setEvoFirstReq(data.chain.evolves_to[0].evolution_details[0])
                 setEvoFirstTrigger(data.chain.evolves_to[0].evolution_details[0].trigger.name)
@@ -46,7 +48,7 @@ const Evolution = (props) => {
              }
             if(data.chain.evolves_to[0].evolves_to.length !== 0) {
                 setEvoSecondId((data.chain.evolves_to[0].evolves_to[0].species.url)
-                [(data.chain.evolves_to[0].evolves_to[0].species.url.length - 2)]);
+                .match(regex));
                 setEvoSecondName(data.chain.evolves_to[0].evolves_to[0].species.name)
                 setEvoSecondReq(data.chain.evolves_to[0].evolves_to[0].evolution_details[0])
                 setEvoSecondTrigger(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name)
@@ -55,7 +57,7 @@ const Evolution = (props) => {
             }
             if(data.chain.evolves_to.length > 1) {
                 setEvoAlt1Id((data.chain.evolves_to[1].species.url)
-                [(data.chain.evolves_to[1].species.url.length - 2)]);
+                .match(regex));
                 setEvoAlt1Name(data.chain.evolves_to[1].species.name)
                 setEvoAlt1Req(data.chain.evolves_to[1].evolution_details[0])
                 setEvoAlt1Trigger(data.chain.evolves_to[1].evolution_details[0].trigger.name)
@@ -64,7 +66,7 @@ const Evolution = (props) => {
             }
             if(data.chain.evolves_to[0].evolves_to.length > 1) {
                 setEvoAlt2Id((data.chain.evolves_to[0].evolves_to[1].species.url)
-                [(data.chain.evolves_to[0].evolves_to[1].species.url.length - 2)]);
+                .match(regex));
                 setEvoAlt2Name(data.chain.evolves_to[0].evolves_to[1].species.name)
                 setEvoAlt2Req(data.chain.evolves_to[0].evolves_to[1].evolution_details[0])
                 setEvoAlt2Trigger(data.chain.evolves_to[0].evolves_to[1].evolution_details[0].trigger.name)
@@ -80,12 +82,16 @@ const Evolution = (props) => {
 
             <div className="evolution__row"> 
                 <div>
-                    <img
-                        className="card__img" 
-                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
-                        alt={evoBaseId}
-                    />
-                    <div>{evoFirstId ? evoBaseName : "No evolution for this Pokémon"}</div>
+                    {evoFirstId &&
+                        <div>
+                            <img
+                                className="card__img" 
+                                src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
+                                alt={evoBaseId}
+                            />
+                            <div>{evoBaseName}</div>
+                        </div>
+                    }
                 </div>
                 <div>
                     {evoFirstTrigger}
@@ -105,12 +111,16 @@ const Evolution = (props) => {
 
             <div className="evolution__row"> 
                 <div>
-                    <img
-                        className="card__img" 
-                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
-                        alt={evoFirstId}
-                    />
-                    <div>{evoSecondsId ? evoFirstName : ""}</div>
+                    {evoSecondsId &&
+                    <div>
+                        <img
+                            className="card__img" 
+                            src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
+                            alt={evoFirstId}
+                        />
+                        <div>{evoFirstName}</div>
+                    </div>
+                    }
                 </div>
                 <div>
                     {evoSecondsTrigger}
@@ -119,12 +129,16 @@ const Evolution = (props) => {
                     {evoSecondsTrigger === "use-item" && evoSecondsReq.item.name}
                 </div>
                 <div>
-                    <img
-                        className="card__img" 
-                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoSecondsId}.png`}
-                        alt={evoSecondsId}
-                    />
-                    <div>{evoSecondsName}</div>
+                    {evoSecondsId &&
+                    <div>
+                        <img
+                            className="card__img" 
+                            src={`https://pokeres.bastionbot.org/images/pokemon/${evoSecondsId}.png`}
+                            alt={evoSecondsId}
+                        />
+                        <div>{evoSecondsName}</div>
+                    </div>
+                    }
                 </div>
             </div>
 
