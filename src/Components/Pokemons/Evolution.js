@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink, useLocation } from "react-router-dom";
 
 const Evolution = (props) => {
     const [evolutionInfo, setEvolutionInfo] = useState([])
@@ -83,14 +84,18 @@ const Evolution = (props) => {
             <div className="evolution__row"> 
                 <div>
                     {evoFirstId &&
-                        <div>
+                        <NavLink
+                        to={{ 
+                            pathname: `/pokedex/${evoBaseId}`,
+                            state: `${evoBaseId}`,
+                        }}>
                             <img
                                 className="card__img" 
                                 src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
                                 alt={evoBaseId}
                             />
                             <div>{evoBaseName}</div>
-                        </div>
+                        </NavLink>
                     }
                 </div>
                 <div>
@@ -100,26 +105,38 @@ const Evolution = (props) => {
                     {evoFirstTrigger === "use-item" && evoFirstReq.item.name}
                 </div>
                 <div>
-                    <img
-                        className="card__img" 
-                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
-                        alt={evoFirstId}
-                    />
-                    <div>{evoFirstName}</div>
-                </div>
-            </div>
-
-            <div className="evolution__row"> 
-                <div>
-                    {evoSecondsId &&
-                    <div>
+                    {evoFirstId &&
+                    <NavLink
+                    to={{ 
+                        pathname: `/pokedex/${evoFirstId}`,
+                        state: `${evoFirstId}`,
+                    }}>
                         <img
                             className="card__img" 
                             src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
                             alt={evoFirstId}
                         />
                         <div>{evoFirstName}</div>
-                    </div>
+                    </NavLink>
+                    }
+                </div>
+            </div>
+
+            <div className="evolution__row"> 
+                <div>
+                    {evoSecondsId &&
+                    <NavLink
+                    to={{ 
+                        pathname: `/pokedex/${evoFirstId}`,
+                        state: `${evoFirstId}`,
+                    }}>
+                        <img
+                            className="card__img" 
+                            src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
+                            alt={evoFirstId}
+                        />
+                        <div>{evoFirstName}</div>
+                    </NavLink>
                     }
                 </div>
                 <div>
@@ -131,12 +148,20 @@ const Evolution = (props) => {
                 <div>
                     {evoSecondsId &&
                     <div>
-                        <img
-                            className="card__img" 
-                            src={`https://pokeres.bastionbot.org/images/pokemon/${evoSecondsId}.png`}
-                            alt={evoSecondsId}
-                        />
-                        <div>{evoSecondsName}</div>
+                        {evoSecondsId &&
+                        <NavLink
+                        to={{ 
+                            pathname: `/pokedex/${evoSecondsId}`,
+                            state: `${evoSecondsId}`,
+                        }}>
+                            <img
+                                className="card__img" 
+                                src={`https://pokeres.bastionbot.org/images/pokemon/${evoSecondsId}.png`}
+                                alt={evoSecondsId}
+                            />
+                            <div>{evoSecondsName}</div>
+                        </NavLink>
+                        }
                     </div>
                     }
                 </div>
@@ -144,49 +169,70 @@ const Evolution = (props) => {
 
             {evoAlt1Id &&
                 <div className="evolution__row"> 
-                <div>
+                <NavLink
+                to={{ 
+                    pathname: `/pokedex/${evoBaseId}`,
+                    state: `${evoBaseId}`,
+                }}>
                     <img
                         className="card__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
                         alt={evoBaseId}
                     />
                     <div>{evoBaseName}</div>
-                </div>
+                </NavLink>
                 <div>
                     {evoAlt1Trigger}
                     {evoAlt1Trigger === "level-up" && evoAlt1Req.min_level}
                     {evoAlt1Trigger === "trade" && evoAlt1Req.held_item && `Held Item:  ${evoAlt1Req.held_item.name}`}
                     {evoAlt1Trigger === "use-item" && evoAlt1Req.item.name}
                 </div>
-                <div>
+                <NavLink
+                to={{ 
+                    pathname: `/pokedex/${evoAlt1Id}`,
+                    state: `${evoAlt1Id}`,
+                }}>
                     <img
                         className="card__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoAlt1Id}.png`}
                         alt={evoAlt1Id}
                     />
                     <div>{evoAlt1Name}</div>
-                </div>
+                </NavLink>
             </div>
             }
             {evoAlt2Id &&
                 <div className="evolution__row"> 
-                <div>
+                <NavLink
+                to={{ 
+                    pathname: `/pokedex/${evoFirstId}`,
+                    state: `${evoFirstId}`,
+                }}>
                     <img
                         className="card__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
                         alt={evoFirstId}
                     />
                     <div>{evoFirstName}</div>
-                </div>
+                </NavLink>
                 <div>
                     {evoAlt2Trigger}
                     {evoAlt2Trigger === "level-up" && evoAlt2Req.min_level}
                     {evoAlt2Trigger === "trade" && evoAlt2Req.held_item && `Held Item:  ${evoAlt2Req.held_item.name}`}
                     {evoAlt2Trigger === "use-item" && evoAlt2Req.item.name}
                 </div>
-                <div>
-                    {evoAlt2Name}
-                </div>
+                <NavLink
+                to={{ 
+                    pathname: `/pokedex/${evoAlt2Name}`,
+                    state: `${evoAlt2Name}`,
+                }}>
+                    <img
+                        className="card__img" 
+                        src={`https://pokeres.bastionbot.org/images/pokemon/${evoAlt2Id}.png`}
+                        alt={evoAlt2Id}
+                    />
+                    <div>{evoAlt2Name}</div>
+                </NavLink>
             </div>
             }
         </div>
