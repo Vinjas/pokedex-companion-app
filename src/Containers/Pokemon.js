@@ -12,7 +12,6 @@ import MoveList from "../Components/Pokemons/MoveList"
 
 const Pokemon = () => {
     const location = useLocation();
-    const history = useHistory();
 
     const [pokemon, setPokemon] = useState([]);
     const [pokemonType, setPokemonType] = useState([])
@@ -59,7 +58,7 @@ const Pokemon = () => {
         pokemon.types &&
         pokemon.types.map((type, index) => {
             if (index === 1) {
-                check = true
+                return check = true
             }
         })
         return check
@@ -167,7 +166,7 @@ const Pokemon = () => {
                 <div 
                 className={classNames({
                     pokemon__title: true,
-                    "pokemon__title--menu": (menu != 1),
+                    "pokemon__title--menu": (menu !== 1),
                     "pokemon__title--active": (menu === 1)
                 })} 
                 onClick={() => setMenu(1)}>
@@ -177,7 +176,7 @@ const Pokemon = () => {
                 <div 
                 className={classNames({
                     pokemon__title: true,
-                    "pokemon__title--menu": (menu != 2),
+                    "pokemon__title--menu": (menu !== 2),
                     "pokemon__title--active": (menu === 2)
                 })}           
                 onClick={() => setMenu(2)}>
@@ -187,7 +186,7 @@ const Pokemon = () => {
                 <div 
                 className={classNames({
                     pokemon__title: true,
-                    "pokemon__title--menu": (menu != 3),
+                    "pokemon__title--menu": (menu !== 3),
                     "pokemon__title--active": (menu === 3)
                 })}           
                 onClick={() => setMenu(3)}>
@@ -197,7 +196,7 @@ const Pokemon = () => {
                 <div 
                 className={classNames({
                     pokemon__title: true,
-                    "pokemon__title--menu": (menu != 4),
+                    "pokemon__title--menu": (menu !== 4),
                     "pokemon__title--active": (menu === 4)
                 })}           
                 onClick={() => setMenu(4)}>
