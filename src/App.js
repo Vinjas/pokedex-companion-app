@@ -8,7 +8,6 @@ import SearchPage from "./Containers/SearchResult"
 import Pokemon from "./Containers/Pokemon"
 
 import TypesList from "./Containers/TypesList"
-import Moves from "./Containers/Moves"
 
 const App = () => {
     return (
@@ -24,7 +23,7 @@ const App = () => {
 
 
                   <Route exact path='/types' component={TypesList} />
-                  <Route exact path='/moves' component={Moves} />
+                  <Route exact path='/moves' component={TypesList} />
               </Switch>
           </div>
         </Router>

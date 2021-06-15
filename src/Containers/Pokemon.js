@@ -8,7 +8,7 @@ import { getPokemon } from "../API/get-pokemon"
 import About from '../Components/Pokemons/About';
 import Stats from "../Components/Pokemons/Stats"
 import Evolution from "../Components/Pokemons/Evolution"
-import Moves from "../Components/Pokemons/Moves"
+import MoveList from "../Components/Pokemons/MoveList"
 
 const Pokemon = () => {
     const location = useLocation();
@@ -211,7 +211,7 @@ const Pokemon = () => {
                 {menu === 1 && <About pokemon={pokemon} pokemonSpecies={pokemonSpecies} /> }
                 {menu === 2 && <Stats pokemon={pokemon} /> }
                 {menu === 3 && <Evolution pokemon={pokemon} evolutionChain={evolutionChain} /> }
-                {menu === 4 && <Moves pokemon={pokemon} /> }
+                {menu === 4 && <MoveList pokemon={pokemon} moves={pokemon.moves} /> }
             </div>
         </div>
     );
