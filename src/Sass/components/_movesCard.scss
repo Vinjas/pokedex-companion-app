@@ -69,6 +69,62 @@
         font-style: italic;
         font-size: 1.2rem;
         padding: 0.5rem;
+
+        &--normal {
+            background: $normal;
+        }
+        &--grass {
+            background: $grass;
+        }
+        &--fire {
+            background: $fire;
+        }
+        &--water {
+            background: $water;
+        }
+        &--fighting {
+            background: $fighting;
+        }
+        &--flying {
+            background: $flying;
+        }
+        &--poison {
+            background: $poison;
+        }
+        &--ground {
+            background: $ground;
+        }
+        &--rock {
+            background: $rock;
+        }
+        &--bug {
+            background: $bug;
+        }
+        &--ghost {
+            background: $ghost;
+        }
+        &--electric {
+            background: $electric;
+        }
+        &--psychic {
+            background: $psychic;
+        }
+        &--ice {
+            background: $ice;
+        }
+        &--dragon {
+            background: $dragon;
+        }
+        &--dark {
+            background: $dark;
+        }
+        &--steel {
+            background: $steel;
+        }
+        &--fairy {
+            background: $fairy;
+        }
+
     }
 
     &__damage {
@@ -88,7 +144,7 @@
         &--special {
             background: $special;
         }
-        &-status {
+        &--status {
             background: $status;
         }
     }

@@ -93,7 +93,7 @@ const MoveList = (props) => {
                 machineMoves.map((elem) => {
                     return (            
                         <MoveCard 
-                            key={props.id }{...elem}
+                            key={elem.move && elem.move.url.match(/\b(\d+)/g)}{...elem}
                             moveName={elem.move && elem.move.name}
                             moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}   
                             level={elem.version_group_details && elem.version_group_details[0].level_learned_at}                               
@@ -109,7 +109,7 @@ const MoveList = (props) => {
                 eggMoves.map((elem) => {
                     return (            
                         <MoveCard 
-                            key={props.id }{...elem}
+                            key={elem.move && elem.move.url.match(/\b(\d+)/g)}{...elem}
                             moveName={elem.move && elem.move.name}
                             moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}
                             level={elem.version_group_details && elem.version_group_details[0].level_learned_at}   
@@ -125,7 +125,7 @@ const MoveList = (props) => {
                 tutorMoves.map((elem) => {
                     return (            
                         <MoveCard 
-                            key={props.id }{...elem}
+                            key={elem.move && elem.move.url.match(/\b(\d+)/g)}{...elem}
                             moveName={elem.move && elem.move.name}
                             moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}
                             level={elem.version_group_details && elem.version_group_details[0].level_learned_at}   

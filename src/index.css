@@ -816,6 +816,46 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.evolution__img {
+  height: 9rem;
+  width: 9rem;
+  bottom: 50px;
+  background: #f2f2f2;
+  border-radius: 50px;
+  padding: 0.9rem;
+}
+.evolution__name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #343434;
+  margin-bottom: 1rem;
+}
+.evolution a {
+  text-decoration: none;
+}
+.evolution__evolve {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.evolution__evolve--details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.evolution__evolve--name {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+.evolution__evolve--number {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 
 .movesCard {
   font-size: 1.4rem;
@@ -881,6 +921,60 @@ body {
   font-size: 1.2rem;
   padding: 0.5rem;
 }
+.movesCard__type--normal {
+  background: #cacabf;
+}
+.movesCard__type--grass {
+  background: #49D0B0;
+}
+.movesCard__type--fire {
+  background: #f7776a;
+}
+.movesCard__type--water {
+  background: #74BBFF;
+}
+.movesCard__type--fighting {
+  background: #B1736A;
+}
+.movesCard__type--flying {
+  background: #9bbbff;
+}
+.movesCard__type--poison {
+  background: #7B548D;
+}
+.movesCard__type--ground {
+  background: #e7d390;
+}
+.movesCard__type--rock {
+  background: #c9c098;
+}
+.movesCard__type--bug {
+  background: #c7cf71;
+}
+.movesCard__type--ghost {
+  background: #8d8ac8;
+}
+.movesCard__type--electric {
+  background: #ffce4b;
+}
+.movesCard__type--psychic {
+  background: #ef94c5;
+}
+.movesCard__type--ice {
+  background: #bef6fe;
+}
+.movesCard__type--dragon {
+  background: #ac9efe;
+}
+.movesCard__type--dark {
+  background: #867972;
+}
+.movesCard__type--steel {
+  background: #C4C2DB;
+}
+.movesCard__type--fairy {
+  background: #f9d0fc;
+}
 .movesCard__damage {
   width: 30%;
   color: #fff;
@@ -898,7 +992,7 @@ body {
 .movesCard__damage--special {
   background: #8660F4;
 }
-.movesCard__damage-status {
+.movesCard__damage--status {
   background: #A4A4A4;
 }
 .movesCard__description {

@@ -4,4 +4,50 @@
         display: flex;
         justify-content: space-between;
     }
+
+    &__img {
+        height: 9rem;
+        width: 9rem;
+        bottom: 50px;
+        background: $gray-light-1;
+        border-radius: 50px;
+        padding: 0.9rem;
+    }
+
+    &__name {
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-align: center;
+        text-transform: capitalize;
+        text-decoration: none;
+        color: $text;
+        margin-bottom: 1rem;
+    }
+
+    & a {
+        text-decoration: none;
+    }
+
+    &__evolve {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        //margin-bottom: 3rem;
+
+        &--details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        &--name {
+            font-size: 1.2rem;
+            text-transform: capitalize;
+        }
+        &--number {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    }
 }

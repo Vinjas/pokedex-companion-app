@@ -90,19 +90,30 @@ const Evolution = (props) => {
                             state: `${evoBaseId}`,
                         }}>
                             <img
-                                className="card__img" 
+                                className="evolution__img" 
                                 src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
                                 alt={evoBaseId}
                             />
-                            <div>{evoBaseName}</div>
+                            <div className="evolution__name">{evoBaseName}</div>
                         </NavLink>
                     }
                 </div>
-                <div>
-                    {evoFirstTrigger}
-                    {evoFirstTrigger === "level-up" && evoFirstReq.min_level}
-                    {evoFirstTrigger === "trade" && evoFirstReq.held_item && `Held Item:  ${evoFirstReq.held_item.name}`}
-                    {evoFirstTrigger === "use-item" && evoFirstReq.item.name}
+                <div className="evolution__evolve">
+                    <img
+                    alt="arrow-icon"
+                    src="../svg/long-arrow-alt-right-solid.svg"
+                    style={{ width: 30 }}
+                    />
+                    <div className="evolution__evolve--details">
+                        <div className="evolution__evolve--name">
+                            {evoFirstTrigger}
+                        </div>
+                        <div className="evolution__evolve--number">
+                            {evoFirstTrigger === "level-up" && evoFirstReq.min_level}
+                            {evoFirstTrigger === "trade" && evoFirstReq.held_item && `Held Item:  ${evoFirstReq.held_item.name}`}
+                            {evoFirstTrigger === "use-item" && evoFirstReq.item.name}
+                        </div>
+                    </div>     
                 </div>
                 <div>
                     {evoFirstId &&
@@ -112,39 +123,52 @@ const Evolution = (props) => {
                         state: `${evoFirstId}`,
                     }}>
                         <img
-                            className="card__img" 
+                            className="evolution__img" 
                             src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
                             alt={evoFirstId}
                         />
-                        <div>{evoFirstName}</div>
+                        <div className="evolution__name">{evoFirstName}</div>
                     </NavLink>
                     }
                 </div>
             </div>
 
             <div className="evolution__row"> 
-                <div>
-                    {evoSecondsId &&
+                {evoSecondsId &&
+                <div>   
                     <NavLink
                     to={{ 
                         pathname: `/pokedex/${evoFirstId}`,
                         state: `${evoFirstId}`,
                     }}>
                         <img
-                            className="card__img" 
+                            className="evolution__img" 
                             src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
                             alt={evoFirstId}
                         />
-                        <div>{evoFirstName}</div>
+                        <div className="evolution__name">{evoFirstName}</div>
                     </NavLink>
-                    }
+                    
+                
+                    <div className="evolution__evolve">
+                        <img
+                        alt="arrow-icon"
+                        src="../svg/long-arrow-alt-right-solid.svg"
+                        style={{ width: 30 }}
+                        />
+                        <div className="evolution__evolve--details">
+                            <div className="evolution__evolve--name">
+                                {evoSecondsTrigger}                        
+                            </div>
+                            <div className="evolution__evolve--number">
+                                {evoSecondsTrigger === "level-up" && evoSecondsReq.min_level}
+                                {evoSecondsTrigger === "trade" && evoSecondsReq.held_item && `Held Item:  ${evoSecondsReq.held_item.name}`}
+                                {evoSecondsTrigger === "use-item" && evoSecondsReq.item.name}
+                            </div>
+                        </div>  
+                    </div>   
                 </div>
-                <div>
-                    {evoSecondsTrigger}
-                    {evoSecondsTrigger === "level-up" && evoSecondsReq.min_level}
-                    {evoSecondsTrigger === "trade" && evoSecondsReq.held_item && `Held Item:  ${evoSecondsReq.held_item.name}`}
-                    {evoSecondsTrigger === "use-item" && evoSecondsReq.item.name}
-                </div>
+                }
                 <div>
                     {evoSecondsId &&
                     <div>
@@ -155,11 +179,11 @@ const Evolution = (props) => {
                             state: `${evoSecondsId}`,
                         }}>
                             <img
-                                className="card__img" 
+                                className="evolution__img" 
                                 src={`https://pokeres.bastionbot.org/images/pokemon/${evoSecondsId}.png`}
                                 alt={evoSecondsId}
                             />
-                            <div>{evoSecondsName}</div>
+                            <div className="evolution__name">{evoSecondsName}</div>
                         </NavLink>
                         }
                     </div>
@@ -175,17 +199,28 @@ const Evolution = (props) => {
                     state: `${evoBaseId}`,
                 }}>
                     <img
-                        className="card__img" 
+                        className="evolution__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
                         alt={evoBaseId}
                     />
-                    <div>{evoBaseName}</div>
+                    <div className="evolution__name">{evoBaseName}</div>
                 </NavLink>
-                <div>
-                    {evoAlt1Trigger}
-                    {evoAlt1Trigger === "level-up" && evoAlt1Req.min_level}
-                    {evoAlt1Trigger === "trade" && evoAlt1Req.held_item && `Held Item:  ${evoAlt1Req.held_item.name}`}
-                    {evoAlt1Trigger === "use-item" && evoAlt1Req.item.name}
+                <div className="evolution__evolve">
+                    <img
+                    alt="arrow-icon"
+                    src="../svg/long-arrow-alt-right-solid.svg"
+                    style={{ width: 30 }}
+                    />
+                    <div className="evolution__evolve--details">
+                        <div className="evolution__evolve--name">
+                            {evoAlt1Trigger}                        
+                        </div>
+                        <div className="evolution__evolve--number">
+                            {evoAlt1Trigger === "level-up" && evoAlt1Req.min_level}
+                            {evoAlt1Trigger === "trade" && evoAlt1Req.held_item && `Held Item:  ${evoAlt1Req.held_item.name}`}
+                            {evoAlt1Trigger === "use-item" && evoAlt1Req.item.name}
+                        </div>
+                    </div>
                 </div>
                 <NavLink
                 to={{ 
@@ -193,11 +228,11 @@ const Evolution = (props) => {
                     state: `${evoAlt1Id}`,
                 }}>
                     <img
-                        className="card__img" 
+                        className="evolution__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoAlt1Id}.png`}
                         alt={evoAlt1Id}
                     />
-                    <div>{evoAlt1Name}</div>
+                    <div className="evolution__name">{evoAlt1Name}</div>
                 </NavLink>
             </div>
             }
@@ -209,17 +244,28 @@ const Evolution = (props) => {
                     state: `${evoFirstId}`,
                 }}>
                     <img
-                        className="card__img" 
+                        className="evolution__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
                         alt={evoFirstId}
                     />
-                    <div>{evoFirstName}</div>
+                    <div className="evolution__name">{evoFirstName}</div>
                 </NavLink>
-                <div>
-                    {evoAlt2Trigger}
-                    {evoAlt2Trigger === "level-up" && evoAlt2Req.min_level}
-                    {evoAlt2Trigger === "trade" && evoAlt2Req.held_item && `Held Item:  ${evoAlt2Req.held_item.name}`}
-                    {evoAlt2Trigger === "use-item" && evoAlt2Req.item.name}
+                <div className="evolution__evolve">
+                    <img
+                    alt="arrow-icon"
+                    src="../svg/long-arrow-alt-right-solid.svg"
+                    style={{ width: 30 }}
+                    />
+                    <div className="evolution__evolve--details">
+                        <div className="evolution__evolve--name">
+                            {evoAlt2Trigger}                       
+                        </div>
+                        <div className="evolution__evolve--number">                    
+                            {evoAlt2Trigger === "level-up" && evoAlt2Req.min_level}
+                            {evoAlt2Trigger === "trade" && evoAlt2Req.held_item && `Held Item:  ${evoAlt2Req.held_item.name}`}
+                            {evoAlt2Trigger === "use-item" && evoAlt2Req.item.name}
+                        </div>
+                    </div>
                 </div>
                 <NavLink
                 to={{ 
@@ -227,11 +273,11 @@ const Evolution = (props) => {
                     state: `${evoAlt2Name}`,
                 }}>
                     <img
-                        className="card__img" 
+                        className="evolution__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoAlt2Id}.png`}
                         alt={evoAlt2Id}
                     />
-                    <div>{evoAlt2Name}</div>
+                    <div className="evolution__name">{evoAlt2Name}</div>
                 </NavLink>
             </div>
             }
