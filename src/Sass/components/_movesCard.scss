@@ -6,6 +6,38 @@
     flex-direction: column;
     margin-bottom: 2rem;
 
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+
+        &--active {
+            color: $pure-white;
+            font-size: 1.4rem;
+            text-align: center;
+            text-transform: capitalize;
+            background: $hightlight;
+            border-radius: 10px;
+            padding: 0.2rem;
+            margin: 0 0 2rem 0;
+            min-width: 6rem;
+
+        }
+
+        &--inactive {
+            color: $text;
+            font-size: 1.4rem;
+            text-align: center;
+            text-transform: capitalize;
+            background: none;
+            border: 1px solid  #B3B3B3;
+            border-radius: 10px;
+            padding: 0.2rem;
+            margin: 0 0 2rem 0;
+            min-width: 6.5rem;
+        }
+    }
+
     &__header {
         display: flex;
         flex-direction: row;
@@ -65,9 +97,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         color: $title-darker;
         font-size: 1.2rem;
-        padding: 0.5rem 0 1rem 0;
+        padding: 0.5rem 2rem 1rem 2rem;
+
     }
     
 }

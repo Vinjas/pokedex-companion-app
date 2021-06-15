@@ -587,14 +587,14 @@ body {
   background: #49D0B0;
 }
 .pokemon__content {
-  padding: 0 3rem 0 3rem;
+  padding: 0 2.5rem;
   background: #fff;
 }
 .pokemon__menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   border-radius: 30px 30px 0 0;
-  padding: 4rem 2rem 0 2rem;
+  padding: 3.5rem 2.5rem 0 2.5rem;
   background: #fff;
 }
 .pokemon__info {
@@ -825,6 +825,34 @@ body {
   flex-direction: column;
   margin-bottom: 2rem;
 }
+.movesCard__menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+.movesCard__menu--active {
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: capitalize;
+  background: #5F6AC9;
+  border-radius: 10px;
+  padding: 0.2rem;
+  margin: 0 0 2rem 0;
+  min-width: 6rem;
+}
+.movesCard__menu--inactive {
+  color: #343434;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: capitalize;
+  background: none;
+  border: 1px solid #B3B3B3;
+  border-radius: 10px;
+  padding: 0.2rem;
+  margin: 0 0 2rem 0;
+  min-width: 6.5rem;
+}
 .movesCard__header {
   display: flex;
   flex-direction: row;
@@ -877,9 +905,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: #5F5F5F;
   font-size: 1.2rem;
-  padding: 0.5rem 0 1rem 0;
+  padding: 0.5rem 2rem 1rem 2rem;
 }
 
 /*# sourceMappingURL=index.css.map */
