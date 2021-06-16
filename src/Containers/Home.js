@@ -29,15 +29,23 @@ const Home = () => {
                     
             </NavLink>
 
-            <div className="home__row"> 
-                
-                    <div className="button button__items">
-                        <h2 className="button__title">Items</h2>
+            <div className="home__row">  
+                <NavLink
+                to = {{pathname: "itemlist/"}}
+                className="button button__items"
+                >
+                    <div>
+                        <h2 className="button__title">
+                            Items
+                        </h2>
                         <div className="button__pokeball"/>
                     </div>
-
+                </NavLink>
+                
                     <div className="button button__moves">
-                        <h2 className="button__title">Moves</h2>
+                        <h2 className="button__title">
+                            Moves
+                        </h2>
                         <div className="button__pokeball"/>
                     </div>
                 
@@ -46,12 +54,16 @@ const Home = () => {
             <div className="home__row"> 
                 
                 <div className="button button__types">
-                        <h2 className="button__title">Types</h2>
+                        <h2 className="button__title">
+                            Types
+                        </h2>
                         <div className="button__pokeball"/>
                     </div>
 
                     <div className="button button__typeschart">
-                        <h2 className="button__title button__title--typechart">Types <br/> Chart</h2>
+                        <h2 className="button__title button__title--typechart">
+                            Types <br/> Chart
+                        </h2>
                         <div className="button__pokeball"/>
                     </div>
                 

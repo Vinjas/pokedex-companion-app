@@ -5,10 +5,10 @@ import PokemonList from "./Containers/PokemonList"
 import Home from "./Containers/Home"
 import SearchPage from "./Containers/SearchResult"
 import SearchPage2 from "./Containers/SearchResult2"
+import ItemList from "./Containers/ItemList";
+
 //COMPONENTS
 import Pokemon from "./Containers/Pokemon"
-
-import TypesList from "./Containers/TypesList"
 
 const App = () => {
     return (
@@ -21,10 +21,11 @@ const App = () => {
                   <Route path='/pokedex/:id' component={Pokemon} />
                   <Route exact path='/search' component={SearchPage} />
                   <Route exact path='/search2' component={SearchPage2} />
+                  <Route exact path='/itemlist' component={ItemList} />
 
 
-                  <Route exact path='/types' component={TypesList} />
-                  <Route exact path='/moves' component={TypesList} />
+                  <Route exact path='/types' component={"TypesList"} />
+                  <Route exact path='/moves' component={"TypesList"} />
               </Switch>
           </div>
         </Router>

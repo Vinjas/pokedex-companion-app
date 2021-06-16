@@ -11,28 +11,14 @@ const AllPokemon = () => {
     const [genFilter, setGenFilter] = useState(false)
 
     const [input, setInput] = useState('');
-    const [resultListDefault, setResultListDefault] = useState();
 
     useEffect(() => {
     fetch("../data.json")
     .then((response) => response.json())
     .then((data) => {
-        setResultListDefault(data)
         setPokemons(data)
         })
     }, []);
-
-    /*const updateInput = (input) => {
-        const filtered = resultListDefault.filter(pokemon => {
-            return pokemon.name.toLowerCase().includes(input.toLowerCase())
-            })
-        setInput(input);
-        setPokemons(filtered);
-    }
-
-    const updateInput2 = async (input) => {
-        setInput(input);
-    }*/
 
     function useFilterUpdate(filter) {   
         return () => {
@@ -278,8 +264,8 @@ const AllPokemon = () => {
 
             {/* SEARCH BAR */}
             <SearchBar 
-            input={input} 
-            onChange={setInput}
+                input={input} 
+                onChange={setInput}
             />
 
             {/* POKEMON CARDS */}
