@@ -9,7 +9,13 @@ return (
     <div className="cards">
         {resultList.map((pokemon) => {
             if (pokemon) { 
-                return <LazyLoad><PokemonCard key={pokemon.id} {...pokemon} id={pokemon.id}/></LazyLoad>
+                return (
+                    <LazyLoad key={pokemon.id} {...pokemon}>
+                        <PokemonCard 
+                        key={pokemon.id} {...pokemon}
+                        id={pokemon.id}/>
+                    </LazyLoad>
+                )
             }
             return "Pokemon not found"
             }

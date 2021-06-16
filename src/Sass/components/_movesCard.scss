@@ -30,6 +30,7 @@
             text-align: center;
             text-transform: capitalize;
             background: none;
+            
             border: 1px solid  #B3B3B3;
             border-radius: 10px;
             padding: 0.2rem;
@@ -43,7 +44,7 @@
         flex-direction: row;
         justify-content: space-between;
         padding: 0.5rem 2rem;
-        
+        text-align: center;
         background: $gray-light-1;
         color: $title-darker;
     }

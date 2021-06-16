@@ -19,23 +19,13 @@ const MoveList = (props) => {
         return elem.version_group_details[0].move_learn_method.name === "tutor"
     })
 
-
-    function lvlLearned() {
-        if(props.moves.version_group_details && props.moves.version_group_details[0].level_learned_at === 0) {
-            return "-"
-        } else {
-            return props.moves.version_group_details && props.moves.version_group_details[0].level_learned_at
-        }
-    }
-    const level = lvlLearned()
-
     return (
         <div>            
             
             <div className="movesCard__menu ">
                 <div 
                 className={classNames({
-                    "movesCard__menu--inactive": (submenu != 1),
+                    "movesCard__menu--inactive": (submenu !== 1),
                     "movesCard__menu--active": (submenu === 1)
                 })} 
                 onClick={() => setSubMenu(1)}>
@@ -44,7 +34,7 @@ const MoveList = (props) => {
 
                 <div 
                 className={classNames({
-                    "movesCard__menu--inactive": (submenu != 2),
+                    "movesCard__menu--inactive": (submenu !== 2),
                     "movesCard__menu--active": (submenu === 2)
                 })}           
                 onClick={() => setSubMenu(2)}>
@@ -53,7 +43,7 @@ const MoveList = (props) => {
 
                 <div 
                 className={classNames({
-                    "movesCard__menu--inactive": (submenu != 3),
+                    "movesCard__menu--inactive": (submenu !== 3),
                     "movesCard__menu--active": (submenu === 3)
                 })}           
                 onClick={() => setSubMenu(3)}>
@@ -62,7 +52,7 @@ const MoveList = (props) => {
 
                 <div 
                 className={classNames({
-                    "movesCard__menu--inactive": (submenu != 4),
+                    "movesCard__menu--inactive": (submenu !== 4),
                     "movesCard__menu--active": (submenu === 4)
                 })}           
                 onClick={() => setSubMenu(4)}>

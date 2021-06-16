@@ -34,47 +34,48 @@ const Evolution = (props) => {
             setEvolutionInfo(data);
             let regex = /\b(\d+)/g
 
-            setEvoBaseId(data.chain.species.url
+            setEvoBaseId(data.chain && data.chain.species.url
             .match(regex));
-            setEvoBaseName(data.chain.species.name)
+            setEvoBaseName(data.chain && data.chain.species.name)
 
-            if(data.chain.evolves_to.length !== 0) {
-                setEvoFirstId((data.chain.evolves_to[0].species.url)
+            if(data.chain && data.chain.evolves_to.length !== 0) {
+                setEvoFirstId((data.chain && data.chain.evolves_to[0].species.url)
                 .match(regex))
-                setEvoFirstName(data.chain.evolves_to[0].species.name)
-                setEvoFirstReq(data.chain.evolves_to[0].evolution_details[0])
-                setEvoFirstTrigger(data.chain.evolves_to[0].evolution_details[0].trigger.name)
+                setEvoFirstName(data.chain && data.chain.evolves_to[0].species.name)
+                setEvoFirstReq(data.chain && data.chain.evolves_to[0].evolution_details[0])
+                setEvoFirstTrigger(data.chain && data.chain.evolves_to[0].evolution_details[0].trigger.name)
             } else {
                 setEvoFirstId(false)
-             }
-            if(data.chain.evolves_to[0].evolves_to.length !== 0) {
-                setEvoSecondId((data.chain.evolves_to[0].evolves_to[0].species.url)
+            }
+            if(data.chain.evolves_to[0] && data.chain.evolves_to[0].evolves_to.length !== 0) {
+                setEvoSecondId((data.chain && data.chain.evolves_to[0].evolves_to[0].species.url)
                 .match(regex));
-                setEvoSecondName(data.chain.evolves_to[0].evolves_to[0].species.name)
-                setEvoSecondReq(data.chain.evolves_to[0].evolves_to[0].evolution_details[0])
-                setEvoSecondTrigger(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name)
+                setEvoSecondName(data.chain && data.chain.evolves_to[0].evolves_to[0].species.name)
+                setEvoSecondReq(data.chain && data.chain.evolves_to[0].evolves_to[0].evolution_details[0])
+                setEvoSecondTrigger(data.chain && data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name)
             } else {
                 setEvoSecondId(false)
             }
-            if(data.chain.evolves_to.length > 1) {
-                setEvoAlt1Id((data.chain.evolves_to[1].species.url)
+            if(data.chain && data.chain.evolves_to.length > 1) {
+                setEvoAlt1Id((data.chain && data.chain.evolves_to[1].species.url)
                 .match(regex));
-                setEvoAlt1Name(data.chain.evolves_to[1].species.name)
-                setEvoAlt1Req(data.chain.evolves_to[1].evolution_details[0])
-                setEvoAlt1Trigger(data.chain.evolves_to[1].evolution_details[0].trigger.name)
+                setEvoAlt1Name(data.chain && data.chain.evolves_to[1].species.name)
+                setEvoAlt1Req(data.chain && data.chain.evolves_to[1].evolution_details[0])
+                setEvoAlt1Trigger(data.chain && data.chain.evolves_to[1].evolution_details[0].trigger.name)
             } else {
                 setEvoAlt1Id(false)
             }
-            if(data.chain.evolves_to[0].evolves_to.length > 1) {
-                setEvoAlt2Id((data.chain.evolves_to[0].evolves_to[1].species.url)
+            if(data.chain.evolves_to[0] && data.chain.evolves_to[0].evolves_to.length > 1) {
+                setEvoAlt2Id((data.chain && data.chain.evolves_to[0].evolves_to[1].species.url)
                 .match(regex));
-                setEvoAlt2Name(data.chain.evolves_to[0].evolves_to[1].species.name)
-                setEvoAlt2Req(data.chain.evolves_to[0].evolves_to[1].evolution_details[0])
-                setEvoAlt2Trigger(data.chain.evolves_to[0].evolves_to[1].evolution_details[0].trigger.name)
+                setEvoAlt2Name(data.chain && data.chain.evolves_to[0].evolves_to[1].species.name)
+                setEvoAlt2Req(data.chain && data.chain.evolves_to[0].evolves_to[1].evolution_details[0])
+                setEvoAlt2Trigger(data.chain && data.chain.evolves_to[0].evolves_to[1].evolution_details[0].trigger.name)
             } else {
                 setEvoAlt2Id(false)
             }
         })
+        .catch(() => "")
     }, []);
     
     return(
@@ -92,12 +93,24 @@ const Evolution = (props) => {
                             <img
                                 className="evolution__img" 
                                 src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
-                                alt={evoBaseId}
+                                alt='pokemon'
                             />
                             <div className="evolution__name">{evoBaseName}</div>
                         </NavLink>
                     }
+                    {evoBaseId && !evoFirstId &&
+                        <div>
+                            <img
+                                className="evolution__img" 
+                                src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
+                                alt='pokemon'
+                            />
+                            <div className="evolution__name">{evoBaseName}</div>
+                        </div>
+                    }
+
                 </div>
+                {evoFirstId &&
                 <div className="evolution__evolve">
                     <img
                     alt="arrow-icon"
@@ -115,6 +128,7 @@ const Evolution = (props) => {
                         </div>
                     </div>     
                 </div>
+                }
                 <div className="evolution__row">
                     {evoFirstId &&
                     <NavLink
@@ -125,7 +139,7 @@ const Evolution = (props) => {
                         <img
                             className="evolution__img" 
                             src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
-                            alt={evoFirstId}
+                            alt="pokemon"
                         />
                         <div className="evolution__name">{evoFirstName}</div>
                     </NavLink>
@@ -144,7 +158,7 @@ const Evolution = (props) => {
                     <img
                         className="evolution__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
-                        alt={evoFirstId}
+                        alt="pokemon"
                     />
                     <div className="evolution__name">{evoFirstName}</div>
                 </NavLink>
@@ -178,7 +192,7 @@ const Evolution = (props) => {
                         <img
                             className="evolution__img" 
                             src={`https://pokeres.bastionbot.org/images/pokemon/${evoSecondsId}.png`}
-                            alt={evoSecondsId}
+                            alt="pokemon"
                         />
                         <div className="evolution__name">{evoSecondsName}</div>
                     </NavLink>
@@ -198,7 +212,7 @@ const Evolution = (props) => {
                     <img
                         className="evolution__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoBaseId}.png`}
-                        alt={evoBaseId}
+                        alt="pokemon"
                     />
                     <div className="evolution__name">{evoBaseName}</div>
                 </NavLink>
@@ -227,7 +241,7 @@ const Evolution = (props) => {
                     <img
                         className="evolution__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoAlt1Id}.png`}
-                        alt={evoAlt1Id}
+                        alt="pokemon"
                     />
                     <div className="evolution__name">{evoAlt1Name}</div>
                 </NavLink>
@@ -243,7 +257,7 @@ const Evolution = (props) => {
                     <img
                         className="evolution__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoFirstId}.png`}
-                        alt={evoFirstId}
+                        alt="pokemon"
                     />
                     <div className="evolution__name">{evoFirstName}</div>
                 </NavLink>
@@ -272,7 +286,7 @@ const Evolution = (props) => {
                     <img
                         className="evolution__img" 
                         src={`https://pokeres.bastionbot.org/images/pokemon/${evoAlt2Id}.png`}
-                        alt={evoAlt2Id}
+                        alt="pokemon"
                     />
                     <div className="evolution__name">{evoAlt2Name}</div>
                 </NavLink>

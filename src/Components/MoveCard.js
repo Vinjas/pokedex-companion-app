@@ -5,27 +5,17 @@ import classNames from 'classnames';
 
 const MoveCard = (props) => {
     const [move, setMove] = useState([])
-    const [machineUrl, setMachineUrl] = useState([])
-    const [machine, setMachine] = useState([])
+    const [machineUrl, setMachineUrl] = useState("")
+    const [machine, setMachine] = useState("")
 
     useEffect(() => {
         getMove(props.moveId)
         .then((data) => {
             setMove(data);
-            
-            if(data.machines[0]) {
-                setMachineUrl(data.machines[0].machine.url)
-        }});
+            setMachineUrl(data.machines[0] && data.machines[0].machine.url)
+            });
       }, [props.moveId]);
-    
-    useEffect(() => {
-        fetch(machineUrl)
-        .then((response) => response.json())
-        .then((data) => {
-            setMachine((data.item.name).match(/\d+/g))
-        })
-    })
-        
+                
     const { name, accuracy, power, pp } = move
  
     function lvlZero() {
@@ -36,14 +26,18 @@ const MoveCard = (props) => {
             return props.level 
         } 
         else if (props.learn === "machine") {
-            if(move.machines && move.machines[0]) {
+            if(move.machines && move.machines[1]) {
+                fetch(machineUrl)
+                .then((response) => response.json())
+                .then((data) => {
+                    setMachine(data.item.name)
+                })  
+                .catch(() => "")
                 return machine
             }
         } else {
             return ""
         }
-
-
     }
     const levelFilter = lvlZero()
 
@@ -52,18 +46,18 @@ const MoveCard = (props) => {
             <div className="movesCard__header">
                 <div>
                     {props.learn === "level" && "Lvl."}
-                    {props.learn === "machine" && "#"}
+                    {props.learn === "machine" && "Num."}
                     {props.learn === "egg" && ""}
                     {props.learn === "tutor" && ""}
                 </div>
-                <div>Move</div>
+                <div style={{width:'20%'}}>Move</div>
                 <div>Pwr.</div>
                 <div>Prec.</div>
                 <div>PP</div>
             </div>
             
             <div className="movesCard__content">
-                <div>{levelFilter}</div>
+                <div style={{textTransform:'uppercase'}}>{levelFilter}</div>
                 <div>{name}</div>
                 <div>{power ? power : "-"}</div>
                 <div>{accuracy ? accuracy : "-"}</div>
