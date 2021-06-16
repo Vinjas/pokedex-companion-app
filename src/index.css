@@ -594,7 +594,7 @@ body {
   display: flex;
   justify-content: space-between;
   border-radius: 30px 30px 0 0;
-  padding: 3.5rem 2.5rem 0 2.5rem;
+  padding: 3.5rem 2.5rem 0.5rem 2.5rem;
   background: #fff;
 }
 .pokemon__info {
@@ -811,6 +811,9 @@ body {
 .page__pokemonlist {
   padding: 3rem 1.5rem;
 }
+.page__search {
+  padding: 3rem 1.5rem;
+}
 
 .evolution__row {
   display: flex;
@@ -855,6 +858,8 @@ body {
 .evolution__evolve--number {
   font-size: 1.2rem;
   font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .movesCard {

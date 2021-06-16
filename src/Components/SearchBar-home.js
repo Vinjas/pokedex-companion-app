@@ -19,7 +19,6 @@ const SearchBar = ({input:keyword,onChange:setKeyword}) => {
     })
 
     const onFormSubmit = () => {
-        console.log(keyword)
         return history.push({
             pathname: "/search",
             state: keyword,

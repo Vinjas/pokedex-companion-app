@@ -6,57 +6,57 @@ import SearchBar from '../Components/SearchBar-home';
 import ResultsList from '../API/ResultsList';
 
 const SearchPage = (props) => {
-  const [input, setInput] = useState('');
-  const [resultListDefault, setResultListDefault] = useState();
-  const [resultList, setResultList] = useState();
+    const [input, setInput] = useState('');
+    const [resultListDefault, setResultListDefault] = useState();
+    const [resultList, setResultList] = useState();
 
-  useEffect(() => {
+    useEffect(() => {
     return fetch('../data.json')
-    .then(response => response.json())
-    .then(data => {
-      setResultListDefault(data)
-      let newData = data.filter(elem => {
-        return elem.name.toLowerCase().includes(location.state.toLowerCase())
-      })
-      setResultList(newData)
-     })
-  }, []);
+        .then(response => response.json())
+        .then(data => {
+            setResultListDefault(data)
+                
+            let newData = data.filter(elem => {
+                return elem.name.toLowerCase().includes(location.state.toLowerCase())
+            })
+            
+            setResultList(newData)
+        })
+    }, []);
 
-  const updateInput = async (input) => {
-     const filtered = resultListDefault.filter(elem => {
-      return elem.name.toLowerCase().includes(input.toLowerCase())
-     })
-     setInput(input);
-     setResultList(filtered);
-  }
+    const updateInput = async (input) => {
+        const filtered = resultListDefault.filter(elem => {
+            return elem.name.toLowerCase().includes(input.toLowerCase())
+            })
+        
+        setInput(input);
+        setResultList(filtered);
+    }
 
-  const location = useLocation()
+    const location = useLocation()
 
-  console.log(location)
+    return (
+        <div className="page__search">
+            <NavLink className="back__button back__button--list" 
+            to = {{pathname: "/"}}>
+                <img
+                alt = "back-icon"
+                src = "../svg/long-arrow-alt-left-solid-black.svg"
+                style = {{width:26}}
+                />
+            </NavLink>
 
+            <h1 className="header header__pokedex">Search results</h1>
 
-	
-  return (
-    <div>
-      <NavLink className="back__button" to={{pathname: "/"}}>
-        <img
-          alt = "back-icon"
-          src = "../svg/arrow-left-solid.svg"
-          style = {{width:26}}
-        />
-      </NavLink>
+            <SearchBar 
+                input={input} 
+                onChange={updateInput}
+                placeholder={location.state}
+            />
 
-      <h1>Search results</h1>
-      <SearchBar 
-       input={input} 
-       onChange={updateInput}
-       placeholder={location.state}
-      />
-
-      <ResultsList resultList={resultList}/>
-
-    </div>
-   );
+            <ResultsList resultList={resultList}/>
+        </div>
+    );
 }
 
 export default SearchPage

@@ -22,13 +22,17 @@ const AllPokemon = () => {
         })
     }, []);
 
-    const updateInput = async (input) => {
+    /*const updateInput = (input) => {
         const filtered = resultListDefault.filter(pokemon => {
             return pokemon.name.toLowerCase().includes(input.toLowerCase())
             })
         setInput(input);
         setPokemons(filtered);
     }
+
+    const updateInput2 = async (input) => {
+        setInput(input);
+    }*/
 
     function useFilterUpdate(filter) {   
         return () => {
@@ -275,7 +279,7 @@ const AllPokemon = () => {
             {/* SEARCH BAR */}
             <SearchBar 
             input={input} 
-            onChange={updateInput}
+            onChange={setInput}
             />
 
             {/* POKEMON CARDS */}

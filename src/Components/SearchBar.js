@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 
 const SearchBar = ({input:keyword,onChange:setKeyword}) => {
+    
+    useEffect(() => {
+        const listener = event => {
+            if (event.code === "Enter" || event.code === "NumpadEnter") {
+                history.push({
+                    pathname: "/search",
+                    state: keyword,
+                })
+            }
+        }
+        document.addEventListener("keydown", listener);
+        return () => {
+            document.removeEventListener("keydown", listener);
+        }
+    })
+
+    const onFormSubmit = () => {
+        return history.push({
+            pathname: "/search",
+            state: keyword,
+        })
+    }
+    
+    const history = useHistory();
+
     return (
-        <div className="searchbar">
+        <form 
+            className="searchbar"
+            onSubmit={onFormSubmit}>
             <img
                 alt = "searchicon"
                 src = "../svg/search-solid.svg"
@@ -16,7 +44,8 @@ const SearchBar = ({input:keyword,onChange:setKeyword}) => {
                 placeholder={`Search Pokemon...`}
                 onChange={(e) => setKeyword(e.target.value)}
             />
-        </div>
+            <button type="submit">submit</button>
+        </form>
     );
 }
 
