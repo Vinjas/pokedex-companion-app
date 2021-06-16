@@ -29,7 +29,6 @@ const MoveList = (props) => {
     }
     const level = lvlLearned()
 
-
     return (
         <div>            
             
@@ -81,6 +80,7 @@ const MoveList = (props) => {
                             moveName={elem.move && elem.move.name}
                             moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}
                             level={elem.version_group_details && elem.version_group_details[0].level_learned_at}   
+                            learn="level"
                         />
                     )
                     }
@@ -97,6 +97,7 @@ const MoveList = (props) => {
                             moveName={elem.move && elem.move.name}
                             moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}   
                             level={elem.version_group_details && elem.version_group_details[0].level_learned_at}                               
+                            learn="machine"
                         />
                     )
                     }
@@ -113,6 +114,7 @@ const MoveList = (props) => {
                             moveName={elem.move && elem.move.name}
                             moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}
                             level={elem.version_group_details && elem.version_group_details[0].level_learned_at}   
+                            learn="egg"
                         />
                     )
                     }
@@ -128,16 +130,14 @@ const MoveList = (props) => {
                             key={elem.move && elem.move.url.match(/\b(\d+)/g)}{...elem}
                             moveName={elem.move && elem.move.name}
                             moveId={elem.move && elem.move.url.match(/\b(\d+)/g)}
-                            level={elem.version_group_details && elem.version_group_details[0].level_learned_at}   
+                            level={elem.version_group_details && elem.version_group_details[0].level_learned_at} 
+                            learn="tutor"  
                         />
                     )
                     }
                 )
             }
             </div>
-
-
-
         </div>
     )
 }

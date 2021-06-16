@@ -5,35 +5,63 @@ import classNames from 'classnames';
 
 const MoveCard = (props) => {
     const [move, setMove] = useState([])
+    const [machineUrl, setMachineUrl] = useState([])
+    const [machine, setMachine] = useState([])
 
     useEffect(() => {
         getMove(props.moveId)
         .then((data) => {
-          setMove(data);
-        });
+            setMove(data);
+            
+            if(data.machines[0]) {
+                setMachineUrl(data.machines[0].machine.url)
+        }});
       }, [props.moveId]);
+    
+    useEffect(() => {
+        fetch(machineUrl)
+        .then((response) => response.json())
+        .then((data) => {
+            setMachine((data.item.name).match(/\d+/g))
+        })
+    })
         
     const { name, accuracy, power, pp } = move
  
     function lvlZero() {
-        if (props.level === 0) {
-            return "-"
+        if(props.learn === "level") {
+            if (props.level === 0) {
+                return "-"
+            }
+            return props.level 
+        } 
+        else if (props.learn === "machine") {
+            if(move.machines && move.machines[0]) {
+                return machine
+            }
+        } else {
+            return ""
         }
-        return props.level 
+
+
     }
     const levelFilter = lvlZero()
 
     return (
         <div className="movesCard">
             <div className="movesCard__header">
-                <div>Lvl.</div>
+                <div>
+                    {props.learn === "level" && "Lvl."}
+                    {props.learn === "machine" && "#"}
+                    {props.learn === "egg" && ""}
+                    {props.learn === "tutor" && ""}
+                </div>
                 <div>Move</div>
                 <div>Pwr.</div>
                 <div>Prec.</div>
                 <div>PP</div>
             </div>
             
-
             <div className="movesCard__content">
                 <div>{levelFilter}</div>
                 <div>{name}</div>
@@ -76,15 +104,9 @@ const MoveCard = (props) => {
                 </div>
             </div>
 
-
             <div className="movesCard__description">
                 {move.effect_entries && move.effect_entries[0].short_effect}
             </div>
-            
-            
-            
-            
-            
         </div>
     )
 }
