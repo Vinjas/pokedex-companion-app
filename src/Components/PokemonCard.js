@@ -82,6 +82,7 @@ const PokemonCard = (props) => {
             <img
               className="card__img" 
               src={`https://pokeres.bastionbot.org/images/pokemon/${props.id}.png`}
+              width="100"
               alt={props.name}
             />
           </LazyLoad>

@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useHistory } from "react-router-dom";
+import { useLocation } from 'react-router';  
 
 const SearchBar = ({input:keyword,onChange:setKeyword}) => {
-    
+    const location = useLocation()
+
     useEffect(() => {
         const listener = event => {
             if (event.code === "Enter" || event.code === "NumpadEnter") {
@@ -19,10 +21,17 @@ const SearchBar = ({input:keyword,onChange:setKeyword}) => {
     })
 
     const onFormSubmit = () => {
-        return history.push({
-            pathname: "/search",
-            state: keyword,
+        if(location.pathname === "/search") {
+            return history.push({
+                pathname: "/search2",
+                state: keyword,
         })
+        } else {
+            return history.push({
+                pathname: "/search",
+                state: keyword,
+        })
+        }
     }
 
     const history = useHistory();
@@ -44,7 +53,7 @@ const SearchBar = ({input:keyword,onChange:setKeyword}) => {
                 placeholder={`Search Pokemon...`}
                 onChange={(e) => setKeyword(e.target.value)}
             />
-            <button type="submit">submit</button>
+            <button type="submit">Search</button>
         </form>
     );
 }
