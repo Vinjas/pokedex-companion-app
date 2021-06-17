@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom"
 import LazyLoad from "react-lazyload"
 
 import ItemCard from "../Components/ItemCard"
-import SearchBar from '../Components/SearchBar';
+import {SearchBarItem} from '../Components/SearchBar-Items';
 
 import getAllItems from '../API/get-all-items';
 
 
 const ItemList = () => {
-
+    const [input, setInput] = useState("")
     const [allItems, setAllItems] = useState([])
 
     const regexId = /\b(\d+)/g
@@ -35,11 +35,18 @@ const ItemList = () => {
 
             <h1 className="header header__pokedex">Items</h1>  
 
+            <SearchBarItem 
+                input={input} 
+                onChange={setInput}
+            />
+
             <div className="cards">
             {allItems.results && allItems.results.map((item) => {
                 return  (
                     
-                    <LazyLoad key={item.url.match(regexId)}>
+                    <LazyLoad 
+                    key={item.url.match(regexId)}
+                    style={{display:"flex", width:"100%"}}>
                         <ItemCard 
                             resultList={item} 
                             key={item.url.match(regexId)} {...item} 

@@ -3,21 +3,22 @@ import { useLocation } from 'react-router';
 import { NavLink } from "react-router-dom"
 
 import SearchBar from '../Components/SearchBar-home';
-import ResultsList from '../API/ResultsList';
+import ResultItems from '../API/ResultsItems';
+import getAllItems from '../API/get-all-items';
 
-const SearchPage = (props) => {
+
+const ItemsResult = (props) => {
     const [input, setInput] = useState('');
     const [resultListDefault, setResultListDefault] = useState();
     const [resultList, setResultList] = useState();
 
     useEffect(() => {
-    return fetch('../data.json')
-        .then(response => response.json())
+        getAllItems()
         .then(data => {
             setResultListDefault(data)
             let newData = ""    
             
-            newData = data.filter(elem => {
+            newData = data.results.filter(elem => {
                 return elem.name && elem.name.toLowerCase().includes(location.state)
             })
             
@@ -46,9 +47,9 @@ const SearchPage = (props) => {
                 onChange={setInput}
             />
 
-            <ResultsList resultList={resultList}/>
+            <ResultItems resultList={resultList}/>
         </div>
     );
 }
 
-export default SearchPage
+export default ItemsResult

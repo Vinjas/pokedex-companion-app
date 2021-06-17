@@ -16,8 +16,7 @@ const SearchPage = (props) => {
         .then(data => {
             setResultListDefault(data)
             let newData = ""    
-            console.log(input)
-            
+
             newData = data.filter(elem => {
                 return elem.name && elem.name.toLowerCase().includes(location.state)
             })
@@ -26,15 +25,6 @@ const SearchPage = (props) => {
         })
         .catch(() => "")
     }, []);
-
-    const updateInput = async (input) => {
-        const filtered = resultListDefault.filter(elem => {
-            return elem.name.toLowerCase().includes(input.toLowerCase())
-            })
-        
-        setInput(input);
-        setResultList(filtered);
-    }
 
     const location = useLocation()
 
