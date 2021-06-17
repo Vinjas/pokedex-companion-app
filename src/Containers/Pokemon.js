@@ -48,7 +48,9 @@ const Pokemon = () => {
         let check = false
         pokemon.types &&
         pokemon.types.map((type, index) => {
-            return ((index === 1) ? (check = true) : (check = false)) 
+            if (index === 1) {
+                return check = true
+            }
         })
         return check
     }
@@ -107,7 +109,9 @@ const Pokemon = () => {
 
                 <h3 style={{"fontSize":"1.3rem" }}>
                     {Object.entries(pokemon)[6] && Object.entries(pokemon)[6].map((id, index) => {
-                        return (index === 1 ? `#${zeroIDs(id)}` : "") 
+                        if (index === 1) {
+                            return `#${zeroIDs(id)}`
+                        }
                     })}
                 </h3>
                 
@@ -118,7 +122,9 @@ const Pokemon = () => {
                 <div className="pokemon__type">
                     {pokemon.types &&
                     pokemon.types.map((type, index) => {
-                        return ((index === 0) ? <p key={index}>{type['type']['name']}</p> : <p></p>);
+                        if (index === 0) {
+                            return <p key={index}>{type['type']['name']}</p>;
+                        }
                     })}
                 </div>
 
@@ -129,7 +135,9 @@ const Pokemon = () => {
                 })}>
                     {pokemon.types &&
                     pokemon.types.map((type, index) => {
-                        return ((index === 1) ? <p key={index}>{type['type']['name']}</p> : <p></p>);
+                        if (index === 1) {
+                            return <p key={index}>{type['type']['name']}</p>;
+                    }
                 })}
                 </div>
 
@@ -193,14 +201,14 @@ const Pokemon = () => {
             </div>
 
             {/* CONTENT */}
-
+            <Fade>
             <div className="pokemon__content">
-            {menu === 1 && <Fade ><About pokemon={pokemon} pokemonSpecies={pokemonSpecies} /></Fade> }
-            {menu === 2 && <Fade ><Stats pokemon={pokemon} /></Fade> }
-            {menu === 3 && <Fade ><Evolution pokemon={pokemon} evolutionChain={evolutionChain} /></Fade> }
-            {menu === 4 && <Fade ><MoveList pokemon={pokemon} moves={pokemon.moves} /></Fade> }
+            {menu === 1 && <Fade><About pokemon={pokemon} pokemonSpecies={pokemonSpecies} /></Fade> }
+            {menu === 2 && <Fade><Stats pokemon={pokemon} /></Fade> }
+            {menu === 3 && <Fade><Evolution pokemon={pokemon} evolutionChain={evolutionChain} /></Fade> }
+            {menu === 4 && <Fade><MoveList pokemon={pokemon} moves={pokemon.moves} /></Fade> }
             </div>
-
+            </Fade>
         </div>
     );
 };

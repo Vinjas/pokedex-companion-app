@@ -17,13 +17,13 @@ const SearchPage = (props) => {
             let newData = ""    
             
             newData = data.filter(elem => {
-                return elem.name && elem.name.toLowerCase().includes(location.state)
+                return elem.name && elem.name.toLowerCase().includes(location.state.toLowerCase())
             })
             
             setResultList(newData)
         })
         .catch(() => "")
-    });
+    }, []);
 
     const location = useLocation()
 

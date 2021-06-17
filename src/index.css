@@ -6,13 +6,6 @@
   box-sizing: inherit;
 }
 
-*:focus {
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-}
-
 html {
   font-size: 65.5%;
   font-family: "Rubik", sans-serif;
@@ -173,7 +166,7 @@ body {
 }
 .card__normal {
   background: url("./images/types/normal.jpg");
-  background-size: 110%;
+  background-size: 140%;
   background-repeat: no-repeat;
   background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(202, 202, 191, 0.5);
@@ -187,99 +180,114 @@ body {
 }
 .card__fire {
   background: url("./images/types/fire.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
   background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(247, 119, 106, 0.5);
 }
 .card__water {
   background: url("./images/types/water.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(116, 187, 255, 0.5);
 }
 .card__fighting {
   background: url("./images/types/fighting.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(177, 115, 106, 0.5);
 }
 .card__flying {
   background: url("./images/types/flying.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(155, 187, 255, 0.5);
 }
 .card__poison {
   background: url("./images/types/poison.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(123, 84, 141, 0.5);
 }
 .card__ground {
   background: url("./images/types/ground.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(231, 211, 144, 0.5);
 }
 .card__rock {
   background: url("./images/types/rock.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(201, 192, 152, 0.5);
 }
 .card__bug {
   background: url("./images/types/bug.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(199, 207, 113, 0.5);
 }
 .card__ghost {
   background: url("./images/types/ghost.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(141, 138, 200, 0.5);
 }
 .card__electric {
   background: url("./images/types/electric.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(255, 206, 75, 0.5);
 }
 .card__psychic {
   background: url("./images/types/psychic.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(239, 148, 197, 0.5);
 }
 .card__ice {
   background: url("./images/types/ice.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(190, 246, 254, 0.5);
 }
 .card__dragon {
   background: url("./images/types/dragon.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(172, 158, 254, 0.5);
 }
 .card__dark {
   background: url("./images/types/dark.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(134, 121, 114, 0.5);
 }
 .card__steel {
   background: url("./images/types/steel.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(196, 194, 219, 0.5);
 }
 .card__fairy {
   background: url("./images/types/fairy.jpg");
-  background-size: 120%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  background-position: bottom right;
   box-shadow: 0px 4px 5px rgba(249, 208, 252, 0.5);
 }
 .card:hover {
@@ -291,28 +299,29 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35);
 }
 
-@media (max-width: 400px) {
-  .card {
-    background-size: 140%;
-    background-position: bottom right;
-    max-width: 150px;
-  }
+/*@media (max-width: 400px) {
+    .card {
+        background-size: 140%;
+        background-position: bottom right; 
+        max-width: 150px;
+    }
 }
+
 @media (min-width: 750px) {
-  .card {
-    min-width: 32%;
-  }
+    .card {
+        min-width: 32%;
+    }
 }
 @media (min-width: 1000px) {
-  .card {
-    min-width: 24%;
-  }
+    .card {
+        min-width: 24%;
+    }
 }
 @media (min-width: 1200px) {
-  .card {
-    min-width: 19%;
-  }
-}
+    .card {
+        min-width: 19%;
+    }
+}*/
 .bigbutton {
   display: flex;
   justify-content: space-between;

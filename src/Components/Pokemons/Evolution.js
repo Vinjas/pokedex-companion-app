@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 
-const Evolution = (props) => {
+const Evolution = (props) => {    
     const [evoBaseId, setEvoBaseId] = useState([])
     const [evoBaseName, setEvoBaseName] = useState([])
 
@@ -73,7 +73,7 @@ const Evolution = (props) => {
             }
         })
         .catch(() => "")
-    });
+    }, []);
     
     return(
         <div className="evolution">

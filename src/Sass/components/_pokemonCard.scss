@@ -108,7 +108,7 @@
 
     &__normal {
         background: url("./images/types/normal.jpg");
-        background-size: 110%;
+        background-size: 140%;
         background-repeat: no-repeat;
         background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($normal, 0.5)
@@ -122,99 +122,114 @@
     }
     &__fire {
         background: url("./images/types/fire.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
         background-position: bottom right; 
         box-shadow: 0px 4px 5px rgba($fire, 0.5)   
     }
     &__water {
         background: url("./images/types/water.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($water, 0.5)   
     }
     &__fighting {
         background: url("./images/types/fighting.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($fighting, 0.5)   
     }
     &__flying {
         background: url("./images/types/flying.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($flying, 0.5)   
     }
     &__poison {
         background: url("./images/types/poison.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($poison, 0.5)   
     }
     &__ground {
         background: url("./images/types/ground.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($ground, 0.5)   
     }
     &__rock {
         background: url("./images/types/rock.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($rock, 0.5)   
     }
     &__bug {
         background: url("./images/types/bug.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($bug, 0.5)   
     }
     &__ghost {
         background: url("./images/types/ghost.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($ghost, 0.5)   
     }
     &__electric {
         background: url("./images/types/electric.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($electric, 0.5)   
     }
     &__psychic {
         background: url("./images/types/psychic.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($psychic, 0.5)   
     }
     &__ice {
         background: url("./images/types/ice.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($ice, 0.5)   
     }
     &__dragon {
         background: url("./images/types/dragon.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($dragon, 0.5)   
     }
     &__dark {
         background: url("./images/types/dark.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($dark, 0.5)   
     }    
     &__steel {
         background: url("./images/types/steel.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($steel, 0.5)   
     }
     &__fairy {
         background: url("./images/types/fairy.jpg");
-        background-size: 120%;
+        background-size: 140%;
         background-repeat: no-repeat;
+        background-position: bottom right;
         box-shadow: 0px 4px 5px rgba($fairy, 0.5)   
     }
 
@@ -232,7 +247,7 @@
 
 
 
-@media (max-width: 400px) {
+/*@media (max-width: 400px) {
     .card {
         background-size: 140%;
         background-position: bottom right; 
@@ -254,4 +269,4 @@
     .card {
         min-width: 19%;
     }
-}
+}*/

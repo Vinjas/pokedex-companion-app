@@ -18,13 +18,13 @@ const ItemsResult = (props) => {
             let newData = ""    
             
             newData = data.results && data.results.filter(elem => {
-                return elem.name && elem.name.toLowerCase().includes(location.state)
+                return elem.name && elem.name.toLowerCase().includes(location.state.toLowerCase())
             })
             
             setResultList(newData)
         })
         .catch(() => "")
-    });
+    }, []);
 
     const location = useLocation()
 
