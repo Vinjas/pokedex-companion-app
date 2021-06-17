@@ -43,7 +43,7 @@ const ItemCard = (props) => {
             <div className="itemCard__sprite">
                 <img
                     src={`${item.sprites && item.sprites.default}`}
-                    width="60px"
+                    width="55px"
                     alt="item"
                 />
             </div>

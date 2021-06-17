@@ -10,7 +10,9 @@ return (
         {resultList.map((elem) => {
             if (elem) { 
                 return (
-                    <LazyLoad key={elem.name} {...elem}>
+                    <LazyLoad 
+                    key={elem.name} {...elem} 
+                    style={{display:"flex", width:"100%"}}>
                         <ItemCard 
                         key={elem.name} {...elem}
                         id={elem.name}/>

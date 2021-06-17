@@ -53,7 +53,7 @@ export const SearchBarItem = ({input:keyword,onChange:setKeyword}) => {
                 className="searchbar__bar"
                 key="random1"
                 value={keyword}
-                placeholder={`Search Pokemon...`}
+                placeholder={`Search Items...`}
                 onChange={(e) => setKeyword(e.target.value)}
             />
             <button type="submit">Search</button>

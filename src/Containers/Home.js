@@ -32,13 +32,13 @@ const Home = () => {
             <div className="home__row">  
                 <NavLink
                 to = {{pathname: "itemlist/"}}
-                className="button button__items"
+                style={{minWidth:"48%", textDecoration:"none"}}
                 >
-                    <div>
+                    <div className="button button__items">
                         <h2 className="button__title">
                             Items
                         </h2>
-                        <div className="button__pokeball"/>
+                        <div className="button__pokeball"></div>
                     </div>
                 </NavLink>
                 
