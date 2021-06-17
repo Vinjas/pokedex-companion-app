@@ -132,6 +132,7 @@ body {
 .card__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-bottom: 5px;
   flex-flow: row nowrap;
 }
@@ -163,7 +164,7 @@ body {
 .card__id {
   color: rgba(255, 255, 255, 0.7);
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1.2rem;
 }
 .card__img {
   height: 6rem;

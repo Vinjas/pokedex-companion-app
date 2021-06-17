@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import classNames from "classnames"
-import LazyLoad from "react-lazyload"
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import { getItem } from '../API/get-item';
 

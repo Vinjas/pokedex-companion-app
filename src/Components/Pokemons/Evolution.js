@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Evolution = (props) => {
-    const [evolutionInfo, setEvolutionInfo] = useState([])
-    
     const [evoBaseId, setEvoBaseId] = useState([])
     const [evoBaseName, setEvoBaseName] = useState([])
 
@@ -31,7 +29,6 @@ const Evolution = (props) => {
         fetch(props.evolutionChain)
         .then((response) => response.json())
         .then((data) => {
-            setEvolutionInfo(data);
             let regex = /\b(\d+)/g
 
             setEvoBaseId(data.chain && data.chain.species.url
@@ -76,7 +73,7 @@ const Evolution = (props) => {
             }
         })
         .catch(() => "")
-    }, []);
+    });
     
     return(
         <div className="evolution">

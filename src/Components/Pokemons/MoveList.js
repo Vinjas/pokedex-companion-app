@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import MoveCard from "../../Components/MoveCard"
 import classNames from 'classnames';
 

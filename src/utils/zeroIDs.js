@@ -4,13 +4,13 @@ function zeroIDs(id) {
     switch (strID.length) {
         case 1:
             return `00${id}`
-            break;
+
         case 2:
             return `0${id}`
-            break;
+
         default:
             return id
-            break
+
     }
 }
 

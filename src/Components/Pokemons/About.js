@@ -58,9 +58,7 @@ const About = (props) => {
 
                     <div className="pokemon__info">
                     {Object.entries(props.pokemon)[4] && Object.entries(props.pokemon)[4].map((id, index) => {
-                    if (index === 1) {
-                        return `${heightConversor(height)}`
-                    }
+                        return (index === 1 ? `${heightConversor(height)}` : "")
                     })}
                     </div>
                 </div>
@@ -72,9 +70,7 @@ const About = (props) => {
 
                     <div className="pokemon__info">
                         {Object.entries(props.pokemon)[17] && Object.entries(props.pokemon)[17].map((id, index) => {
-                        if (index === 1) {
-                            return `${weightConversor(weight)}`
-                        }
+                            return (index === 1 ? `${weightConversor(weight)}` : "") 
                         })}
                     </div>
                 </div>

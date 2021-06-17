@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useHistory, NavLink } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 import classNames from "classnames"
 import Fade from 'react-reveal/Fade';
 
@@ -19,7 +19,6 @@ const Pokemon = () => {
     const [pokemonType, setPokemonType] = useState([])
     const [pokemonSpecies, setPokemonSpecies] = useState([])
     const [evolutionChain, setEvolutionChain] = useState([])
-    const [evolutionInfo, setEvolutionInfo] = useState([])
 
     const [menu, setMenu] = useState(1)
 
@@ -42,16 +41,6 @@ const Pokemon = () => {
         })
     }, [location.state]);
 
-    function getEvolution() {
-        return () => {
-            fetch(evolutionChain)
-            .then((response) => response.json())
-            .then((data) => {
-            setEvolutionInfo(data);
-            })
-        }
-    };
-
     const { name, id } = pokemon;
     const twoTypes = twoTypesCheck()
     
@@ -59,9 +48,7 @@ const Pokemon = () => {
         let check = false
         pokemon.types &&
         pokemon.types.map((type, index) => {
-            if (index === 1) {
-                return check = true
-            }
+            return ((index === 1) ? (check = true) : (check = false)) 
         })
         return check
     }
@@ -120,9 +107,7 @@ const Pokemon = () => {
 
                 <h3 style={{"fontSize":"1.3rem" }}>
                     {Object.entries(pokemon)[6] && Object.entries(pokemon)[6].map((id, index) => {
-                        if (index === 1) {
-                            return `#${zeroIDs(id)}`
-                        }
+                        return (index === 1 ? `#${zeroIDs(id)}` : "") 
                     })}
                 </h3>
                 
@@ -133,9 +118,7 @@ const Pokemon = () => {
                 <div className="pokemon__type">
                     {pokemon.types &&
                     pokemon.types.map((type, index) => {
-                        if (index === 0) {
-                            return <p key={index}>{type['type']['name']}</p>;
-                        }
+                        return ((index === 0) ? <p key={index}>{type['type']['name']}</p> : <p></p>);
                     })}
                 </div>
 
@@ -146,9 +129,7 @@ const Pokemon = () => {
                 })}>
                     {pokemon.types &&
                     pokemon.types.map((type, index) => {
-                        if (index === 1) {
-                            return <p key={index}>{type['type']['name']}</p>;
-                    }
+                        return ((index === 1) ? <p key={index}>{type['type']['name']}</p> : <p></p>);
                 })}
                 </div>
 

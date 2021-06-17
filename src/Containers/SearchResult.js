@@ -8,14 +8,12 @@ import ResultsList from '../API/ResultsList';
 
 const SearchPage = (props) => {
     const [input, setInput] = useState('');
-    const [resultListDefault, setResultListDefault] = useState();
     const [resultList, setResultList] = useState();
 
     useEffect(() => {
     return fetch('../data.json')
         .then(response => response.json())
         .then(data => {
-            setResultListDefault(data)
             let newData = ""    
 
             newData = data.filter(elem => {
@@ -25,7 +23,7 @@ const SearchPage = (props) => {
             setResultList(newData)
         })
         .catch(() => "")
-    }, []);
+    });
 
     const location = useLocation()
 

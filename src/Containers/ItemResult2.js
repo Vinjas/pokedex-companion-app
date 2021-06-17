@@ -10,13 +10,11 @@ import getAllItems from '../API/get-all-items';
 
 const ItemsResult2 = (props) => {
     const [input, setInput] = useState('');
-    const [resultListDefault, setResultListDefault] = useState();
     const [resultList, setResultList] = useState();
 
     useEffect(() => {
         getAllItems()
         .then(data => {
-            setResultListDefault(data)
             let newData = ""    
             
             newData = data.results && data.results.filter(elem => {
@@ -26,7 +24,7 @@ const ItemsResult2 = (props) => {
             setResultList(newData)
         })
         .catch(() => "")
-    }, []);
+    });
 
     const location = useLocation()
 

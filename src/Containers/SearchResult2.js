@@ -23,7 +23,7 @@ const SearchPage = (props) => {
             setResultList(newData)
         })
         .catch(() => "")
-    }, []);
+    });
 
     const location = useLocation()
 
