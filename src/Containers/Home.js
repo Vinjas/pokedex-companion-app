@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import React, { useState } from 'react';
+import Fade from 'react-reveal/Fade';
 
 import SearchBar from "../Components/SearchBar-home"
 //import { pokeballBack } from "../images/palm-leaf.png"
@@ -13,13 +14,15 @@ const Home = () => {
     
     return (
         <div className="page__home home__page">
+            <Fade>
             <h1 className="header">What are <br/> you looking for?</h1>
             
+
             <SearchBar 
                 input={input} 
                 onChange={setInput}
             />
-            
+
             <NavLink
             className="bigbutton"
             to = {{pathname: "pokedex/"}}
@@ -68,7 +71,9 @@ const Home = () => {
                     </div>
                 
             </div>
+            </Fade>
         </div>
+        
     )
 }
 

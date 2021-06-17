@@ -23,16 +23,6 @@
         cursor: pointer;
         width: 23%;
 
-        /*&:hover {
-            background-color: rgba($black, 0.3);
-            color: $pure-white;
-        }
-        &:active,
-        &:focus {
-            background-color: rgba($black, 0.3);
-            color: $pure-white;
-        }*/
-
         &--row {
             display: flex;
             justify-content: space-between;
@@ -50,7 +40,6 @@
         padding: 4px 13px;
         margin: 4px 0 4px 0;
         outline: none;
-        //border: 2px solid rgba($black, 0.1);
         border:none;
         cursor: pointer;
         width: 23%;

@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router';  
 import { NavLink } from "react-router-dom"
+import Fade from 'react-reveal/Fade';
 
 import SearchBar from '../Components/SearchBar-home';
 import ResultsList from '../API/ResultsList';
 
 const SearchPage = (props) => {
     const [input, setInput] = useState('');
-    const [resultListDefault, setResultListDefault] = useState();
     const [resultList, setResultList] = useState();
 
     useEffect(() => {
     return fetch('../data.json')
         .then(response => response.json())
         .then(data => {
-            setResultListDefault(data)
             let newData = ""    
             
             newData = data.filter(elem => {
@@ -45,8 +44,9 @@ const SearchPage = (props) => {
                 input={input} 
                 onChange={setInput}
             />
-
+            <Fade bottom>
             <ResultsList resultList={resultList}/>
+            </Fade>
         </div>
     );
 }

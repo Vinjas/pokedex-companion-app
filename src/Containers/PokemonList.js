@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom"
 import LazyLoad from "react-lazyload"
+import Fade from 'react-reveal/Fade';
 
 import PokemonCard from "../Components/PokemonCard"
 import SearchBar from '../Components/SearchBar-home';
@@ -53,6 +54,7 @@ const AllPokemon = () => {
 
     return (
         <div className="page__pokemonlist">
+            <Fade>
             {/* BACK BUTTON */}
             <NavLink className="back__button back__button--list" 
             to = {{pathname: "/"}}>
@@ -267,17 +269,21 @@ const AllPokemon = () => {
                 input={input} 
                 onChange={setInput}
             />
-
+            </Fade>
             {/* POKEMON CARDS */}
             <div className="cards">
             {pokemons.map((pokemon) => {
                 return  (
+                    
                     <LazyLoad key={pokemon.id}>
+                    <Fade bottom>
                         <PokemonCard 
                             resultList={pokemons} 
                             key={pokemon.id} {...pokemon} 
                             id={pokemon.id}/>
+                    </Fade>
                     </LazyLoad>
+                    
                 )}
             )}
             </div>     

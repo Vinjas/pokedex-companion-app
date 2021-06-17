@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router';  
 import { NavLink } from "react-router-dom"
+import Fade from 'react-reveal/Fade';
 
 import SearchBar from '../Components/SearchBar-Items';
 import ResultItems from '../API/ResultsItems';
@@ -29,8 +30,6 @@ const ItemsResult2 = (props) => {
 
     const location = useLocation()
 
-    console.log(resultList)
-
     return (
         <div className="page__search">
             <NavLink className="back__button back__button--list" 
@@ -48,8 +47,9 @@ const ItemsResult2 = (props) => {
                 input={input} 
                 onChange={setInput}
             />
-
+            <Fade>
             <ResultItems resultList={resultList}/>
+            </Fade>
         </div>
     );
 }

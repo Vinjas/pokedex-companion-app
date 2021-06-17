@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom"
 import LazyLoad from "react-lazyload"
+import Fade from 'react-reveal/Fade';
 
 import ItemCard from "../Components/ItemCard"
 import {SearchBarItem} from '../Components/SearchBar-Items';
@@ -23,6 +24,7 @@ const ItemList = () => {
 
     return (
         <div className="page__pokemonlist">
+            <Fade>
             {/* BACK BUTTON */}
             <NavLink className="back__button back__button--list" 
             to = {{pathname: "/"}}>
@@ -39,6 +41,7 @@ const ItemList = () => {
                 input={input} 
                 onChange={setInput}
             />
+            </Fade>
 
             <div className="cards">
             {allItems.results && allItems.results.map((item) => {
@@ -47,10 +50,12 @@ const ItemList = () => {
                     <LazyLoad 
                     key={item.url.match(regexId)}
                     style={{display:"flex", width:"100%"}}>
+                        <Fade bottom>
                         <ItemCard 
                             resultList={item} 
                             key={item.url.match(regexId)} {...item} 
                             id={item.url.match(regexId)}/>
+                        </Fade>
                     </LazyLoad>
                 )}
             )}

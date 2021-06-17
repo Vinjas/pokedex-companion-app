@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useHistory, NavLink } from 'react-router-dom';
 import classNames from "classnames"
+import Fade from 'react-reveal/Fade';
+
 
 import zeroIDs from "../utils/zeroIDs"
 import { getPokemon } from "../API/get-pokemon"
@@ -76,7 +78,7 @@ const Pokemon = () => {
 
     return (
         <div className="page__pokemon">
-
+            
             {/* HEADER */}
             <div className={classNames({
             back: true,
@@ -99,7 +101,8 @@ const Pokemon = () => {
             "back__fairy": (pokemonType === "fairy"),
             "back__electric": (pokemonType === "electric"),
             })}>
-
+            
+   
             <NavLink className="back__button"
             to = {{pathname: "/pokedex"}}>
                 <img
@@ -108,7 +111,8 @@ const Pokemon = () => {
                 style={{ width: 26 }}
                 />
             </NavLink>
-
+            
+            
             <div className="pokemon__name">
                 <h2>
                     {name}
@@ -121,7 +125,9 @@ const Pokemon = () => {
                         }
                     })}
                 </h3>
+                
             </div>
+            
 
             <div className="pokemon__types">
                 <div className="pokemon__type">
@@ -152,7 +158,7 @@ const Pokemon = () => {
                     && translateGenus(Object.entries(pokemonSpecies)[10][1])}
                 </div>
             </div>
-
+            <Fade>
             <div className="pokemon__img--wrapper">
                 <img
                 className='pokemon__img'
@@ -160,7 +166,7 @@ const Pokemon = () => {
                 alt='pokemon-pic'
                 />
             </div>
-
+            </Fade>    
             {/* MENU */}
             <div className="pokemon__menu ">
                 <div 
@@ -206,12 +212,14 @@ const Pokemon = () => {
             </div>
 
             {/* CONTENT */}
+
             <div className="pokemon__content">
-                {menu === 1 && <About pokemon={pokemon} pokemonSpecies={pokemonSpecies} /> }
-                {menu === 2 && <Stats pokemon={pokemon} /> }
-                {menu === 3 && <Evolution pokemon={pokemon} evolutionChain={evolutionChain} /> }
-                {menu === 4 && <MoveList pokemon={pokemon} moves={pokemon.moves} /> }
+            {menu === 1 && <Fade ><About pokemon={pokemon} pokemonSpecies={pokemonSpecies} /></Fade> }
+            {menu === 2 && <Fade ><Stats pokemon={pokemon} /></Fade> }
+            {menu === 3 && <Fade ><Evolution pokemon={pokemon} evolutionChain={evolutionChain} /></Fade> }
+            {menu === 4 && <Fade ><MoveList pokemon={pokemon} moves={pokemon.moves} /></Fade> }
             </div>
+
         </div>
     );
 };

@@ -6,6 +6,13 @@
   box-sizing: inherit;
 }
 
+*:focus {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
 html {
   font-size: 65.5%;
   font-family: "Rubik", sans-serif;
@@ -400,15 +407,6 @@ body {
   border: none;
   cursor: pointer;
   width: 23%;
-  /*&:hover {
-      background-color: rgba($black, 0.3);
-      color: $pure-white;
-  }
-  &:active,
-  &:focus {
-      background-color: rgba($black, 0.3);
-      color: $pure-white;
-  }*/
 }
 .dropmenu__header--row {
   display: flex;
