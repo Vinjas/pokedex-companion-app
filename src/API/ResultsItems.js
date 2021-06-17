@@ -10,10 +10,10 @@ return (
         {resultList.map((elem) => {
             if (elem) { 
                 return (
-                    <LazyLoad key={elem.id} {...elem}>
+                    <LazyLoad key={elem.name} {...elem}>
                         <ItemCard 
-                        key={elem.id} {...elem}
-                        id={elem.id}/>
+                        key={elem.name} {...elem}
+                        id={elem.name}/>
                     </LazyLoad>
                 )
             }

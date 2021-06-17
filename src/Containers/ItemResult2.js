@@ -7,7 +7,7 @@ import ResultItems from '../API/ResultsItems';
 import getAllItems from '../API/get-all-items';
 
 
-const ItemsResult = (props) => {
+const ItemsResult2 = (props) => {
     const [input, setInput] = useState('');
     const [resultListDefault, setResultListDefault] = useState();
     const [resultList, setResultList] = useState();
@@ -54,4 +54,4 @@ const ItemsResult = (props) => {
     );
 }
 
-export default ItemsResult
+export default ItemsResult2

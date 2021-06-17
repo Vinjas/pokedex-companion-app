@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import LazyLoad from "react-lazyload"
 
 import PokemonCard from "../Components/PokemonCard"
-import SearchBar from '../Components/SearchBar';
+import SearchBar from '../Components/SearchBar-home';
 
 const AllPokemon = () => {
     const [pokemons, setPokemons] = useState([])

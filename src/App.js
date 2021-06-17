@@ -7,6 +7,7 @@ import SearchPage from "./Containers/SearchResult"
 import SearchPage2 from "./Containers/SearchResult2"
 import ItemList from "./Containers/ItemList";
 import ItemsResult from "./Containers/ItemResult";
+import ItemsResult2 from "./Containers/ItemResult2";
 
 //COMPONENTS
 import Pokemon from "./Containers/Pokemon"
@@ -24,8 +25,8 @@ const App = () => {
                   <Route exact path='/search2' component={SearchPage2} />
 
                   <Route exact path='/searchitem' component={ItemsResult} />       
+                  <Route exact path='/searchitem2' component={ItemsResult2} />       
                   <Route exact path='/itemlist' component={ItemList} />
-
 
                   <Route exact path='/types' component={"TypesList"} />
                   <Route exact path='/moves' component={"TypesList"} />
