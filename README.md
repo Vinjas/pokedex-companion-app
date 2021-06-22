@@ -1,5 +1,8 @@
 # Pokedex Companion App
 > https://pokemon-companion-app-beta2.surge.sh/
+
+![alt text](https://github.com/Vinjas/pokedex-companion-app/tree/main/screenshots/pokemon-list.jpg?raw=true)
+
 ## Introduction
 *Pokedex Companion App* is a complete Pokedex App wich shows all relevant information about Pokemons for all Generations.
 
