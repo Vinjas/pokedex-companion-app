@@ -11,7 +11,7 @@ Information about a Pokemon is complete and is divided between a submenu that in
 
 All images except those of the pokemons where designing and created using Adobe Photoshop and Illustrator. The UI/UX was designed using Figma.
 
-**Current features:**
+### Current features:
 * Homescreen with a search bar and all the app sections.
 * Complete list of all the pokemons with a search bar and the option to filter by type or generation. The list uses lazyload to load the pokemon cards components currently on screen.
 * Individual pokemon page for all pokemons with all information included.
@@ -22,7 +22,7 @@ All images except those of the pokemons where designing and created using Adobe 
 * Different colours and style classes depending on pokemon type.
 * Complete list of all the items in the game, which includes a search bar.
 
-**Planned Features**
+### Planned Features
 * Add a global Move List with filters and another search bar.
 * Complete the Eevee evolution chain.
 * Bar charts for the pokemon base stats.
@@ -41,7 +41,7 @@ The CSS and styles are precompiled using Sass. The animations are implemented wi
 
 All the React states are managed with React Hooks.
 
-**Libraries:**
+### Libraries:
 * "classnames": "^2.3.1",
 * "node-sass": "4.14.1",
 * "react": "^17.0.2",
