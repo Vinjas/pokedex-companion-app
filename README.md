@@ -6,8 +6,6 @@
 
 It currently fetch its data through https://pokeapi.co/, https://pokeres.bastionbot.org and through custom jsons.
 
-There is a search bar for filtering pokemons, and buttons to filter through types and Generations.
-
 Information about a Pokemon is complete and is divided between a submenu that includes About, Base Stats, Evolution Chain and Moves.
 
 All images except those of the pokemons where designing and created using Adobe Photoshop and Illustrator. The UI/UX was designed using Figma.
@@ -33,31 +31,69 @@ All images except those of the pokemons where designing and created using Adobe 
 * Advanced filters for all lists.
 * A type chart with the strenghts and weakness of all types.
 
-## Technologies
-*Pokemon Companion App* was made using the React JS framework.
+## Available Scripts
 
-It uses multiple containers and componentes to render the entire app. It uses react-router to navigate through all the containers.
+In the project directory, you can run:
 
-The CSS and styles are precompiled using Sass. The animations are implemented with the help of react-reveal and react-transition-group.
+### `npm start`
 
-All the React states are managed with React Hooks.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Libraries:
-* "classnames": "^2.3.1",
-* "node-sass": "4.14.1",
-* "react": "^17.0.2",
-* "react-dom": "^17.0.2",
-* "react-lazyload": "^3.2.0",
-* "react-reveal": "^1.2.2",
-* "react-router-dom": "^5.2.0",
-* "react-scripts": "4.0.3",
-* "react-transition-group": "^4.4.2",
-* "recharts": "^2.0.9",
-* "web-vitals": "^1.0.1"
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## APP Deploymehnt
-The app has been publicly deployed on surge.sh.
+### `npm test`
 
-It can be accessed through the following link:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-**https://pokemon-companion-app-beta2.surge.sh/**
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
